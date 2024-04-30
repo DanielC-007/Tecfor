@@ -1,9 +1,12 @@
 :root {
-  --corFundoDark: #202020;
+  --corFundoDark: #000000;
   --corFundoLight: white;
-  --corNavLight: #f3f3f3;
-  --corNavDivLight: #d3d3d3;
-  --corNavDivHoverLight: #a1a1a1;
+  --cor1Light: #e9e9e9;
+  --cor1Dark: #202020;
+  --cor2Light: #d3d3d3;
+  --cor2Dark: #292929;
+  --cor3Light: #a1a1a1;
+  --cor3Dark: #494949;
 }
 
 * {
@@ -11,6 +14,17 @@
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--corFundoDark);
+}
+
+.container {
+  display: flex;
+}
+
+.subContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100vw;
 }
 
 body {
@@ -24,8 +38,9 @@ a {
 header {
   background-color: #7151a9;
   height: 75px;
-  width: 100vw;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header img {
@@ -33,48 +48,38 @@ header img {
   height: 30px;
 }
 
-button:hover {
-  cursor: pointer;
+header button {
+  border-style: none;
+  display: flex;
+  background-color: transparent;
 }
 
-.boxProcura {
+.box1 {
+  width: 100vw;
+  padding: 15px;
   display: flex;
   align-items: center;
-  height: 70px;
+  justify-content: left;
 }
 
-.salas {
-  background-color: var(--corNavLight);
-  border-right: solid var(--corFundoDark) 1px;
-  height: calc(100vh - 85px);
-  width: 400px;
-  padding: 5px;
+.box2 {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.salas button {
-  display: grid;
-  place-items: center;
-  background-color: var(--corNavDivLight);
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  border-style: none;
-  width: 390px;
-  height: 50px;
-}
-
-.salas button:hover {
-  background-color: var(--corNavDivHoverLight);
+.box3 {
+  width: 100vw;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 
 #icon {
-  width: auto;
+  width: 70px;
   height: auto;
-  margin-left: 5vw;
-}
-
-#box {
-  width: 100vw;
 }
 
 #pesquisa {
@@ -87,15 +92,84 @@ button:hover {
   background-color: var(--corFundoLight);
 }
 
-#procurar {
-  border-style: none;
-  display: flex;
-  background-color: transparent;
+button:hover {
+  cursor: pointer;
 }
 
-#home {
-  margin-left: 15px;
+.salas {
+  background-color: var(--cor1Light);
+  height: calc(100vh - 85px);
+  width: 400px;
+  padding: 5px;
+}
+
+.salas button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cor2Light);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
   border-style: none;
+  width: 390px;
+  height: 50px;
+}
+
+.salas button:hover {
+  background-color: var(--cor3Light);
+}
+
+.closeNav {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: calc(100vh - 75px);
+}
+
+.closeNav button {
+  background-color: var(--cor2Light);
+  border-style: none;
+  border-radius: 15px;
+  height: 50px;
+  width: 10px;
+}
+
+.chat {
+  background-color: var(--cor1Light);
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat button {
+  border-style: none;
+  border-radius: 10px;
+  background-color: var(--corFundoLight);
   text-align: center;
-  background-color: transparent;
+  height: 45px;
+  width: 45px;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.chat button img {
+  height: 30px;
+}
+
+.chat button:hover{
+  background-color: #7151a9;
+}
+
+#mensagem {
+  width: 50vw;
+  height: 35px;
+  padding: 5px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: var(--corFundoLight);
 }

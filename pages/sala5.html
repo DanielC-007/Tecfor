@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/style.css">
-    <link rel="icon" href="../public/imgs/icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <link rel="icon" href="../public/imgs/icon.png" />
     <script src="../assets/scripts/script.js"></script>
     <title>Sala 5</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div id="box"></div>
-        <div class="boxProcura">
-            <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar" />
-            <button id="procurar"><img src="../public/imgs/buscaLight.png" /></button>
-        </div>
+      <div class="box1">
+        <a href="../index.html"
+          ><button><img src="../public/imgs/homeLight.png" /></button
+        ></a>
+      </div>
+      <div class="box2">
         <img id="icon" src="../public/imgs/icon.png" />
+      </div>
+      <div class="box3">
+        <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar"/>
+        <button><img src="../public/imgs/buscaLight.png" /></button>
+      </div>
     </header>
     <main class="container">
-        <nav class="salas">
-            <a href="sala1.html"><button><p>Sala 1</p></button></a>
-            <a href="sala2.html"><button><p>Sala 2</p></button></a>
-            <a href="sala3.html"><button><p>Sala 3</p></button></a>
-            <a href="sala5.html"><button><p>Sala 4</p></button></a>
-            <button style="background-color: #7151a9;"><p>Sala 5</p></button>
-        </nav>
-        <div class="closeNav"></div>
+      <nav class="salas">
+        <a href="sala1.html"><button><p>Sala 1</p></button></a>
+        <a href="sala2.html"><button><p>Sala 2</p></button></a>
+        <a href="sala3.html"><button><p>Sala 3</p></button></a>
+        <a href="sala4.html"><button><p>Sala 4</p></button></a>
+        <button style="background-color: #7151a9"><p>Sala 5</p></button>
+      </nav>
+      <div class="closeNav"><button></button></div>
+      <main class="subContainer">
+        <div class="chat">
+          <input type="text" id="mensagem" placeholder="Mensagem">
+          <button><img src="../public/imgs/submit.png"></button>
+        </div>
+      </main>
     </main>
-</body>
-
+  </body>
 </html>
