@@ -1,5 +1,5 @@
 :root {
-  --corFundoDark: #000000;
+  --corFundoDark: #131313;
   --corFundoLight: white;
   --cor1Light: #e9e9e9;
   --cor1Dark: #202020;
@@ -13,11 +13,37 @@
   padding: 0px;
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--corFundoDark);
+  color: var(--corFundoLight);
 }
 
 .container {
   display: flex;
+}
+
+#containerLogin{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  padding: 5px;
+  padding-top: 10px;
+  background-color: var(--cor2Dark);
+  border-radius: 5px;
+  text-align: center;
+}
+
+form div{
+  margin: 5px;
+}
+
+form input{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  width: 50vw;
 }
 
 .subContainer {
@@ -28,7 +54,7 @@
 }
 
 body {
-  background-color: var(--corFundoLight);
+  background-color: var(--corFundoDark);
 }
 
 a {
@@ -71,10 +97,15 @@ header button {
 
 .box3 {
   width: 100vw;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: right;
+}
+
+.box3 img{
+  height: 50px;
+  width: 50px;
 }
 
 #icon {
@@ -89,7 +120,7 @@ header button {
   margin-right: 2.5px;
   border-style: none;
   border-radius: 5px;
-  background-color: var(--corFundoLight);
+  background-color: var(--corFundoDark);
 }
 
 button:hover {
@@ -97,7 +128,7 @@ button:hover {
 }
 
 #salas {
-  background-color: var(--cor1Light);
+  background-color: var(--cor1Dark);
   height: calc(100vh - 85px);
   width: 400px;
   padding: 5px;
@@ -107,7 +138,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--cor2Light);
+  background-color: var(--cor2Dark);
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
@@ -117,7 +148,7 @@ button:hover {
 }
 
 #salas button:hover {
-  background-color: var(--cor3Light);
+  background-color: var(--cor3Dark);
 }
 
 .closeNav {
@@ -129,7 +160,7 @@ button:hover {
 }
 
 .closeNav button {
-  background-color: var(--cor2Light);
+  background-color: var(--cor2Dark);
   border-style: none;
   border-radius: 50px;
   height: 50px;
@@ -145,7 +176,7 @@ button:hover {
 }
 
 .chat {
-  background-color: var(--cor1Light);
+  background-color: var(--cor1Dark);
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -156,7 +187,7 @@ button:hover {
 .chat button {
   border-style: none;
   border-radius: 10px;
-  background-color: var(--corFundoLight);
+  background-color: var(--corFundoDark);
   text-align: center;
   height: 45px;
   width: 45px;
@@ -178,5 +209,5 @@ button:hover {
   padding: 5px;
   border-style: none;
   border-radius: 10px;
-  background-color: var(--corFundoLight);
+  background-color: var(--corFundoDark);
 }
