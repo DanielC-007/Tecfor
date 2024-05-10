@@ -16,11 +16,21 @@
   color: var(--corFundoLight);
 }
 
+#fechar{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 0;
+  display: none;
+  border: none;
+}
+
 .container {
   display: flex;
 }
 
-#containerLogin{
+.containerLogin{
   height: 100vh;
   display: flex;
   align-items: center;
@@ -37,13 +47,48 @@ form{
 
 form div{
   margin: 5px;
+  width: min-content;
+}
+
+#miniPass{
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#miniPass input[type=password]{
+  width: calc(50vw - 35px);
+  margin: 5px;
+}
+
+#miniPass button{
+  background-color: transparent;
+  border: none;
+}
+
+#miniPass img{
+  width: 30px;
+  height: 30px;
 }
 
 form input{
+  color: var(--corFundoDark);
+  background-color: var(--corFundoLight);
   border: none;
   padding: 5px;
+  margin: 5px;
   border-radius: 5px;
   width: 50vw;
+  height: 25px;
+}
+
+form input[type=submit]{
+  width: 70px;
+}
+
+form input[type=submit]:hover{
+  background-color: #916dd5;
 }
 
 .subContainer {
@@ -127,6 +172,30 @@ button:hover {
   cursor: pointer;
 }
 
+#infoUser{
+  background-color: var(--cor1Dark);
+  height: calc(100vh - 85px);
+  width: 400px;
+  padding: 5px;
+  text-align: center;
+}
+
+#infoUser img{
+  height: 200px;
+}
+
+#infoUser button{
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--cor2Dark);
+}
+
+#infoUser button img{
+  height: 70px;
+  width: auto;
+}
+
 #salas {
   background-color: var(--cor1Dark);
   height: calc(100vh - 85px);
@@ -147,7 +216,7 @@ button:hover {
   height: 50px;
 }
 
-#salas button:hover {
+#salas button:hover, #infoUser button:hover {
   background-color: var(--cor3Dark);
 }
 

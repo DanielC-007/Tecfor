@@ -6,19 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="icon" href="../public/imgs/icon.png">
     <script src="../assets/scripts/script.js"></script>
-    <title>Document</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <main id="containerLogin">
-        <form action="" method="get">
+    <main class="containerLogin">
+        <form action="../index.html" method="post">
             <h1>Login</h1>
             <div>
-                <p>Seu nome:</p>
-                <input type="text">
-                <p>Seu email:</p>
-                <input type="email">
+                <input type="text" placeholder="Nome" name="nameUser" id="nameUser">
+                <input type="email" placeholder="Email institucional" name="emailUser" id="emailUser">
+                <div id="miniPass">
+                    <input type="password" placeholder="Senha" name="passUser" id="passUser">
+                    <button onclick="exibirSenha()"><img src="../public/imgs/eyeLight.png"></button>
+                </div>
+                <input type="submit" value="Enviar" onclick="confirmarConta()">
             </div>
         </form>
     </main>
