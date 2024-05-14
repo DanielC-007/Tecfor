@@ -2,10 +2,16 @@ console.log("Olá, tudo certo");
 
 function navOpenClose() {
     var navSalas = document.getElementById("salas");
+    var divclose = document.querySelector(".closeNav");
+    navSalas.classList.toggle("closed");
+    divclose.classList.toggle("closed");
     if (navSalas.style.display === "none" || navSalas.style.display === "") {
-        navSalas.style.display = "block";
+        navSalas.style.transform = "tranlateX(-100%)";
+        setTimeout(()=>{
+            navSalas.style.display = "none";
+        }, 500);
     } else {
-        navSalas.style.display = "none";
+        navSalas.style.display = "block";
     }
 }
 
@@ -27,3 +33,4 @@ function exibirSenha() {
         visualizar.type = "password";
     }
 }
+

@@ -16,7 +16,7 @@
   color: var(--corFundoLight);
 }
 
-#fechar{
+#fechar {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
@@ -30,14 +30,14 @@
   display: flex;
 }
 
-.containerLogin{
+.containerLogin {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-form{
+form {
   padding: 5px;
   padding-top: 10px;
   background-color: var(--cor2Dark);
@@ -45,34 +45,34 @@ form{
   text-align: center;
 }
 
-form div{
+form div {
   margin: 5px;
   width: min-content;
 }
 
-#miniPass{
+#miniPass {
   margin: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#miniPass input[type=password]{
+#miniPass input[type=password] {
   width: calc(50vw - 35px);
   margin: 5px;
 }
 
-#miniPass button{
+#miniPass button {
   background-color: transparent;
   border: none;
 }
 
-#miniPass img{
+#miniPass img {
   width: 30px;
   height: 30px;
 }
 
-form input{
+form input {
   color: var(--corFundoDark);
   background-color: var(--corFundoLight);
   border: none;
@@ -83,11 +83,11 @@ form input{
   height: 25px;
 }
 
-form input[type=submit]{
+form input[type=submit] {
   width: 70px;
 }
 
-form input[type=submit]:hover{
+form input[type=submit]:hover {
   background-color: #916dd5;
 }
 
@@ -148,7 +148,7 @@ header button {
   justify-content: right;
 }
 
-.box3 img{
+.box3 img {
   height: 50px;
   width: 50px;
 }
@@ -172,26 +172,37 @@ button:hover {
   cursor: pointer;
 }
 
-#infoUser{
+#infoUser {
   background-color: var(--cor1Dark);
   height: calc(100vh - 85px);
   width: 400px;
   padding: 5px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#infoUser img{
+#infoUser h3 {
+  margin-bottom: 25px;
+}
+
+#infoUser img {
   height: 200px;
 }
 
-#infoUser button{
+#infoUser button {
   width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 5px;
   background-color: var(--cor2Dark);
+  padding: 5px;
+  margin: 3px;
 }
 
-#infoUser button img{
+#infoUser button img {
   height: 70px;
   width: auto;
 }
@@ -201,6 +212,20 @@ button:hover {
   height: calc(100vh - 85px);
   width: 400px;
   padding: 5px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#salas.closed {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#salas div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #salas button {
@@ -208,15 +233,16 @@ button:hover {
   justify-content: center;
   align-items: center;
   background-color: var(--cor2Dark);
-  margin: 5px;
+  margin: 0px 0px 5px 0px;
   padding: 5px;
   border-radius: 5px;
   border-style: none;
-  width: 390px;
+  width: 300px;
   height: 50px;
 }
 
-#salas button:hover, #infoUser button:hover {
+#salas button:hover,
+#infoUser button:hover {
   background-color: var(--cor3Dark);
 }
 
@@ -224,8 +250,16 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
+  width: 30px;
   height: calc(100vh - 75px);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.closeNav.closed {
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 .closeNav button {
@@ -236,11 +270,8 @@ button:hover {
   width: 10px;
 }
 
-.closeNav button:hover{
-  height: 50px;
-  width: 50px;
-  border-radius: 0px;
-  clip-path: polygon(100% 0, 50% 50%, 100% 100%, 50% 100%, 0% 50%, 50% 0);
+.closeNav button:hover {
+  height: 60px;
   background-color: #7151a9;
 }
 
