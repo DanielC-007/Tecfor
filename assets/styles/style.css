@@ -95,8 +95,9 @@ form input[type=submit]:hover {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  position: none;
   width: 100vw;
+  height: calc(100vh - 85px);
+  position: none;
 }
 
 body {
@@ -211,7 +212,7 @@ button:hover {
 #salas {
   background-color: var(--cor1Dark);
   height: calc(100vh - 85px);
-  width: 400px;
+  width: 325px;
   padding: 5px;
 }
 
