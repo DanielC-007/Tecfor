@@ -91,7 +91,7 @@ form input[type=submit]:hover {
   background-color: #916dd5;
 }
 
-.subContainer {
+#subContainer {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -238,7 +238,7 @@ button:hover {
   background-color: var(--cor3Dark);
 }
 
-.closeNav {
+#closeNav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,7 +246,7 @@ button:hover {
   height: calc(100vh - 75px);
 }
 
-.closeNav button {
+#closeNav button {
   background-color: var(--cor2Dark);
   border-style: none;
   border-radius: 50px;
@@ -254,7 +254,7 @@ button:hover {
   width: 10px;
 }
 
-.closeNav button:hover {
+#closeNav button:hover {
   height: 60px;
   background-color: #7151a9;
 }
