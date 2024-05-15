@@ -9,13 +9,11 @@ function navOpenClose() {
     navSalas.style.transform === ""
   ) {
     navSalas.style.transform = "translateX(-100%)";
-    navSalas
     bntClose.style.transform = "translateX(-310px)";
-
     // subContainer.style.width("100vw")
   } else {
-    navSalas.style.transform = "translateX(0px)";
-    bntClose.style.transform = "translateX(0px)";
+    navSalas.style.transform = "translateX(0px)";    
+    bntClose.style.transform = "translateX(0px)";    
   }
 }
 
