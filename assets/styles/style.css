@@ -9,95 +9,12 @@
   --cor3Dark: #494949;
 }
 
+/* itens no geral */
 * {
   padding: 0px;
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--corFundoLight);
-}
-
-#fechar {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  z-index: 0;
-  display: none;
-  border: none;
-}
-
-.container {
-  display: flex;
-}
-
-.containerLogin {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-form {
-  padding: 5px;
-  padding-top: 10px;
-  background-color: var(--cor2Dark);
-  border-radius: 5px;
-  text-align: center;
-}
-
-form div {
-  margin: 5px;
-  width: min-content;
-}
-
-#miniPass {
-  margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#miniPass input[type=password] {
-  width: calc(50vw - 35px);
-  margin: 5px;
-}
-
-#miniPass button {
-  background-color: transparent;
-  border: none;
-}
-
-#miniPass img {
-  width: 30px;
-  height: 30px;
-}
-
-form input {
-  color: var(--corFundoDark);
-  background-color: var(--corFundoLight);
-  border: none;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 5px;
-  width: 50vw;
-  height: 25px;
-}
-
-form input[type=submit] {
-  width: 70px;
-}
-
-form input[type=submit]:hover {
-  background-color: #916dd5;
-}
-
-#subContainer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  width: 100vw;
-  height: calc(100vh - 85px);
-  position: none;
 }
 
 body {
@@ -106,6 +23,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 header {
@@ -125,6 +46,51 @@ header button {
   border-style: none;
   display: flex;
   background-color: transparent;
+}
+
+form {
+  padding: 5px;
+  padding-top: 10px;
+  background-color: var(--cor2Dark);
+  border-radius: 5px;
+  text-align: center;
+}
+
+form div {
+  margin: 5px;
+  width: min-content;
+}
+
+form input {
+  color: var(--corFundoDark);
+  background-color: var(--corFundoLight);
+  border: none;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  width: 50vw;
+  height: 25px;
+}
+
+form input[type="submit"] {
+  width: 70px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #916dd5;
+}
+
+/* classes */
+
+.container {
+  display: flex;
+}
+
+.containerLogin {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box1 {
@@ -155,58 +121,48 @@ header button {
   width: 50px;
 }
 
+.chat {
+  background-color: var(--cor1Dark);
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat button {
+  border-style: none;
+  border-radius: 10px;
+  background-color: var(--corFundoDark);
+  text-align: center;
+  height: 45px;
+  width: 45px;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.chat button img {
+  height: 30px;
+}
+
+.chat button:hover {
+  background-color: #7151a9;
+}
+
+/* ids */
+
 #icon {
   width: 70px;
   height: auto;
 }
 
-#pesquisa {
-  height: 30px;
-  width: 250px;
-  padding: 5px;
-  margin-right: 2.5px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: var(--corFundoDark);
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-#infoUser {
-  background-color: var(--cor1Dark);
-  height: calc(100vh - 85px);
-  width: 400px;
-  padding: 5px;
+#subContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#infoUser h3 {
-  margin-bottom: 25px;
-}
-
-#infoUser img {
-  height: 200px;
-}
-
-#infoUser button {
-  width: 200px;
-  display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--cor2Dark);
-  padding: 5px;
-  margin: 3px;
-}
-
-#infoUser button img {
-  height: 70px;
-  width: auto;
+  width: 100vw;
+  height: calc(100vh - 85px);
+  position: none;
 }
 
 #salas {
@@ -236,11 +192,6 @@ button:hover {
   height: 50px;
 }
 
-#salas button:hover,
-#infoUser button:hover {
-  background-color: var(--cor3Dark);
-}
-
 #closeNav {
   display: flex;
   justify-content: center;
@@ -262,32 +213,44 @@ button:hover {
   background-color: #7151a9;
 }
 
-.chat {
+#salas button:hover,
+#infoUser button:hover {
+  background-color: var(--cor3Dark);
+}
+
+#infoUser {
   background-color: var(--cor1Dark);
-  padding: 10px;
-  border-radius: 15px;
+  height: calc(100vh - 85px);
+  width: 400px;
+  padding: 5px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.chat button {
-  border-style: none;
-  border-radius: 10px;
-  background-color: var(--corFundoDark);
-  text-align: center;
-  height: 45px;
-  width: 45px;
+#infoUser button {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--cor2Dark);
   padding: 5px;
-  margin-left: 5px;
+  margin: 3px;
 }
 
-.chat button img {
-  height: 30px;
+#infoUser button img {
+  height: 70px;
+  width: auto;
 }
 
-.chat button:hover {
-  background-color: #7151a9;
+#infoUser h3 {
+  margin-bottom: 25px;
+}
+
+#infoUser img {
+  height: 200px;
 }
 
 #mensagem {
@@ -298,3 +261,36 @@ button:hover {
   border-radius: 10px;
   background-color: var(--corFundoDark);
 }
+
+#miniPass {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#miniPass input[type="password"] {
+  width: calc(50vw - 35px);
+  margin: 5px;
+}
+
+#miniPass button {
+  background-color: transparent;
+  border: none;
+}
+
+#miniPass img {
+  width: 30px;
+  height: 30px;
+}
+
+/* 
+#fechar {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 0;
+  display: none;
+  border: none;
+} */
