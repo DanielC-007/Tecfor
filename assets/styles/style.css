@@ -101,6 +101,16 @@ form input[type="submit"]:hover {
   justify-content: left;
 }
 
+.box1 img {
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.box1 img:hover {
+  background-color: #916dd5;
+}
+
 .box2 {
   width: 100vw;
   display: flex;
@@ -117,12 +127,17 @@ form input[type="submit"]:hover {
 }
 
 .box3 img {
+  border-radius: 10px;
   height: 50px;
   width: 50px;
 }
 
+.box3 img:hover {
+  background-color: #916dd5;
+}
+
 .chat {
-  background-color: var(--cor1Dark);
+  background-color: var(--cor2Dark);
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -151,6 +166,12 @@ form input[type="submit"]:hover {
 
 /* ids */
 
+#x{
+  width: 100px;
+  height: 100px;
+  background-color: lime;
+}
+
 #icon {
   width: 70px;
   height: auto;
@@ -160,55 +181,29 @@ form input[type="submit"]:hover {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  width: 100vw;
+  width: calc(100vw - 300px);
   height: calc(100vh - 80px);
 }
 
-#salas {
+#salas{
   background-color: var(--cor1Dark);
-  height: calc(100vh - 80px);
-  width: 325px;
-}
-
-#salas div {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#salas button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--cor2Dark);
-  margin-bottom: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  border-style: none;
   width: 300px;
-  height: 50px;
 }
 
-#closeNav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: calc(100vh - 75px);
+#salas div{
+  padding: 5px;
 }
 
-#closeNav button {
+#salas button{
   background-color: var(--cor2Dark);
   border-style: none;
-  border-radius: 50px;
+  border-radius: 5px;
+  width: 290px;
   height: 50px;
-  width: 10px;
-}
-
-#closeNav button:hover {
-  height: 60px;
-  background-color: #7151a9;
+  margin-top: 5px;
 }
 
 #salas button:hover,
@@ -226,7 +221,7 @@ form input[type="submit"]:hover {
   align-items: center;
 }
 
-#infoUser button {
+/* #infoUser button {
   width: 200px;
   display: flex;
   align-items: center;
@@ -249,7 +244,7 @@ form input[type="submit"]:hover {
 
 #infoUser img {
   height: 200px;
-}
+} */
 
 #mensagem {
   width: 50vw;
@@ -281,14 +276,3 @@ form input[type="submit"]:hover {
   width: 30px;
   height: 30px;
 }
-
-/* 
-#fechar {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  z-index: 0;
-  display: none;
-  border: none;
-} */

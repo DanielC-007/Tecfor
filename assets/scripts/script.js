@@ -2,19 +2,16 @@ console.log("Olá, tudo certo");
 
 function navOpenClose() {
   var navSalas = document.getElementById("salas");
-  var bntClose = document.getElementById("closeNav");
+  var subContainer = document.getElementById("subContainer");
   if (
     navSalas.style.transform === "translateX(0px)" ||
     navSalas.style.transform === ""
   ) {
     navSalas.style.transform = "translateX(-100%)";
-    navSalas.style.position = "absolute";
-    bntClose.style.transform = "translateX(0px)";
+    subContainer.style.width = "100vw";
   } else {
     navSalas.style.transform = "translateX(0px)";
-    navSalas.style.position = "none";
-    bntClose.style.transform = "translateX(330px)";
-    bntClose.style.position = "none";
+    subContainer.style.width = "calc(100vw - 300px)";
   }
 }
 
