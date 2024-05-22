@@ -82,10 +82,6 @@ form input[type="submit"]:hover {
 
 /* classes */
 
-.container {
-  display: flex;
-}
-
 .containerLogin {
   height: 100vh;
   display: flex;
@@ -166,10 +162,17 @@ form input[type="submit"]:hover {
 
 /* ids */
 
+#container {
+  background-color: #916dd5;
+  display: flex;
+  height: calc(100vh - 80px);
+  width: 100vw;
+}
+
 #x{
   width: 100px;
   height: 100px;
-  background-color: lime;
+  background-color: red;
 }
 
 #icon {
@@ -177,13 +180,14 @@ form input[type="submit"]:hover {
   height: auto;
 }
 
-#subContainer {
+/* #subContainer {
+  background-color: blue;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   width: calc(100vw - 300px);
   height: calc(100vh - 80px);
-}
+} */
 
 #salas{
   background-color: var(--cor1Dark);
@@ -191,6 +195,7 @@ form input[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
   width: 300px;
+  height: calc(100vh - 80px);
 }
 
 #salas div{
@@ -211,7 +216,7 @@ form input[type="submit"]:hover {
   background-color: var(--cor3Dark);
 }
 
-#infoUser {
+/* #infoUser {
   background-color: var(--cor1Dark);
   height: calc(100vh - 85px);
   width: 400px;
@@ -221,7 +226,7 @@ form input[type="submit"]:hover {
   align-items: center;
 }
 
-/* #infoUser button {
+#infoUser button {
   width: 200px;
   display: flex;
   align-items: center;
@@ -244,7 +249,7 @@ form input[type="submit"]:hover {
 
 #infoUser img {
   height: 200px;
-} */
+}
 
 #mensagem {
   width: 50vw;
@@ -253,7 +258,7 @@ form input[type="submit"]:hover {
   border-style: none;
   border-radius: 10px;
   background-color: var(--corFundoDark);
-}
+} */
 
 #miniPass {
   margin: 0px;
