@@ -1,12 +1,17 @@
 :root {
-  --corFundoDark: #131313;
-  --corFundoLight: white;
-  --cor1Light: #e9e9e9;
-  --cor1Dark: #202020;
-  --cor2Light: #d3d3d3;
-  --cor2Dark: #292929;
-  --cor3Light: #a1a1a1;
-  --cor3Dark: #494949;
+  --corFundo: #131313;
+  --corTexto: white;
+  --cor1: #202020;
+  --cor2: #292929;
+  --cor3: #494949;
+}
+
+body.lightTheme{
+  --corFundo: white;
+  --corTexto: black;
+  --cor1: #e9e9e9;
+  --cor2: #d3d3d3;
+  --cor3: #a1a1a1;
 }
 
 /* itens no geral */
@@ -14,11 +19,11 @@
   padding: 0px;
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--corFundoLight);
+  color: var(--corTexto);
 }
 
 body {
-  background-color: var(--corFundoDark);
+  background-color: var(--corFundo);
 }
 
 a {
@@ -51,7 +56,7 @@ header button {
 form {
   padding: 5px;
   padding-top: 10px;
-  background-color: var(--cor2Dark);
+  background-color: var(--cor2);
   border-radius: 5px;
   text-align: center;
 }
@@ -62,8 +67,8 @@ form div {
 }
 
 form input {
-  color: var(--corFundoDark);
-  background-color: var(--corFundoLight);
+  color: var(--corFundo);
+  background-color: var(--corTexto);
   border: none;
   padding: 5px;
   margin: 5px;
@@ -133,7 +138,7 @@ form input[type="submit"]:hover {
 }
 
 .chat {
-  background-color: var(--cor2Dark);
+  background-color: var(--cor2);
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -144,7 +149,7 @@ form input[type="submit"]:hover {
 .chat button {
   border-style: none;
   border-radius: 10px;
-  background-color: var(--corFundoDark);
+  background-color: var(--corFundo);
   text-align: center;
   height: 45px;
   width: 45px;
@@ -163,7 +168,7 @@ form input[type="submit"]:hover {
 /* ids */
 
 #container {
-  background-color: #916dd5;
+  /* background-color: blue; */
   display: flex;
   height: calc(100vh - 80px);
   width: 100vw;
@@ -172,7 +177,7 @@ form input[type="submit"]:hover {
 #x{
   width: 100px;
   height: 100px;
-  background-color: red;
+  background-color: aqua;
 }
 
 #icon {
@@ -190,7 +195,7 @@ form input[type="submit"]:hover {
 } */
 
 #salas{
-  background-color: var(--cor1Dark);
+  background-color: var(--cor1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,21 +208,27 @@ form input[type="submit"]:hover {
 }
 
 #salas button{
-  background-color: var(--cor2Dark);
+  background-color: var(--cor2);
   border-style: none;
   border-radius: 5px;
   width: 290px;
   height: 50px;
   margin-top: 5px;
+  text-align: center;
+}
+
+#salas button img{
+  height: 45px;
+  width: auto;
 }
 
 #salas button:hover,
 #infoUser button:hover {
-  background-color: var(--cor3Dark);
+  background-color: var(--cor3);
 }
 
 /* #infoUser {
-  background-color: var(--cor1Dark);
+  background-color: var(--cor1);
   height: calc(100vh - 85px);
   width: 400px;
   padding: 5px;
@@ -233,7 +244,7 @@ form input[type="submit"]:hover {
   justify-content: center;
   border: none;
   border-radius: 5px;
-  background-color: var(--cor2Dark);
+  background-color: var(--cor2);
   padding: 5px;
   margin: 3px;
 }
@@ -257,7 +268,7 @@ form input[type="submit"]:hover {
   padding: 5px;
   border-style: none;
   border-radius: 10px;
-  background-color: var(--corFundoDark);
+  background-color: var(--corFundo);
 } */
 
 #miniPass {
