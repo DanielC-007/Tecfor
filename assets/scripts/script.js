@@ -3,7 +3,10 @@ console.log("Olá, tudo certo");
 function navOpenClose() {
   var navSalas = document.getElementById("salas");
   var container = document.getElementById("container");
-  if (navSalas.style.visibility === "hidden" || navSalas.style.visibility === ""){
+  if (
+    navSalas.style.visibility === "hidden" ||
+    navSalas.style.visibility === ""
+  ) {
     navSalas.style.visibility = "hidden";
     container.style.width = "100vw";
   } else {
@@ -23,38 +26,42 @@ function exibirSenha() {
 
 function tema() {
   const body = document.body;
+  var home = document.getElementById("home");
+  var user = document.getElementById("user");
+  var sunMoon = document.getElementById("sunMoon");
+
   if (body.classList.contains("lightTheme")) {
     body.classList.remove("lightTheme");
-    updateImages('dark');
+    home.src = "../public/imgs/homeDark.png";
+    user.src = "../public/imgs/userDark.png";
+    sunMoon.src = "../public/imgs/sun.png";
+    localStorage.setItem("theme", "dark");
   } else {
     body.classList.add("lightTheme");
-    updateImages('light');
+    home.src = "../public/imgs/homeLight.png";
+    user.src = "../public/imgs/userLight.png";
+    sunMoon.src = "../public/imgs/moon.png";
+    localStorage.setItem("theme", "light");
   }
 }
 
-function updateImages(theme) {
-  const imageElements = [
-    {
-      id: "userImage",
-      dark: "public/imgs/userDark.png",
-      light: "public/imgs/userLight.png",
-    },
-    {
-      id: "homeImage",
-      dark: "public/imgs/homeDark.png",
-      light: "public/imgs/homeLight.png",
-    },
-    {
-      id: "sunImage",
-      dark: "public/imgs/sun.png",
-      light: "public/imgs/moon.png",
-    },
-  ];
+function carregarTema() {
+  const body = document.body;
+  var home = document.getElementById("home");
+  var user = document.getElementById("user");
+  var sunMoon = document.getElementById("sunMoon");
 
-  imageElements.forEach((image) => {
-    const imgElement = document.getElementById(image.id);
-    if (imgElement) {
-      imgElement.src = theme === "dark" ? image.dark : image.light;
-    }
-  });
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    body.classList.add("lightTheme");
+    home.src = "../public/imgs/homeLight.png";
+    user.src = "../public/imgs/userLight.png";
+    sunMoon.src = "../public/imgs/moon.png";
+  } else {
+    body.classList.remove("lightTheme");
+    home.src = "../public/imgs/homeDark.png";
+    user.src = "../public/imgs/userDark.png";
+    sunMoon.src = "../public/imgs/sun.png";
+  }
 }
+document.addEventListener("DOMContentLoaded", carregarTema);
