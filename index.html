@@ -12,7 +12,11 @@
 
   <body>
     <header>
-      <div class="box1"><button onclick="navOpenClose()"><img id="home" src="public/imgs/homeDark.png"></button></div>
+      <div class="box1">
+        <button onclick="navOpenClose()">
+          <img id="home" src="public/imgs/homeDark.png" />
+        </button>
+      </div>
       <div class="box2">
         <img id="icon" src="public/imgs/icon.png" />
       </div>
@@ -24,18 +28,32 @@
     </header>
     <main id="container">
       <nav id="salas">
-        <button style="background-color: #7151a9">
-          <p>Página principal</p>
+        <div>
+          <button style="background-color: #7151a9">
+            <p>Página principal</p>
+          </button>
+          <a href="pages/sala1.html"
+            ><button><p>Sala 1</p></button></a
+          >
+          <a href="pages/sala2.html"
+            ><button><p>Sala 2</p></button></a
+          >
+          <a href="pages/sala3.html"
+            ><button><p>Sala 3</p></button></a
+          >
+          <a href="pages/sala4.html"
+            ><button><p>Sala 4</p></button></a
+          >
+          <a href="pages/sala5.html"
+            ><button><p>Sala 5</p></button></a
+          >
+        </div>
+        <button onclick="tema()">
+          <img id="sunMoon" src="public/imgs/sun.png" />Alterar tema
         </button>
-        <a href="pages/sala1.html"><button><p>Sala 1</p></button></a>
-        <a href="pages/sala2.html"><button><p>Sala 2</p></button></a>
-        <a href="pages/sala3.html"><button><p>Sala 3</p></button></a>
-        <a href="pages/sala4.html"><button><p>Sala 4</p></button></a>
-        <a href="pages/sala5.html"><button><p>Sala 5</p></button></a>
-        <button onclick="tema()"><img id="sunMoon" src="public/imgs/sun.png"></button>
       </nav>
       <div id="x"></div>
-        <!-- <aside id="infoUser">
+      <!-- <aside id="infoUser">
         <img src="public/imgs/userDark.png">
         <h3>User name</h3>
         <a href="pages/login.html"><button>Fazer login</button></a>

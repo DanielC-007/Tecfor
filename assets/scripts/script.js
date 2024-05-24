@@ -2,16 +2,13 @@ console.log("Olá, tudo certo");
 
 function navOpenClose() {
   var navSalas = document.getElementById("salas");
-  var container = document.getElementById("container");
   if (
-    navSalas.style.visibility === "hidden" ||
-    navSalas.style.visibility === ""
+    navSalas.style.transform === "translateX(0px)" ||
+    navSalas.style.transform === ""
   ) {
-    navSalas.style.visibility = "hidden";
-    container.style.width = "100vw";
+    navSalas.style.transform = "translateX(-100%)";
   } else {
-    navSalas.style.visibility = "visible";
-    container.style.width = "calc(100vw - 300px)";
+    navSalas.style.transform = "translateX(0px)";
   }
 }
 

@@ -14,20 +14,22 @@
     <header>
       <div class="box1">
         <button onclick="navOpenClose()">
-          <img src="../public/imgs/homeDark.png" />
+          <img id="home" src="../public/imgs/homeDark.png" />
         </button>
       </div>
       <div class="box2">
         <img id="icon" src="../public/imgs/icon.png" />
       </div>
       <div class="box3">
-        <a href="../pages/login.html"
-          ><button><img src="../public/imgs/userDark.png" /></button
+        <a href="../pages/login.html">
+          <button><img id="user" src="../public/imgs/userDark.png" /></button
+
         ></a>
       </div>
     </header>
     <main id="container">
       <nav id="salas">
+        <div>
         <a href="../index.html"
           ><button><p>Página principal</p></button></a
         >
@@ -44,6 +46,8 @@
         <a href="sala5.html"
           ><button><p>Sala 5</p></button></a
         >
+      </div>
+        <button onclick= "tema()"><img id="sunMoon" src="../public/imgs/moon.png">Alterar tema</template></button>
       </nav>
       <main id="subContainer">
         <div id="x"></div>

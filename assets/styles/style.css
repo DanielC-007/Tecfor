@@ -199,12 +199,9 @@ form input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 300px;
   height: calc(100vh - 80px);
-}
-
-#salas div{
-  padding: 5px;
 }
 
 #salas button{
@@ -214,12 +211,15 @@ form input[type="submit"]:hover {
   width: 290px;
   height: 50px;
   margin-top: 5px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #salas button img{
   height: 45px;
   width: auto;
+  margin:10px;
 }
 
 #salas button:hover,
