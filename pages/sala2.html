@@ -11,10 +11,32 @@
   </head>
 
   <body>
+    <button id="y" onclick="navOpenClose()"></button>
+      <nav id="salas">
+        <div>
+          <a href="../index.html"
+            ><button><img id="home" src="../public/imgs/homeDark.png"><p>Página principal</p></button></a
+          >
+          <a href="sala1.html"
+            ><button><img class="chatImg" src="../public/imgs/chatDark.png"><p>Sala 1</p></button></a
+          >
+          <button style="background-color: #7151a9"><img class="chatImg" src="../public/imgs/chatDark.png"><p>Sala 2</p></button>
+          <a href="sala3.html"
+            ><button><img class="chatImg" src="../public/imgs/chatDark.png"><p>Sala 3</p></button></a
+          >
+          <a href="sala4.html"
+            ><button><img class="chatImg" src="../public/imgs/chatDark.png"><p>Sala 4</p></button></a
+          >
+          <a href="sala5.html"
+            ><button><img class="chatImg" src="../public/imgs/chatDark.png"><p>Sala 5</p></button></a
+          >
+        </div>
+        <button onclick= "tema()"><img id="sunMoon" src="../public/imgs/moon.png">Alterar tema</template></button>
+      </nav>
     <header>
       <div class="box1">
         <button onclick="navOpenClose()">
-          <img id="home" src="../public/imgs/homeDark.png" />
+          <img id="hamburger" src="../public/imgs/hamburgerDark.png" />
         </button>
       </div>
       <div class="box2">
@@ -23,32 +45,10 @@
       <div class="box3">
         <a href="../pages/login.html">
           <button><img id="user" src="../public/imgs/userDark.png" /></button
-
         ></a>
       </div>
     </header>
     <main id="container">
-      <nav id="salas">
-        <div>
-          <a href="../index.html"
-            ><button><p>Página principal</p></button></a
-          >
-          <a href="sala1.html"
-            ><button><p>Sala 1</p></button></a
-          >
-          <button style="background-color: #7151a9"><p>Sala 2</p></button>
-          <a href="sala3.html"
-            ><button><p>Sala 3</p></button></a
-          >
-          <a href="sala4.html"
-            ><button><p>Sala 4</p></button></a
-          >
-          <a href="sala5.html"
-            ><button><p>Sala 5</p></button></a
-          >
-        </div>
-        <button onclick= "tema()"><img id="sunMoon" src="../public/imgs/moon.png">Alterar tema</template></button>
-      </nav>
       <main id="subContainer">
         <div id="x"></div>
         <!-- <div class="chat">

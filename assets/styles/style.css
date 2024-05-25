@@ -102,13 +102,13 @@ form input[type="submit"]:hover {
   justify-content: left;
 }
 
-.box1 img {
-  border-radius: 10px;
+.box1 img, .box3 img {
+  border-radius: 5px;
   height: 50px;
   width: 50px;
 }
 
-.box1 img:hover {
+.box1 img:hover, .box3 img:hover {
   background-color: #916dd5;
 }
 
@@ -125,16 +125,6 @@ form input[type="submit"]:hover {
   display: flex;
   align-items: center;
   justify-content: right;
-}
-
-.box3 img {
-  border-radius: 10px;
-  height: 50px;
-  width: 50px;
-}
-
-.box3 img:hover {
-  background-color: #916dd5;
 }
 
 .chat {
@@ -194,6 +184,15 @@ form input[type="submit"]:hover {
   height: calc(100vh - 80px);
 } */
 
+#y{
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  border: none;
+  visibility: hidden;
+}
+
 #salas{
   background-color: var(--cor1);
   display: flex;
@@ -201,7 +200,10 @@ form input[type="submit"]:hover {
   align-items: center;
   justify-content: space-between;
   width: 300px;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 10px);
+  padding: 5px;
+  position: absolute;
+  transform: translateX(-100%);
 }
 
 #salas button{
@@ -217,7 +219,7 @@ form input[type="submit"]:hover {
 }
 
 #salas button img{
-  height: 45px;
+  height: 35px;
   width: auto;
   margin:10px;
 }
