@@ -4,14 +4,16 @@ function navOpenClose() {
   var navSalas = document.getElementById("salas");
   var bntY = document.getElementById("y");
   if (
-    navSalas.style.transform === "translateX(0px)" ||
+    navSalas.style.transform === "translateX(-100%)" ||
     navSalas.style.transform === ""
   ) {
-    navSalas.style.transform = "translateX(-100%)";
-    bntY.style.visibility = "hidden";
-  } else {
+    navSalas.style.animation = "showNav 0.5s";
     navSalas.style.transform = "translateX(0px)";
     bntY.style.visibility = "visible";
+  } else {
+    navSalas.style.animation = "closeNav 0.5s";
+    navSalas.style.transform = "translateX(-100%)";
+    bntY.style.visibility = "hidden";
   }
 }
 

@@ -6,7 +6,7 @@
   --cor3: #494949;
 }
 
-body.lightTheme{
+body.lightTheme {
   --corFundo: white;
   --corTexto: black;
   --cor1: #e9e9e9;
@@ -102,13 +102,15 @@ form input[type="submit"]:hover {
   justify-content: left;
 }
 
-.box1 img, .box3 img {
+.box1 img,
+.box3 img {
   border-radius: 5px;
   height: 50px;
   width: 50px;
 }
 
-.box1 img:hover, .box3 img:hover {
+.box1 img:hover,
+.box3 img:hover {
   background-color: #916dd5;
 }
 
@@ -158,13 +160,12 @@ form input[type="submit"]:hover {
 /* ids */
 
 #container {
-  /* background-color: blue; */
   display: flex;
   height: calc(100vh - 80px);
   width: 100vw;
 }
 
-#x{
+#x {
   width: 100px;
   height: 100px;
   background-color: aqua;
@@ -184,7 +185,7 @@ form input[type="submit"]:hover {
   height: calc(100vh - 80px);
 } */
 
-#y{
+#y {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
   width: 100vw;
@@ -193,7 +194,7 @@ form input[type="submit"]:hover {
   visibility: hidden;
 }
 
-#salas{
+#salas {
   background-color: var(--cor1);
   display: flex;
   flex-direction: column;
@@ -206,7 +207,7 @@ form input[type="submit"]:hover {
   transform: translateX(-100%);
 }
 
-#salas button{
+#salas button {
   background-color: var(--cor2);
   border-style: none;
   border-radius: 5px;
@@ -218,10 +219,10 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
-#salas button img{
+#salas button img {
   height: 35px;
   width: auto;
-  margin:10px;
+  margin: 10px;
 }
 
 #salas button:hover,
@@ -293,4 +294,22 @@ form input[type="submit"]:hover {
 #miniPass img {
   width: 30px;
   height: 30px;
+}
+
+@keyframes showNav {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes closeNav {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
