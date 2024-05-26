@@ -12,18 +12,16 @@
 </head>
 
 <body>
-    <main id="containerLogin">
+    <main class="containerLogin">
         <form action="../index.html" method="post">
             <h1>Login</h1>
+            <input type="text" placeholder="Nome" name="nameUser" id="nameUser">
+            <input type="email" placeholder="Email institucional" name="emailUser" id="emailUser">
             <div>
-                <input type="text" placeholder="Nome" name="nameUser" id="nameUser">
-                <input type="email" placeholder="Email institucional" name="emailUser" id="emailUser">
-                <div id="miniPass">
-                    <input type="password" placeholder="Senha" name="passUser" id="passUser">
-                    <button onclick="exibirSenha()"><img src="../public/imgs/eyeLight.png"></button>
-                </div>
-                <input type="submit" value="Enviar" onclick="confirmarConta()">
+                <input type="password" placeholder="Senha" name="passUser" id="passUser">
+                <img src="../public/imgs/openEyeLight.png" id="eye" onclick="exibirSenha()">
             </div>
+            <input type="submit" value="Enviar">
         </form>
     </main>
 </body>

@@ -58,23 +58,30 @@ form {
   padding-top: 10px;
   background-color: var(--cor2);
   border-radius: 5px;
-  text-align: center;
-}
-
-form div {
-  margin: 5px;
-  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 form input {
-  color: var(--corFundo);
-  background-color: var(--corTexto);
+  color: var(--corTexto);
+  background-color: var(--corFundo);
   border: none;
   padding: 5px;
-  margin: 5px;
+  margin: 3px;
   border-radius: 5px;
-  width: 50vw;
+  width: 40vw;
   height: 25px;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+}
+
+form div input{
+  width: calc(40vw - 35px);
 }
 
 form input[type="submit"] {
@@ -83,12 +90,20 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
   background-color: #916dd5;
+  color: white;
 }
 
 /* classes */
 
+.container {
+  display: flex;
+  height: calc(100vh - 85px);
+  width: 100vw;
+}
+
 .containerLogin {
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,12 +174,6 @@ form input[type="submit"]:hover {
 
 /* ids */
 
-#container {
-  display: flex;
-  height: calc(100vh - 80px);
-  width: 100vw;
-}
-
 #x {
   width: 100px;
   height: 100px;
@@ -176,15 +185,6 @@ form input[type="submit"]:hover {
   height: auto;
 }
 
-/* #subContainer {
-  background-color: blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100vw - 300px);
-  height: calc(100vh - 80px);
-} */
-
 #y {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
@@ -192,6 +192,17 @@ form input[type="submit"]:hover {
   position: absolute;
   border: none;
   visibility: hidden;
+}
+
+#eye{
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+#eye:hover{
+  cursor: pointer;
+  background-color: var(--corFundo);
 }
 
 #salas {
@@ -228,72 +239,6 @@ form input[type="submit"]:hover {
 #salas button:hover,
 #infoUser button:hover {
   background-color: var(--cor3);
-}
-
-/* #infoUser {
-  background-color: var(--cor1);
-  height: calc(100vh - 85px);
-  width: 400px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#infoUser button {
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--cor2);
-  padding: 5px;
-  margin: 3px;
-}
-
-#infoUser button img {
-  height: 70px;
-  width: auto;
-}
-
-#infoUser h3 {
-  margin-bottom: 25px;
-}
-
-#infoUser img {
-  height: 200px;
-}
-
-#mensagem {
-  width: 50vw;
-  height: 35px;
-  padding: 5px;
-  border-style: none;
-  border-radius: 10px;
-  background-color: var(--corFundo);
-} */
-
-#miniPass {
-  margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#miniPass input[type="password"] {
-  width: calc(50vw - 35px);
-  margin: 5px;
-}
-
-#miniPass button {
-  background-color: transparent;
-  border: none;
-}
-
-#miniPass img {
-  width: 30px;
-  height: 30px;
 }
 
 @keyframes showNav {
