@@ -22,10 +22,10 @@ function exibirSenha() {
   var eye = document.getElementById("eye");
   if (visualizar.type === "password") {
     visualizar.type = "text";
-    eye.src = "../src/imgs/closeEyeLight.png";
+    eye.src = "../src/imgs/closeEyeDark.png";
   } else {
     visualizar.type = "password";
-    eye.src = "../src/imgs/openEyeLight.png";
+    eye.src = "../src/imgs/openEyeDark.png";
   }
 }
 

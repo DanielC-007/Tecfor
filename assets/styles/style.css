@@ -193,11 +193,6 @@ form input[type="submit"]:hover {
   border-radius: 5px;
 }
 
-#eye:hover{
-  cursor: pointer;
-  background-color: var(--corFundo);
-}
-
 #salas {
   background-color: var(--cor1);
   display: flex;
@@ -230,7 +225,8 @@ form input[type="submit"]:hover {
 }
 
 #salas button:hover,
-#infoUser button:hover {
+#infoUser button:hover, #eye:hover {
+  cursor: pointer;
   background-color: var(--cor3);
 }
 
