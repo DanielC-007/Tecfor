@@ -14,7 +14,7 @@ body.lightTheme {
   --cor3: #a1a1a1;
 }
 
-/* itens no geral */
+/*! itens no geral */
 * {
   padding: 0px;
   margin: 0px;
@@ -80,7 +80,7 @@ form div {
   align-items: center;
 }
 
-form div input{
+form div input {
   width: calc(40vw - 35px);
 }
 
@@ -93,7 +93,7 @@ form input[type="submit"]:hover {
   color: white;
 }
 
-/* classes */
+/*! classes */
 
 .container {
   display: flex;
@@ -172,7 +172,7 @@ form input[type="submit"]:hover {
   background-color: #7151a9;
 }
 
-/* ids */
+/*! ids */
 #icon {
   width: 70px;
   height: auto;
@@ -187,7 +187,31 @@ form input[type="submit"]:hover {
   visibility: hidden;
 }
 
-#eye{
+#y {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+#telaConfig {
+  height: 500px;
+  width: 500px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--cor1);
+  transform: translatey(-200%);
+  position: absolute;
+  margin-left: calc(50vw - 500px/2);
+  margin-top: calc(50vh - 500px/2);
+}
+
+#eye {
   width: 35px;
   height: 35px;
   border-radius: 5px;
@@ -206,7 +230,7 @@ form input[type="submit"]:hover {
   transform: translateX(-100%);
 }
 
-#salas button {
+#salas button{
   background-color: var(--cor2);
   border-style: none;
   border-radius: 5px;
@@ -218,17 +242,20 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
-#salas button img {
+#salas button img{
   height: 35px;
   width: auto;
   margin: 10px;
 }
 
 #salas button:hover,
-#infoUser button:hover, #eye:hover {
+#infoUser button:hover,
+#eye:hover {
   cursor: pointer;
   background-color: var(--cor3);
 }
+
+/*! animações */
 
 @keyframes showNav {
   from {
@@ -245,5 +272,23 @@ form input[type="submit"]:hover {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes openConfig {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes closeConfig {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-200%);
   }
 }

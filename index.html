@@ -49,10 +49,17 @@
           </button></a
         >
       </div>
-      <button onclick="tema()">
-        <img id="sunMoon" src="src/imgs/sun.png" />Alterar tema
-      </button>
+      <div>
+        <button onclick="tema()">
+          <img id="sunMoon" src="src/imgs/sun.png" />Alterar tema
+        </button>
+        <button onclick="configOpenClose()">
+          <img src="src/imgs/config.png" />Configurações
+        </button>
+      </div>
     </nav>
+    <button id="y" onclick="configOpenClose()"></button>
+    <div id="telaConfig"></div>
     <header>
       <div class="box1">
         <button onclick="navOpenClose()">
@@ -69,7 +76,6 @@
         ></a>
       </div>
     </header>
-    <main class="container">
-    </main>
+    <main class="container"></main>
   </body>
 </html>
