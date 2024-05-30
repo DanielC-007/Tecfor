@@ -24,6 +24,7 @@ body.lightTheme {
 
 body {
   background-color: var(--corFundo);
+  overflow: hidden;
 }
 
 a {
@@ -40,11 +41,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-header img {
-  width: 30px;
-  height: 30px;
 }
 
 header button {
@@ -144,34 +140,6 @@ form input[type="submit"]:hover {
   justify-content: right;
 }
 
-.chat {
-  background-color: var(--cor2);
-  padding: 10px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chat button {
-  border-style: none;
-  border-radius: 10px;
-  background-color: var(--corFundo);
-  text-align: center;
-  height: 45px;
-  width: 45px;
-  padding: 5px;
-  margin-left: 5px;
-}
-
-.chat button img {
-  height: 30px;
-}
-
-.chat button:hover {
-  background-color: #7151a9;
-}
-
 /*! ids */
 #icon {
   width: 70px;
@@ -205,10 +173,10 @@ form input[type="submit"]:hover {
   padding: 5px;
   border-radius: 5px;
   background-color: var(--cor1);
-  transform: translatey(-200%);
+  transform: translateY(-200%);
   position: absolute;
-  margin-left: calc(50vw - 500px/2);
-  margin-top: calc(50vh - 500px/2);
+  margin-left: calc(50vw - 500px / 2);
+  margin-top: calc(50vh - 500px / 2);
 }
 
 #eye {
@@ -230,7 +198,7 @@ form input[type="submit"]:hover {
   transform: translateX(-100%);
 }
 
-#salas button{
+#salas button {
   background-color: var(--cor2);
   border-style: none;
   border-radius: 5px;
@@ -242,7 +210,7 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
-#salas button img{
+#salas button img {
   height: 35px;
   width: auto;
   margin: 10px;
@@ -290,5 +258,47 @@ form input[type="submit"]:hover {
   }
   to {
     transform: translateY(-200%);
+  }
+}
+
+/*! ajustar tela */
+
+@media screen and (max-width: 685px) {
+  /*todo itens no geral */
+  header {
+    height: 50px;
+  }
+
+  /* todo classes */
+  .box1 img,
+  .box3 img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /*todo ids */
+  #icon {
+    width: 45px;
+  }
+
+  #salas {
+    width: 150px;
+  }
+
+  #salas button {
+    height: 25px;
+    width: 140px;
+    font-size: 10px;
+  }
+
+  #salas button img {
+    height: 20px;
+  }
+
+  #telaConfig {
+    width: 300px;
+    height: 400px;
+    margin-left: calc(50vw - 300px / 2);
+    margin-top: calc(50vh - 400px / 2);
   }
 }
