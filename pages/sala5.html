@@ -36,8 +36,17 @@ src="../src/imgs/chats.png"><p>Sala 4</p></button></a
         <button style="background-color: #7151a9"><img 
 src="../src/imgs/chats.png"><p>Sala 5</p></button>
         </div>
-        <button onclick= "tema()"><img id="sunMoon" src="../src/imgs/sun.png">Alterar tema</template></button>
-      </nav>
+      <div>
+        <button onclick="tema()">
+          <img id="sunMoon" src="../src/imgs/sun.png" />Alterar tema
+        </button>
+        <button onclick="configOpenClose()">
+          <img src="../src/imgs/config.png" />Configurações
+        </button>
+      </div>
+    </nav>
+    <button id="y" onclick="configOpenClose()"></button>
+    <div id="telaConfig"></div>
     <header>
       <div class="box1">
         <button onclick="navOpenClose()">
