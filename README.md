@@ -12,5 +12,5 @@ Olá somos aunos do 3° ano de Desenvolvimento de Sistemas (2024) e este é noss
 2- Diego Boni Ferreira <br>
 3- Gabriel Henrique Borges Hombris <br>
 4- Guilherme Almeida Rodrigues <br>
-5- Guilherme Almeida Rodrigues <br>
+5- Maísa Oliveira de Souza <br>
 6- Pedro Henrique Rolim <br>
