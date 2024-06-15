@@ -1,13 +1,13 @@
 :root {
-  --corFundo: #131313;
+  --corFundo: #1f1f1f;
   --corTexto: white;
-  --cor1: #202020;
-  --cor2: #292929;
+  --cor1: #292929;
+  --cor2: #404040;
   --cor3: #494949;
 }
 
 body.lightTheme {
-  --corFundo: white;
+  --corFundo: #e8e8e8;
   --corTexto: black;
   --cor1: #e9e9e9;
   --cor2: #d3d3d3;
@@ -36,7 +36,7 @@ button:hover {
 }
 
 header {
-  background-color: #7151a9;
+  background-color: #916dd5;
   height: 75px;
   display: flex;
   justify-content: center;
@@ -167,6 +167,80 @@ form input[type="submit"]:hover {
   visibility: hidden;
 }
 
+#z {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+#pesquisaDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#barraPesquisa {
+  background-color: var(--cor2);
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 50vw;
+  max-width: 550px;
+}
+
+#procurar {
+  background-color: transparent;
+  border: none;
+  margin: 5px;
+  text-align: center;
+  height: 30px;
+}
+
+#procurar:hover {
+  background-color: var(--cor3);
+  border-radius: 5px;
+}
+
+#procurar img {
+  height: 30px;
+}
+
+#infoUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 650px;
+  width: 500px;
+  border-radius: 5px;
+  background-color: var(--cor1);
+  position: absolute;
+  margin-left: calc(50vw - 500px / 2);
+  margin-top: calc(50vh - 650px / 2);
+  transform: translateY(-200%);
+}
+
+#infoUser img {
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+}
+
+#infoUser button {
+  background-color: var(--cor2);
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  border: none;
+}
+
+#infoUser button:hover {
+  background-color: #916dd5;
+}
+
 #telaConfig {
   height: 500px;
   width: 500px;
@@ -243,7 +317,7 @@ form input[type="submit"]:hover {
   }
 }
 
-@keyframes openConfig {
+@keyframes downY {
   from {
     transform: translateY(-200%);
   }
@@ -252,7 +326,7 @@ form input[type="submit"]:hover {
   }
 }
 
-@keyframes closeConfig {
+@keyframes upY {
   from {
     transform: translateY(0px);
   }

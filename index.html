@@ -9,8 +9,12 @@
     <script src="assets/scripts/script.js"></script>
     <title>TecFor</title>
   </head>
-
   <body>
+    <button id="z" onclick="infoUserOpenClose()"></button>
+    <aside id="infoUser">
+      <img src="src/imgs/userDark.png">
+      <a href="pages/login.html"><button>Entrar</button></a>
+    </aside>
     <button id="x" onclick="navOpenClose()"></button>
     <nav id="salas">
       <div>
@@ -70,12 +74,14 @@
         <img id="icon" src="src/imgs/icon.png" />
       </div>
       <div class="box3">
-        <a href="pages/login.html"
-          ><button>
-            <img id="user" src="src/imgs/userDark.png" /></button
-        ></a>
+        <button onclick="infoUserOpenClose()">
+          <img id="user" src="src/imgs/userDark.png" /></button>
+        </div>
+      </header>
+      <div id="pesquisaDiv">
+        <input type="search" name="barraPesquisa" id="barraPesquisa">
+        <button id="procurar"><img src="src/imgs/busca.png"></button>
       </div>
-    </header>
-    <main class="container"></main>
-  </body>
-</html>
+      <main class="container"></main>
+    </body>
+    </html>

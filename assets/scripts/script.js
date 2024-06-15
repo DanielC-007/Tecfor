@@ -7,11 +7,11 @@ function configOpenClose() {
     divConfig.style.transform === "translateY(-200%)" ||
     divConfig.style.transform === ""
   ) {
-    divConfig.style.animation = "openConfig 0.5s";
+    divConfig.style.animation = "downY 0.5s";
     divConfig.style.transform = "translateY(0px)";
     bntY.style.visibility = "visible";
   } else {
-    divConfig.style.animation = "closeConfig 0.5s";
+    divConfig.style.animation = "upY 0.5s";
     divConfig.style.transform = "translateY(-200%)";
     bntY.style.visibility = "hidden";
     // navOpenClose();
@@ -32,6 +32,21 @@ function navOpenClose() {
     navSalas.style.animation = "closeNav 0.5s";
     navSalas.style.transform = "translateX(-100%)";
     bntX.style.visibility = "hidden";
+  }
+}
+
+function infoUserOpenClose() {
+  var aside = document.getElementById("infoUser");
+  var bntz = document.getElementById("z");
+  if (aside.style.transform === "translateY(-200%)" || aside.style.transform === "") {
+    aside.style.animation = "downY 0.5s";
+    aside.style.transform = "translateY(0px)";
+    bntz.style.visibility = "visible";
+  } else {
+    aside.style.animation = "upY 0.5s";
+    aside.style.transform = "translateY(-200%)";
+    bntz.style.visibility = "hidden";
+
   }
 }
 
