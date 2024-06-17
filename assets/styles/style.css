@@ -210,17 +210,20 @@ form input[type="submit"]:hover {
 }
 
 #infoUser {
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 650px;
-  width: 500px;
+  width: 450px;
   border-radius: 5px;
+  border: solid #916dd5 2px;
   background-color: var(--cor1);
   position: absolute;
-  margin-left: calc(50vw - 500px / 2);
+  margin-left: calc(50vw - 450px / 2);
   margin-top: calc(50vh - 650px / 2);
   transform: translateY(-200%);
+  visibility: hidden;
 }
 
 #infoUser img {
@@ -233,12 +236,9 @@ form input[type="submit"]:hover {
   background-color: var(--cor2);
   border-radius: 5px;
   height: 50px;
-  width: 100px;
+  width: 250px;
+  margin: 5px;
   border: none;
-}
-
-#infoUser button:hover {
-  background-color: #916dd5;
 }
 
 #telaConfig {
@@ -246,11 +246,13 @@ form input[type="submit"]:hover {
   width: 500px;
   padding: 5px;
   border-radius: 5px;
+  border: solid #916dd5 2px;
   background-color: var(--cor1);
   transform: translateY(-200%);
   position: absolute;
   margin-left: calc(50vw - 500px / 2);
   margin-top: calc(50vh - 500px / 2);
+  visibility: hidden;
 }
 
 #eye {
@@ -260,6 +262,7 @@ form input[type="submit"]:hover {
 }
 
 #salas {
+  border-right: solid #916dd5 2px;
   background-color: var(--cor1);
   display: flex;
   flex-direction: column;
@@ -293,8 +296,7 @@ form input[type="submit"]:hover {
 #salas button:hover,
 #infoUser button:hover,
 #eye:hover {
-  cursor: pointer;
-  background-color: var(--cor3);
+  background-color: #6941ad;
 }
 
 /*! animações */
@@ -355,24 +357,27 @@ form input[type="submit"]:hover {
     width: 45px;
   }
 
-  #salas {
-    width: 150px;
-  }
-
-  #salas button {
-    height: 25px;
-    width: 140px;
-    font-size: 10px;
-  }
-
-  #salas button img {
-    height: 20px;
-  }
-
   #telaConfig {
     width: 300px;
     height: 400px;
     margin-left: calc(50vw - 300px / 2);
     margin-top: calc(50vh - 400px / 2);
+  }
+
+  #infoUser {
+    width: 300px;
+    height: 550px;
+    margin-left: calc(50vw - 300px / 2);
+    margin-top: calc(50vh - 550px / 2);
+  }
+
+  #infoUser img{
+    height: 200px;
+    width: 200px;
+  }
+
+  #infoUser button{
+    width: 200px;
+    height: 40px;
   }
 }

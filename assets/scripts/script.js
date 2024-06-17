@@ -9,12 +9,15 @@ function configOpenClose() {
   ) {
     divConfig.style.animation = "downY 0.5s";
     divConfig.style.transform = "translateY(0px)";
+    divConfig.style.visibility = "visible";
     bntY.style.visibility = "visible";
   } else {
     divConfig.style.animation = "upY 0.5s";
     divConfig.style.transform = "translateY(-200%)";
     bntY.style.visibility = "hidden";
-    // navOpenClose();
+    setTimeout(function delay() {
+      divConfig.style.visibility = "hidden";
+    }, 1000);
   }
 }
 
@@ -38,15 +41,21 @@ function navOpenClose() {
 function infoUserOpenClose() {
   var aside = document.getElementById("infoUser");
   var bntz = document.getElementById("z");
-  if (aside.style.transform === "translateY(-200%)" || aside.style.transform === "") {
+  if (
+    aside.style.transform === "translateY(-200%)" ||
+    aside.style.transform === ""
+  ) {
     aside.style.animation = "downY 0.5s";
     aside.style.transform = "translateY(0px)";
+    aside.style.visibility = "visible";
     bntz.style.visibility = "visible";
   } else {
     aside.style.animation = "upY 0.5s";
     aside.style.transform = "translateY(-200%)";
     bntz.style.visibility = "hidden";
-
+    setTimeout(function delay() {
+      aside.style.visibility = "hidden";
+    }, 1000);
   }
 }
 
@@ -67,44 +76,39 @@ function tema() {
   var hamburger = document.getElementById("hamburger");
   var user = document.getElementById("user");
   var sunMoon = document.getElementById("sunMoon");
-  var eye = document.getElementById("eye");
 
   if (body.classList.contains("lightTheme")) {
     body.classList.remove("lightTheme");
     hamburger.src = "../src/imgs/hamburgerDark.png";
     user.src = "../src/imgs/userDark.png";
     sunMoon.src = "../src/imgs/sun.png";
-    eye.src = "../src/imgs/openEyeDark.png";
-    // localStorage.setItem("theme", "dark");
+    localStorage.setItem("localTema", "dark");
   } else {
     body.classList.add("lightTheme");
     hamburger.src = "../src/imgs/hamburgerLight.png";
     user.src = "../src/imgs/userLight.png";
     sunMoon.src = "../src/imgs/moon.png";
-    eye.src = "../src/imgs/openEyeLight.png";
-    // localStorage.setItem("theme", "light");
+    localStorage.setItem("localTema", "light");
+  }
+  console.log(localStorage.getItem("localTema"));
+}
+
+function carregarTema() {
+  const body = document.body;
+  var hamburger = document.getElementById("hamburger");
+  var user = document.getElementById("user");
+  var sunMoon = document.getElementById("sunMoon");
+  if (localStorage.getItem('localTema') === 'light') {
+    body.classList.add("lightTheme");
+    hamburger.src = "../src/imgs/hamburgerLight.png";
+    user.src = "../src/imgs/userLight.png";
+    sunMoon.src = "../src/imgs/moon.png";
+  } else {
+    body.classList.remove("lightTheme");
+    hamburger.src = "../src/imgs/hamburgerDark.png";
+    user.src = "../src/imgs/userDark.png";
+    sunMoon.src = "../src/imgs/sun.png";
   }
 }
 
-// function carregarTema() {
-//   const body = document.body;
-//   var hamburger = document.getElementById("hamburger");
-//   var user = document.getElementById("user");
-//   var sunMoon = document.getElementById("sunMoon");
-//   var eye = document.getElementById("eye");
-//   const savedTheme = localStorage.getItem("theme");
-//   if (savedTheme === "light") {
-//     body.classList.add("lightTheme");
-//     hamburger.src = "../src/imgs/hamburgerLight.png";
-//     user.src = "../src/imgs/userLight.png";
-//     sunMoon.src = "../src/imgs/moon.png";
-//     eye.src = "../src/imgs/openEyeLight.png";
-//   } else {
-//     body.classList.remove("lightTheme");
-//     hamburger.src = "../src/imgs/hamburgerDark.png";
-//     user.src = "../src/imgs/userDark.png";
-//     sunMoon.src = "../src/imgs/sun.png";
-//     eye.src = "../src/imgs/openEyeDark.png";
-//   }
-// }
-// document.addEventListener("DOMContentLoaded", carregarTema);
+carregarTema();

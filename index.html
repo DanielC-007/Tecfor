@@ -6,53 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="icon" href="src/imgs/icon.png" />
-    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/script.js" defer></script>
     <title>TecFor</title>
   </head>
   <body>
     <button id="z" onclick="infoUserOpenClose()"></button>
     <aside id="infoUser">
-      <img src="src/imgs/userDark.png">
+      <img src="src/imgs/userDark.png" />
+      <h1>User</h1>
+      <h5>id: 01</h5>
       <a href="pages/login.html"><button>Entrar</button></a>
     </aside>
     <button id="x" onclick="navOpenClose()"></button>
     <nav id="salas">
       <div>
-        <button style="background-color: #7151a9">
+        <button style="background-color: #6941ad">
           <img id="home" src="src/imgs/home.png" />
           <p>Página principal</p>
         </button>
         <a href="pages/sala1.html"
-          ><button>
-            <img src="src/imgs/chats.png" />
-            <p>Sala 1</p>
-          </button></a
+        ><button>
+          <img src="src/imgs/chats.png" />
+          <p>Sala 1</p>
+        </button></a
         >
         <a href="pages/sala2.html"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 2</p>
           </button></a
-        >
-        <a href="pages/sala3.html"
+          >
+          <a href="pages/sala3.html"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 3</p>
           </button></a
-        >
-        <a href="pages/sala4.html"
+          >
+          <a href="pages/sala4.html"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 4</p>
           </button></a
-        >
-        <a href="pages/sala5.html"
+          >
+          <a href="pages/sala5.html"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 5</p>
           </button></a
-        >
-      </div>
+          >
+        </div>
       <div>
         <button onclick="tema()">
           <img id="sunMoon" src="src/imgs/sun.png" />Alterar tema
@@ -75,13 +77,14 @@
       </div>
       <div class="box3">
         <button onclick="infoUserOpenClose()">
-          <img id="user" src="src/imgs/userDark.png" /></button>
-        </div>
-      </header>
-      <div id="pesquisaDiv">
-        <input type="search" name="barraPesquisa" id="barraPesquisa">
-        <button id="procurar"><img src="src/imgs/busca.png"></button>
+          <img id="user" src="src/imgs/userDark.png" />
+        </button>
       </div>
-      <main class="container"></main>
-    </body>
-    </html>
+    </header>
+    <div id="pesquisaDiv">
+      <input type="search" name="barraPesquisa" id="barraPesquisa" />
+      <button id="procurar"><img src="src/imgs/busca.png" /></button>
+    </div>
+    <main class="container"></main>
+  </body>
+</html>
