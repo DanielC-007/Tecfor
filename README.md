@@ -2,7 +2,7 @@
   <img src="https://github.com/DanielC-007/Tecfor/assets/140892651/93be0b60-24be-4e30-a090-c3048b12da93">
 </p>
 
-# Tecfor, que é?
+# Tecfor, o que é?
 O Tecfor é uma nova rede social onde os alunos da etec de Rio Grande da Serra podem se comunicar entre si, compartilhando gostos, hobbies, lembranças, eventos e dentre outros tópicos.
 O objetivo do trabalho é ser um complemento do site da [Etec RGS](https://etecrgs.com.br/) e fazer com que os alunos interajam mais entre si.
 
