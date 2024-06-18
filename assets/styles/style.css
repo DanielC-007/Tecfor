@@ -217,7 +217,6 @@ form input[type="submit"]:hover {
   height: 650px;
   width: 450px;
   border-radius: 5px;
-  border: solid #916dd5 2px;
   background-color: var(--cor1);
   position: absolute;
   margin-left: calc(50vw - 450px / 2);
@@ -242,17 +241,36 @@ form input[type="submit"]:hover {
 }
 
 #telaConfig {
+  display: flex;
+  align-items: start;
+  justify-content: right;
   height: 500px;
   width: 500px;
   padding: 5px;
   border-radius: 5px;
-  border: solid #916dd5 2px;
   background-color: var(--cor1);
   transform: translateY(-200%);
   position: absolute;
   margin-left: calc(50vw - 500px / 2);
   margin-top: calc(50vh - 500px / 2);
   visibility: hidden;
+}
+
+#telaConfig button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor2);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 250px;
+}
+
+#telaConfig button img{
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
 }
 
 #eye {
@@ -262,7 +280,6 @@ form input[type="submit"]:hover {
 }
 
 #salas {
-  border-right: solid #916dd5 2px;
   background-color: var(--cor1);
   display: flex;
   flex-direction: column;
@@ -295,7 +312,8 @@ form input[type="submit"]:hover {
 
 #salas button:hover,
 #infoUser button:hover,
-#eye:hover {
+#eye:hover,
+#telaConfig button:hover {
   background-color: #6941ad;
 }
 
