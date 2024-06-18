@@ -17,7 +17,7 @@ function configOpenClose() {
     bntY.style.visibility = "hidden";
     setTimeout(function delay() {
       divConfig.style.visibility = "hidden";
-    }, 1000);
+    }, 500);
   }
 }
 
@@ -55,7 +55,7 @@ function infoUserOpenClose() {
     bntz.style.visibility = "hidden";
     setTimeout(function delay() {
       aside.style.visibility = "hidden";
-    }, 1000);
+    }, 500);
   }
 }
 

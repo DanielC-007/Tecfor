@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <button id="z" onclick="infoUserOpenClose()"></button>
+    <aside id="infoUser">
+      <img src="../src/imgs/userDark.png" />
+      <h1>User</h1>
+      <h5>id: 01</h5>
+      <a href="../pages/login.html"><button>Entrar</button></a>
+    </aside>
     <button id="x" onclick="navOpenClose()"></button>
       <nav id="salas">
         <div>
@@ -37,16 +44,17 @@ src="../src/imgs/chats.png"><p>Sala 5</p></button></a
         >
         </div>
       <div>
-        <button onclick="tema()">
-          <img id="sunMoon" src="../src/imgs/sun.png" />Alterar tema
-        </button>
         <button onclick="configOpenClose()">
           <img src="../src/imgs/config.png" />Configurações
         </button>
       </div>
     </nav>
     <button id="y" onclick="configOpenClose()"></button>
-    <div id="telaConfig"></div>
+    <div id="telaConfig">
+      <button onclick="tema()">
+        <img id="sunMoon" src="../src/imgs/sun.png" />Alterar tema
+      </button>
+    </div>
     <header>
       <div class="box1">
         <button onclick="navOpenClose()">
@@ -57,11 +65,15 @@ src="../src/imgs/chats.png"><p>Sala 5</p></button></a
         <img id="icon" src="../src/imgs/icon.png" />
       </div>
       <div class="box3">
-        <a href="../pages/login.html"></a>
-          <button><img id="user" src="../src/imgs/userDark.png" /></button
-        ></a>
+        <button onclick="infoUserOpenClose()">
+          <img id="user" src="../src/imgs/userDark.png" />
+        </button>
       </div>
     </header>
+    <div id="pesquisaDiv">
+      <input type="search" name="barraPesquisa" id="barraPesquisa" />
+      <button id="procurar"><img src="../src/imgs/busca.png" /></button>
+    </div>
     <main class="container">
       </main>
   </body>
