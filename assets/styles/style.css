@@ -24,7 +24,6 @@ body.lightTheme {
 
 body {
   background-color: var(--corFundo);
-  overflow: hidden;
 }
 
 a {
@@ -37,10 +36,13 @@ button:hover {
 
 header {
   background-color: #916dd5;
-  height: 75px;
+  height: 55px;
+  width: 100vw;
+  padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: fixed;
 }
 
 header button {
@@ -48,6 +50,15 @@ header button {
   display: flex;
   background-color: transparent;
 }
+
+header button img{
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+}
+
+/* header button img:hover{
+} */
 
 form {
   padding: 5px;
@@ -93,7 +104,7 @@ form input[type="submit"]:hover {
 
 .container {
   display: flex;
-  height: calc(100vh - 85px);
+  height: 100vh;
   width: 100vw;
 }
 
@@ -105,42 +116,8 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
-.box1 {
-  width: 100vw;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-.box1 img,
-.box3 img {
-  border-radius: 5px;
-  height: 50px;
-  width: 50px;
-}
-
-.box1 img:hover,
-.box3 img:hover {
-  background-color: #916dd5;
-}
-
-.box2 {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.box3 {
-  width: 100vw;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
-
 /*! ids */
+
 #icon {
   width: 70px;
   height: auto;
@@ -181,6 +158,9 @@ form input[type="submit"]:hover {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin-top: 75px;
+  position: fixed;
+  width: 100vw;
 }
 
 #barraPesquisa {
@@ -364,15 +344,10 @@ form input[type="submit"]:hover {
   }
 
   /* todo classes */
-  .box1 img,
-  .box3 img {
-    width: 40px;
-    height: 40px;
-  }
 
   /*todo ids */
   #icon {
-    width: 45px;
+    width: 60px;
   }
 
   #telaConfig {
@@ -380,6 +355,15 @@ form input[type="submit"]:hover {
     height: 400px;
     margin-left: calc(50vw - 300px / 2);
     margin-top: calc(50vh - 400px / 2);
+  }
+
+  #telaConfig button{
+    width: 150px;
+  }
+
+  #telaConfig button img{
+    height: 25px;
+    width: 25px;
   }
 
   #infoUser {
@@ -397,5 +381,9 @@ form input[type="submit"]:hover {
   #infoUser button{
     width: 200px;
     height: 40px;
+  }
+
+  #pesquisaDiv{
+    padding: 5px;
   }
 }

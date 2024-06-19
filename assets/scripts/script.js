@@ -24,14 +24,17 @@ function configOpenClose() {
 function navOpenClose() {
   var navSalas = document.getElementById("salas");
   var bntX = document.getElementById("x");
+  const body = document.body;
   if (
     navSalas.style.transform === "translateX(-100%)" ||
     navSalas.style.transform === ""
   ) {
+    body.style.overflow = "hidden";
     navSalas.style.animation = "showNav 0.5s";
     navSalas.style.transform = "translateX(0px)";
     bntX.style.visibility = "visible";
   } else {
+    body.style.overflow = "visible";
     navSalas.style.animation = "closeNav 0.5s";
     navSalas.style.transform = "translateX(-100%)";
     bntX.style.visibility = "hidden";
@@ -41,15 +44,18 @@ function navOpenClose() {
 function infoUserOpenClose() {
   var aside = document.getElementById("infoUser");
   var bntz = document.getElementById("z");
+  const body = document.body;
   if (
     aside.style.transform === "translateY(-200%)" ||
     aside.style.transform === ""
   ) {
+        body.style.overflow = "hidden";
     aside.style.animation = "downY 0.5s";
     aside.style.transform = "translateY(0px)";
     aside.style.visibility = "visible";
     bntz.style.visibility = "visible";
   } else {
+        body.style.overflow = "visible";
     aside.style.animation = "upY 0.5s";
     aside.style.transform = "translateY(-200%)";
     bntz.style.visibility = "hidden";
@@ -98,7 +104,7 @@ function carregarTema() {
   var hamburger = document.getElementById("hamburger");
   var user = document.getElementById("user");
   var sunMoon = document.getElementById("sunMoon");
-  if (localStorage.getItem('localTema') === 'light') {
+  if (localStorage.getItem("localTema") === "light") {
     body.classList.add("lightTheme");
     hamburger.src = "../src/imgs/hamburgerLight.png";
     user.src = "../src/imgs/userLight.png";
