@@ -13,16 +13,10 @@
 </head>
 
 <body>
-  <?php require_once ("../php/header.php"); ?>
-  <div id="pesquisaDiv">
-    <input type="search" name="barraPesquisa" id="barraPesquisa" />
-    <button id="procurar"><img src="../src/imgs/busca.png" /></button>
-  </div>
-
-  <?php
-  require_once("../php/aside.php");
-  require_once ("../php/nav.php"); 
-  require_once("../php/telaConfig.php");
+  
+  <?php require_once ("../php/header.php");
+  require_once ("../php/aside.php");
+  require_once ("../php/nav.php");
   ?>
 
   <main class="container"></main>
