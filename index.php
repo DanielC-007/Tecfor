@@ -29,7 +29,7 @@
       <img src="src/imgs/userDark.png" />
       <h1>User</h1>
       <h5>id: 01</h5>
-      <a href="pages/login.html"><button>Entrar</button></a>
+      <a href="pages/login.php"><button>Entrar</button></a>
     </aside>
     <button id="x" onclick="navOpenClose()"></button>
     <nav id="salas">
@@ -38,31 +38,31 @@
           <img id="home" src="src/imgs/home.png" />
           <p>Página principal</p>
         </button>
-        <a href="pages/sala1.html"
+        <a href="pages/sala1.php"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 1</p>
           </button></a
         >
-        <a href="pages/sala2.html"
+        <a href="pages/sala2.php"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 2</p>
           </button></a
         >
-        <a href="pages/sala3.html"
+        <a href="pages/sala3.php"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 3</p>
           </button></a
         >
-        <a href="pages/sala4.html"
+        <a href="pages/sala4.php"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 4</p>
           </button></a
         >
-        <a href="pages/sala5.html"
+        <a href="pages/sala5.php"
           ><button>
             <img src="src/imgs/chats.png" />
             <p>Sala 5</p>

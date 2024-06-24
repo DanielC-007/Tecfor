@@ -14,7 +14,7 @@
 <body>
     <main class="containerLogin">
         <!-- <button onclick="tema()">tema teste</button> -->
-        <form action="../index.html" method="post">
+        <form action="../index.php" method="post">
             <h1>Login</h1>
             <input type="text" placeholder="Nome" name="nameUser" id="nameUser">
             <input type="email" placeholder="Email institucional" name="emailUser" id="emailUser">
