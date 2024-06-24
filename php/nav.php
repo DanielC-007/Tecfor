@@ -21,10 +21,12 @@
                 <img src="../src/imgs/chats.png" />
                 <p>Sala 4</p>
             </button></a>
-        <button>
-            <img src="../src/imgs/chats.png" />
-            <p>Sala 5</p>
-        </button>
+        <a href="sala5.php">
+            <button>
+                <img src="../src/imgs/chats.png" />
+                <p>Sala 5</p>
+            </button>
+        </a>
     </div>
     <div>
         <button onclick="configOpenClose()">
