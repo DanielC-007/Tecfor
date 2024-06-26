@@ -14,9 +14,8 @@
 
 <body>
   
-  <?php require_once ("../php/header.php");
-  require_once ("../php/aside.php");
-  require_once ("../php/nav.php");
+  <?php
+  require_once("../php/all.php");
   ?>
 
   <main class="container"></main>

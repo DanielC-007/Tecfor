@@ -29,12 +29,12 @@ function navOpenClose() {
     navSalas.style.transform === "translateX(-100%)" ||
     navSalas.style.transform === ""
   ) {
-    body.style.overflow = "hidden";
+    body.style.overflowY = "hidden";
     navSalas.style.animation = "showNav 0.5s";
     navSalas.style.transform = "translateX(0px)";
     bntX.style.visibility = "visible";
   } else {
-    body.style.overflow = "visible";
+    body.style.overflowY = "visible";
     navSalas.style.animation = "closeNav 0.5s";
     navSalas.style.transform = "translateX(-100%)";
     bntX.style.visibility = "hidden";
@@ -49,13 +49,13 @@ function infoUserOpenClose() {
     aside.style.transform === "translateY(-200%)" ||
     aside.style.transform === ""
   ) {
-        body.style.overflow = "hidden";
+        body.style.overflowY = "hidden";
     aside.style.animation = "downY 0.5s";
     aside.style.transform = "translateY(0px)";
     aside.style.visibility = "visible";
     bntz.style.visibility = "visible";
   } else {
-        body.style.overflow = "visible";
+        body.style.overflowY = "visible";
     aside.style.animation = "upY 0.5s";
     aside.style.transform = "translateY(-200%)";
     bntz.style.visibility = "hidden";

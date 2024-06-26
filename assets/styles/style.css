@@ -24,6 +24,7 @@ body.lightTheme {
 
 body {
   background-color: var(--corFundo);
+  overflow-x: hidden;
 }
 
 a {
@@ -36,8 +37,8 @@ button:hover {
 
 header {
   background-color: #916dd5;
-  position: fixed;
-  width: 100vw;
+  /* position: absolute; */
+  /* width: 100vw; */
 }
 
 form {
@@ -82,11 +83,8 @@ form input[type="submit"]:hover {
 
 /*! classes */
 
-.container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
+/* .container {
+} */
 
 .containerLogin {
   height: 100vh;
@@ -98,12 +96,10 @@ form input[type="submit"]:hover {
 
 .header {
   height: 55px;
-  /* width: 100vw; */
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: fixed; */
 }
 
 .header button {
@@ -116,6 +112,13 @@ form input[type="submit"]:hover {
   border-radius: 5px;
   height: 50px;
   width: 50px;
+}
+
+.pesquisaDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7151a9;
 }
 
 /*! ids */
@@ -155,33 +158,21 @@ form input[type="submit"]:hover {
   visibility: hidden;
 }
 
-#pesquisaDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #7151a9;
-}
-
 #barraPesquisa {
   background-color: var(--cor2);
   border: none;
   border-radius: 5px;
   height: 30px;
   width: 50vw;
-  max-width: 550px;
 }
 
 #procurar {
-  background-color: transparent;
+  background-color: var(--cor1);
   border: none;
+  border-radius: 10px;
   margin: 5px;
   text-align: center;
   height: 30px;
-}
-
-#procurar:hover {
-  background-color: var(--cor3);
-  border-radius: 5px;
 }
 
 #procurar img {
@@ -260,6 +251,7 @@ form input[type="submit"]:hover {
 
 #salas {
   background-color: var(--cor1);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -296,12 +288,47 @@ form input[type="submit"]:hover {
   background-color: #6941ad;
 }
 
+#post {
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--cor1);
+  position: fixed;
+  margin-top: calc(100vh - 100px);
+  margin-left: calc(100vw - 100px);
+}
+
+#post img {
+  height: 75px;
+}
+
+#post:hover {
+  background-color: var(--cor2);
+  animation: pulse 2s infinite;
+}
+
+#teste {
+  background-color: red;
+  width: 100px;
+  height: 100vh;
+}
+
+#teste2 {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
 /*! animações */
 
 @keyframes showNav {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0px);
   }
@@ -311,6 +338,7 @@ form input[type="submit"]:hover {
   from {
     transform: translateX(0px);
   }
+
   to {
     transform: translateX(-100%);
   }
@@ -320,6 +348,7 @@ form input[type="submit"]:hover {
   from {
     transform: translateY(-200%);
   }
+
   to {
     transform: translateY(0px);
   }
@@ -329,8 +358,20 @@ form input[type="submit"]:hover {
   from {
     transform: translateY(0px);
   }
+
   to {
     transform: translateY(-200%);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
   }
 }
 
@@ -339,14 +380,42 @@ form input[type="submit"]:hover {
 @media screen and (max-width: 685px) {
   /*todo itens no geral */
   header {
-    height: 50px;
+    /* height: 50px; */
   }
 
   /* todo classes */
+  .header {
+    height: 30px;
+  }
+
+  .header button img {
+    height: 35px;
+    width: auto;
+  }
 
   /*todo ids */
   #icon {
-    width: 60px;
+    width: 40px;
+  }
+
+  #barraPesquisa {
+    height: 20px;
+  }
+
+  #procurar {
+    height: 20px;
+  }
+
+  #procurar img {
+    height: 20px;
+  }
+
+  #salas {
+    width: 225px;
+  }
+
+  #salas button {
+    width: 215px;
   }
 
   #telaConfig {
@@ -382,7 +451,12 @@ form input[type="submit"]:hover {
     height: 40px;
   }
 
-  #pesquisaDiv {
-    padding: 5px;
+  #post {
+    margin-top: calc(100vh - 60px);
+    margin-left: calc(50vw - 55px / 2);
+  }
+
+  #post img {
+    height: 55px;
   }
 }
