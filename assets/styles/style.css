@@ -379,9 +379,6 @@ form input[type="submit"]:hover {
 
 @media screen and (max-width: 685px) {
   /*todo itens no geral */
-  header {
-    /* height: 50px; */
-  }
 
   /* todo classes */
   .header {
