@@ -17,8 +17,10 @@
   require_once("../php/all.php");
   ?>
   <main class="container">
-    <div id="teste"></div>
-    <div id="teste2"></div>
+    <div class="publicacaoDiv">
+      <div class="descricao"><p>exemplo</p></div>
+      <div class="rodape"><p>asukghadkl</p></div>
+    </div>
   </main>
 </body>
 
