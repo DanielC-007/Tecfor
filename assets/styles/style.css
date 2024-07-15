@@ -97,6 +97,13 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
+.containerPost{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 725px;
+}
+
 .header {
   height: 55px;
   padding: 10px;

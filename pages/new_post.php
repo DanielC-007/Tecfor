@@ -10,7 +10,7 @@
     <title>Nova publicação</title>
 </head>
 <body>
-    <div class="container">
+    <div class="containerPost">
         <div class="postFlexCollum">
             <input type="file" name="postUser" id="fileImgUser">
             <div class="imgpub">
