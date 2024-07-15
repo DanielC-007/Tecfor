@@ -134,12 +134,45 @@ form input[type="submit"]:hover {
   border-radius: 5px;
 }
 
-.descricao{
+/* .cabecalho{
+  
+} */
+
+.descricao {
   background-color: var(--cor2);
+  border-radius: 5px;
 }
 
-.rodape{
-  background-color: var(--cor2);
+.rodape {
+  background-color: var(--cor3);
+  margin-top: 10px;
+}
+
+.postFlexCollum {
+  display: flex;
+  flex-direction: column;
+}
+
+.postFlexCollum textarea {
+  border: none;
+  border-radius: 5px;
+  height: 75px;
+  padding: 5px;
+  background-color: var(--cor1);
+  resize: none;
+  margin-top: 5px;
+}
+
+.imgpub {
+  background-color: #7151a9;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.imgpub img {
+  height: 40vh;
+  border-radius: 5px;
 }
 
 /*! ids */
@@ -329,6 +362,25 @@ form input[type="submit"]:hover {
 #post:hover {
   background-color: var(--cor2);
   animation: pulse 2s infinite;
+}
+
+#publicarPost {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--cor2);
+  height: 30px;
+  width: 100px;
+  margin-top: 5px;
+}
+
+#publicarPost:hover {
+  background-color: #6941ad;
+  animation: pulse 1.5s;
+}
+
+#fileImgUser{
+  background-color: var(--cor1);
+  border-radius: 5px;
 }
 
 /*! animações */

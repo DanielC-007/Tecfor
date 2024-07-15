@@ -18,6 +18,7 @@
   ?>
   <main class="container">
     <div class="publicacaoDiv">
+      <div class="cabecalho"></div>
       <div class="descricao"><p>exemplo</p></div>
       <div class="rodape"><p>asukghadkl</p></div>
     </div>
