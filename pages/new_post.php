@@ -11,14 +11,14 @@
 </head>
 <body>
     <div class="containerPost">
-        <div class="postFlexCollum">
-            <input type="file" name="postUser" id="fileImgUser">
+        <form class="postFlexCollum" method="post" enctype="multipart/form-data">
             <div class="imgpub">
                 <img src="../src/imgs/Lobo.jpeg" id="imgPublicacao">
             </div>
+            <input type="file" name="postUser" id="fileImgUser">
             <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Mensagem"></textarea>
             <input type="submit" value="Publicar" id="publicarPost">
-        </div>
+        </form>
     </div>
 </body>
 </html>

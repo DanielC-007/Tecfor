@@ -388,6 +388,7 @@ form input[type="submit"]:hover {
 #fileImgUser{
   background-color: var(--cor1);
   border-radius: 5px;
+  margin-top: 5px;
 }
 
 /*! animações */

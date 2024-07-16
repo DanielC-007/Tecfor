@@ -66,32 +66,49 @@ function infoUserOpenClose() {
 }
 
 function exibirSenha() {
-  var visualizar = document.getElementById("passUser");
-  var eye = document.getElementById("eye");
-  if (visualizar.type === "password") {
-    visualizar.type = "text";
-    eye.src = "../src/imgs/closeEyeDark.png";
-  } else {
-    visualizar.type = "password";
-    eye.src = "../src/imgs/openEyeDark.png";
+  console.log("Função de exibir a senha");
+  if(document.getElementById("password")){
+    var visualizar = document.getElementById("password");
+    var eye = document.getElementById("eye");
+    if (visualizar.type === "password") {
+      visualizar.type = "text";
+      eye.src = "../src/imgs/closeEyeDark.png";
+    } else {
+      visualizar.type = "password";
+      eye.src = "../src/imgs/openEyeDark.png";
+    }
+  } else{
+    console.log("Elemento com id 'visualizar' não encontrado");
   }
 }
 
 function tema() {
   const body = document.body;
-  var hamburger = document.getElementById("hamburger");
+
+  if(document.getElementById("hamburger")){
+    var hamburger = document.getElementById("hamburger");
+  }
+
   var user = document.getElementById("user");
   var sunMoon = document.getElementById("sunMoon");
 
   if (body.classList.contains("lightTheme")) {
     body.classList.remove("lightTheme");
-    hamburger.src = "../src/imgs/hamburgerDark.png";
+
+    if(document.getElementById("hamburger")){
+      hamburger.src = "../src/imgs/hamburgerDark.png";
+    }
+
     user.src = "../src/imgs/userDark.png";
     sunMoon.src = "../src/imgs/sun.png";
     localStorage.setItem("localTema", "dark");
   } else {
     body.classList.add("lightTheme");
-    hamburger.src = "../src/imgs/hamburgerLight.png";
+    
+    if(document.getElementById("hamburger")){
+      hamburger.src = "../src/imgs/hamburgerLight.png";
+    }
+    
     user.src = "../src/imgs/userLight.png";
     sunMoon.src = "../src/imgs/moon.png";
     localStorage.setItem("localTema", "light");
@@ -101,20 +118,30 @@ function tema() {
 
 function carregarTema() {
   const body = document.body;
-  var hamburger = document.getElementById("hamburger");
+
+  if(document.getElementById("hamburger")){
+    var hamburger = document.getElementById("hamburger");
+  }
+  
   var user = document.getElementById("user");
   var sunMoon = document.getElementById("sunMoon");
   if (localStorage.getItem("localTema") === "light") {
     body.classList.add("lightTheme");
-    hamburger.src = "../src/imgs/hamburgerLight.png";
+    if(document.getElementById("hamburger")){
+      hamburger.src = "../src/imgs/hamburgerLight.png";
+    }
     user.src = "../src/imgs/userLight.png";
     sunMoon.src = "../src/imgs/moon.png";
   } else {
     body.classList.remove("lightTheme");
-    hamburger.src = "../src/imgs/hamburgerDark.png";
+    if(document.getElementById("hamburger")){
+      hamburger.src = "../src/imgs/hamburgerDark.png";
+    }
     user.src = "../src/imgs/userDark.png";
     sunMoon.src = "../src/imgs/sun.png";
   }
 }
 
 carregarTema();
+
+// 
