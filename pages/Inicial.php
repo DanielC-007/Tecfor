@@ -9,7 +9,7 @@
   <link rel="icon" href="../src/imgs/icon.png" />
   <script src="../assets/scripts/script.js" defer></script>
   <?php // require_once("../connection/connect.php"); ?>
-  <title>Home</title>
+  <title>Inicial</title>
 </head>
 
 <body>

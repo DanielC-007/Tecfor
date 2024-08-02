@@ -13,11 +13,70 @@ body {
 }
 
 header {
-    /* background-color: blue; */
     height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
 
-div {
+header div {
+    margin: 0 75px;
+    display: flex;
+    align-items: center;
+}
+
+header div img {
+    height: 50px;
+    width: auto;
+    margin-right: 5px;
+}
+
+header div button {
+    height: 40px;
+    width: 150px;
+    background: transparent;
+    border: solid 2px #916dd5;
+    border-radius: 100px;
+    font-size: 25px;
+    color: #dac7ff;
+    margin-left: 75px;
+}
+
+header div button:hover {
+    cursor: pointer;
+    background-color: #906def;
+}
+
+ul {
+    display: flex;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+ul a:hover {
+    text-decoration: underline 1px #916dd5;
+}
+
+ul a li {
+    margin: 0 10px;
+    list-style-type: none;
+    font-size: 25px;
+    font-variant-caps: all-petite-caps;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+main img {
+    margin-right: 75px;
+}
+
+main div {
     margin: 0 75px;
 }
 
@@ -27,8 +86,14 @@ h1 {
     font-weight: normal;
 }
 
+h4 {
+    color: #dac7ff;
+    font-size: 30px;
+    font-variant-caps: all-petite-caps;
+}
+
 strong {
-    color: #906def;
+    color: #dac7ff;
 }
 
 p {
@@ -36,7 +101,7 @@ p {
     font-size: 15px;
 }
 
-button {
+main div button {
     background: rgb(70, 50, 93);
     background: linear-gradient(90deg, rgba(70, 50, 93, 1) 0%, rgba(113, 81, 169, 1) 100%);
     border: none;
@@ -47,8 +112,28 @@ button {
     margin-right: 15px;
 }
 
-button:hover {
+main div button:hover {
     cursor: pointer;
+    /* animation: deLaPraCa 1s; */
     background: rgb(113, 81, 169);
     background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 100%);
 }
+
+/* @keyframes deLaPraCa {
+
+    0%,
+    50% {
+        background: rgb(70, 50, 93);
+        background: linear-gradient(90deg, rgba(70, 50, 93, 1) 0%, rgba(113, 81, 169, 1) 100%);
+    }
+
+    50% {
+        background: rgb(113, 81, 169);
+        background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 50%, rgba(113, 81, 169, 1) 100%);
+    }
+
+    100% {
+        background: rgb(113, 81, 169);
+        background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 100%);
+    }
+} */

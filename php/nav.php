@@ -1,7 +1,7 @@
 <button id="x" onclick="navOpenClose()"></button>
 <nav id="salas">
     <div>
-        <a href="home.php"><button>
+        <a href="Inicial.php"><button>
                 <img src="../src/imgs/home.png" />
                 <p>Página principal</p>
             </button></a>
