@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body {
+  background-image: url(../../src/imgs/fundo.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.box1 {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1 img {
+  height: 150px;
+}
+
+.box2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f2841;
+  height: auto;
+  width: auto;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+form .div1{
+    flex-direction: column;
+    display: flex;
+}
+
+form .div2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form .div1 input{
+    height: 35px;
+    width: 350px;
+    background-color: #514869;
+    border:none;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+}
+
+form .div2 input[type=submit], button{
+    background-color: transparent;
+    color: #916dd5;
+    border: solid #916dd5;
+    border-radius: 10px;
+    padding: 5px;
+    height: 50px;
+    width: calc(350px/2 - 5px);
+    margin: 25px 10px;
+    font-size: 20px;
+}
+
+h2{
+    color: #836dbd;
+    margin-bottom: 15px;
+    font-size: 35px;
+}

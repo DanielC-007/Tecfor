@@ -49,25 +49,33 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/style.css">
-    <link rel="stylesheet" href="../assets/styles/register.css">
     <link rel="icon" href="../src/imgs/icon.png">
-    <script src="../assets/scripts/script.js" defer></script>
+    <link rel="stylesheet" href="../assets/styles/login.css">
+    <!-- <script src="../assets/scripts/script.js" defer></script> -->
     <title>Login</title>
 </head>
 
 <body>
-    <main class="containerLogin">
+    <main class="container">
         <!-- <button onclick="tema()">tema teste</button> -->
-        <form method="post">
-            <h1>Login</h1>
-            <input type="email" value="<?php echo $email; ?>" placeholder="Email institucional" name="email" id="email">
-            <div>
-                <input type="password" placeholder="Senha" name="password" id="password">
-                <img src="../src/imgs/openEyeDark.png" id="eye" onclick="exibirSenha()">
-            </div>
-            <input type="submit" value="Enviar">
-        </form>
+        <div class="box1">
+            <h1>Faça login</h1>
+            <h1>E entre para nossa comunidade</h1>
+            <img src="../src/imgs/icon.png">
+        </div>
+        <div class="box2">
+            <form method="post">
+                <h2>Login</h2>
+                <div class="div1">
+                    <input type="email" value="<?php echo $email; ?>" placeholder="Email" name="email" id="email">
+                    <input type="password" placeholder="Senha" name="password" id="password">
+                </div>
+                <div class="div2">
+                    <button>Cadastre-se</button>
+                    <input type="submit" value="Entrar">
+                </div>
+            </form>
+        </div>
     </main>
 </body>
 </html>
