@@ -59,9 +59,9 @@ if(isset($_POST['submit'])){
     <main class="container">
         <!-- <button onclick="tema()">tema teste</button> -->
         <div class="box1">
-            <h1>Faça login</h1>
-            <h1>E entre para nossa comunidade</h1>
+            <h1>Faça login <br> E entre para nossa comunidade</h1>
             <img src="../src/imgs/icon.png">
+            <div class="vozesdacabeca"></div>
         </div>
         <div class="box2">
             <form method="post">
@@ -71,7 +71,9 @@ if(isset($_POST['submit'])){
                     <input type="password" placeholder="Senha" name="password" id="password">
                 </div>
                 <div class="div2">
-                    <button>Cadastre-se</button>
+                    <button>
+                        <a href="register.php">Cadastre-se</a>
+                    </button>
                     <input type="submit" value="Entrar">
                 </div>
             </form>

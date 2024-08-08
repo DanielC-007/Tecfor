@@ -18,16 +18,22 @@ body {
   justify-content: center;
 }
 
+.vozesdacabeca {
+  height: 50px;
+  width: 50px;
+}
+
 .box1 {
   width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .box1 img {
   height: 150px;
+  animation: upDown infinite 2s;
 }
 
 .box2 {
@@ -42,49 +48,74 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #2f2841;
+  background-color: transparent;
+  border: solid 3px #916dd5;
   height: auto;
   width: auto;
   padding: 50px;
   border-radius: 10px;
 }
 
-form .div1{
-    flex-direction: column;
-    display: flex;
+form .div1 {
+  display: flex;
+  flex-direction: column;
 }
 
-form .div2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+form .div2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-form .div1 input{
-    height: 35px;
-    width: 350px;
-    background-color: #514869;
-    border:none;
-    color: white;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px 0 15px 0;
+form .div1 input {
+  height: 35px;
+  width: 350px;
+  background-color: transparent;
+  border: solid 3px #916dd5;
+  color: #dac7ff;
+  border-radius: 100px;
+  padding: 5px;
+  margin: 5px 0 15px 0;
 }
 
-form .div2 input[type=submit], button{
-    background-color: transparent;
-    color: #916dd5;
-    border: solid #916dd5;
-    border-radius: 10px;
-    padding: 5px;
-    height: 50px;
-    width: calc(350px/2 - 5px);
-    margin: 25px 10px;
-    font-size: 20px;
+form .div2 input[type=submit],
+button {
+  background-color: transparent;
+  color: #dac7ff;
+  border: solid 3px #916dd5;
+  border-radius: 100px;
+  padding: 5px;
+  height: 50px;
+  width: calc(350px/2 - 5px);
+  margin: 25px 10px;
+  font-size: 20px;
 }
 
-h2{
-    color: #836dbd;
-    margin-bottom: 15px;
-    font-size: 35px;
+form .div2 input[type=submit]:hover,
+button:hover {
+  background-color: #916dd5;
+}
+
+a {
+  text-decoration: none;
+  color: #dac7ff;
+}
+
+h1 {
+  color: #dac7ff;
+  font-size: 35px;
+}
+
+h2 {
+  color: #dac7ff;
+  margin-bottom: 15px;
+  font-size: 35px;
+}
+
+@keyframes upDownImg{
+  from{
+    transform: translateY(5px);
+  } to {
+    transform: translate(-5px);
+  }
 }

@@ -57,7 +57,7 @@ ul a {
 }
 
 ul a:hover {
-    text-decoration: underline 1px #916dd5;
+    text-decoration: underline 3px #916dd5;
 }
 
 ul a li {
