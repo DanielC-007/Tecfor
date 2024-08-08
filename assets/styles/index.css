@@ -73,7 +73,11 @@ main {
 }
 
 main img {
+    height: 50vh;
+    width: auto;
     margin-right: 75px;
+    transform: translateY(0px);
+    animation: upDown 7.5s infinite;
 }
 
 main div {
@@ -114,15 +118,12 @@ main div button {
 
 main div button:hover {
     cursor: pointer;
-    /* animation: deLaPraCa 1s; */
-    background: rgb(113, 81, 169);
-    background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 100%);
+    animation: deLaPraCa 3s;
 }
 
-/* @keyframes deLaPraCa {
+@keyframes deLaPraCa {
 
-    0%,
-    50% {
+    0% {
         background: rgb(70, 50, 93);
         background: linear-gradient(90deg, rgba(70, 50, 93, 1) 0%, rgba(113, 81, 169, 1) 100%);
     }
@@ -136,4 +137,13 @@ main div button:hover {
         background: rgb(113, 81, 169);
         background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 100%);
     }
-} */
+}
+
+@keyframes upDown{
+    0%, 100% {
+        transform: translateY(0px);
+    } 
+    50% {
+        transform: translateY(15px);
+    }
+}
