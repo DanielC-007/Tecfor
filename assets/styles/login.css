@@ -32,8 +32,9 @@ body {
 }
 
 .box1 img {
-  height: 150px;
-  animation: upDown infinite 2s;
+  height: 200px;
+  transform: translateY(-15px);
+  animation: upDownImg infinite 5s;
 }
 
 .box2 {
@@ -54,6 +55,10 @@ form {
   width: auto;
   padding: 50px;
   border-radius: 10px;
+}
+
+form img{
+  height: 50px;
 }
 
 form .div1 {
@@ -113,9 +118,9 @@ h2 {
 }
 
 @keyframes upDownImg{
-  from{
-    transform: translateY(5px);
-  } to {
-    transform: translate(-5px);
+  0%, 100%{
+    transform: translateY(-15px);
+  } 50% {
+    transform: translateY(15px);
   }
 }

@@ -6,8 +6,6 @@ if(isset($_GET['email'])){
     $email = $_GET['email'];
 }
 
-// cd TecFor
-
 if(isset($_POST['submit'])){
     if(
         isset($_POST['email']) &&
@@ -57,7 +55,6 @@ if(isset($_POST['submit'])){
 
 <body>
     <main class="container">
-        <!-- <button onclick="tema()">tema teste</button> -->
         <div class="box1">
             <h1>Faça login <br> E entre para nossa comunidade</h1>
             <img src="../src/imgs/icon.png">
@@ -66,6 +63,7 @@ if(isset($_POST['submit'])){
         <div class="box2">
             <form method="post">
                 <h2>Login</h2>
+                <img src="../src/imgs/raposa.png">
                 <div class="div1">
                     <input type="email" value="<?php echo $email; ?>" placeholder="Email" name="email" id="email">
                     <input type="password" placeholder="Senha" name="password" id="password">
