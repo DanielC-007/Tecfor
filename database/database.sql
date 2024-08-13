@@ -1,4 +1,4 @@
-create database conexao;
+create database conexaoTecfor;
 use conexao;
 
 create table info_user(

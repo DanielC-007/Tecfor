@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "conexao";
+$banco = "conexaoTecfor";
 $connect = mysqli_connect($servidor, $usuario, $senha, $banco);
 
 if(mysqli_connect_errno()){

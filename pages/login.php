@@ -1,42 +1,40 @@
 <?php
-include_once('../connection/connect.php');
+// include_once('../connection/connect.php');
 
-$email = "";
-if(isset($_GET['email'])){
-    $email = $_GET['email'];
-}
+// $email = "";
+// if(isset($_GET['email'])){
+//     $email = $_GET['email'];
+// }
 
-if(isset($_POST['submit'])){
-    if(
-        isset($_POST['email']) &&
-        isset($_POST['password']) &&
-        !empty($_POST['email']) &&
-        !empty($_POST['password'])
-    ){
-        $email = $_POST['email'];
-        $senha = $_POST['password'];
+// if(isset($_POST['submit'])){
+//     if(
+//         isset($_POST['email']) &&
+//         isset($_POST['password']) &&
+//         !empty($_POST['email']) &&
+//         !empty($_POST['password'])
+//     ){
+//         $email = $_POST['email'];
+//         $senha = $_POST['password'];
         
-        $query = "SELECT * FROM alunos where email = '$email'";
-        $consulta = $connect->query($query);
+//         $query = "SELECT * FROM alunos where email = '$email'";
+//         $consulta = $connect->query($query);
 
-        if($consulta->num_rows > 0){
-            $aluno = $consulta->fetch_assoc();
+//         if($consulta->num_rows > 0){
+//             $aluno = $consulta->fetch_assoc();
             
-            $hash = $aluno['senha_hash'];
-            if(password_verify($senha, $hash)){
-                echo "Login feito para o usuário " . $aluno['nome'];
-            } else{
-                echo "Senha inválida";
-            }
-        } else {
-            echo "Email não cadastrado";
-        }
-    } else {
-        echo "Insira os dados corretamente";
-    }
-}
-
-// está nessa página mesmo?
+//             $hash = $aluno['senha_hash'];
+//             if(password_verify($senha, $hash)){
+//                 echo "Login feito para o usuário " . $aluno['nome'];
+//             } else{
+//                 echo "Senha inválida";
+//             }
+//         } else {
+//             echo "Email não cadastrado";
+//         }
+//     } else {
+//         echo "Insira os dados corretamente";
+//     }
+// }
 
 ?>
 
@@ -61,11 +59,11 @@ if(isset($_POST['submit'])){
             <div class="vozesdacabeca"></div>
         </div>
         <div class="box2">
-            <form method="post">
+            <form method="post" action="testeLogin.php">
                 <h2>Login</h2>
                 <img src="../src/imgs/raposa.png">
                 <div class="div1">
-                    <input type="email" value="<?php echo $email; ?>" placeholder="Email" name="email" id="email">
+                    <input type="email" placeholder="Email" name="email" id="email">
                     <input type="password" placeholder="Senha" name="password" id="password">
                 </div>
                 <div class="div2">

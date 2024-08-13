@@ -81,6 +81,7 @@ form .div1 input {
   border-radius: 100px;
   padding: 5px;
   margin: 5px 0 15px 0;
+  outline: none;
 }
 
 form .div2 input[type=submit],
