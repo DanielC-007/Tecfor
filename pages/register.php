@@ -1,8 +1,6 @@
 <?php
 include_once('../connection/connect.php');
 
-// Atualiza
-
 if(isset($_POST['submit'])){
     if(
         isset($_POST['nome']) &&
@@ -46,20 +44,16 @@ if(isset($_POST['submit'])){
     <title>Document</title>
 </head>
 <body>
-    <form method="POST">
-        <div class="container">
-            <label for="">Nome:</label>
-            <input type="text" id="nome" name="nome">
-        </div>
-        <div class="container">
-            <label for="">Email:</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div class="container">
-            <label for="">Senha:</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <input type="submit" name="submit" value="Enviar">
-    </form>
+    <main class="container">
+        <form method="POST">
+            <h2>Registro</h2>
+            <img src="../src/imgs/raposa.png">
+            <input type="text" id="nome" name="nome" placeholder="Nome">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Senha">
+            <p></p>
+            <input type="submit" name="submit" value="Enviar">
+        </form>
+    </main>
 </body>
 </html>

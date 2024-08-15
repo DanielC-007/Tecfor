@@ -99,6 +99,7 @@ button {
 
 form .div2 input[type=submit]:hover,
 button:hover {
+  cursor: pointer;
   background-color: #916dd5;
 }
 

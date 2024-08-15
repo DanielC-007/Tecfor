@@ -8,8 +8,7 @@
   <link rel="stylesheet" href="../assets/styles/style.css" />
   <link rel="icon" href="../src/imgs/icon.png" />
   <script src="../assets/scripts/script.js" defer></script>
-  <?php // require_once("../connection/connect.php"); ?>
-  <title>Inicial</title>
+  <title>Home</title>
 </head>
 
 <body>
@@ -18,9 +17,10 @@
   ?>
   <main class="container">
     <div class="publicacaoDiv">
-      <div class="cabecalho"></div>
-      <div class="descricao"><p>exemplo</p></div>
-      <div class="rodape"><p>asukghadkl</p></div>
+      <div class="cabecalho"><img src="../src/imgs/userDark.png"><a href="">Fulano123</a></div>
+      <div class="descricao"><h3>Veja esse incrível lobo!</h3></div>
+      <img src="../src/imgs/Lobo.jpeg">
+      <div class="rodape"></div>
     </div>
   </main>
 </body>

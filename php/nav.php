@@ -1,7 +1,7 @@
 <button id="x" onclick="navOpenClose()"></button>
 <nav id="salas">
     <div>
-        <a href="Inicial.php"><button>
+        <a href="Home.php"><button>
                 <img src="../src/imgs/home.png" />
                 <p>Página principal</p>
             </button></a>
@@ -29,15 +29,8 @@
         </a>
     </div>
     <div>
-        <button onclick="configOpenClose()">
-            <img src="../src/imgs/config.png" />Configurações
+        <button onclick="tema()">
+            <img id="sunMoon" src="../src/imgs/sun.png" />Alterar tema
         </button>
     </div>
 </nav>
-
-<button id="y" onclick="configOpenClose()"></button>
-<div id="telaConfig">
-    <button onclick="tema()">
-        <img id="sunMoon" src="../src/imgs/sun.png" />Alterar tema
-    </button>
-</div>
