@@ -20,7 +20,7 @@
       <div class="cabecalho"><img src="../src/imgs/userDark.png"><a href="">Fulano123</a></div>
       <div class="descricao"><h3>Veja esse incrível lobo!</h3></div>
       <img src="../src/imgs/Lobo.jpeg">
-      <div class="rodape"></div>
+      <div class="rodape">/*cod do diego*/</div>
     </div>
   </main>
 </body>

@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
         $senha = $_POST['password'];
         
         $query = "SELECT * FROM alunos where email = '$email'";
-        $consulta = $connect->ery($query);
+        $consulta = $connect->query($query);
 
         if($consulta->num_rows > 0){
             $aluno = $consulta->fetch_assoc();
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
                     <button>
                         <a href="register.php">Cadastre-se</a>
                     </button>
-                    <input type="submit" value="Entrar">
+                    <input type="submit" value="Entrar" name="submit">
                 </div>
             </form>
         </div>
