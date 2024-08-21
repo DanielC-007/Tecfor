@@ -239,7 +239,7 @@ form input[type="submit"]:hover {
 }
 
 #infoUser {
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,7 +266,11 @@ form input[type="submit"]:hover {
   height: 50px;
   width: 250px;
   margin: 5px;
-  border: solid 3px #6941ad;
+  border: solid 3px red;
+}
+
+#infoUser button:hover {
+  background-color: red;
 }
 
 #eye {
@@ -308,7 +312,6 @@ form input[type="submit"]:hover {
 }
 
 #salas button:hover,
-#infoUser button:hover,
 #eye:hover,
 #telaConfig button:hover {
   background-color: #6941ad;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('../connection/connect.php');
 
 $email = "";
@@ -25,14 +26,26 @@ if(isset($_POST['submit'])){
             $hash = $aluno['senha_hash'];
             if(password_verify($senha, $hash)){
                 echo "Login feito para o usuário " . $aluno['nome'];
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $senha;
+                header('Location: home.php');
             } else{
                 echo "Senha inválida";
+                unset($_SESSION['email']);
+                unset($_SESSION['senha']);
+                header('location: login.php');
             }
         } else {
             echo "Email não cadastrado";
+            unset($_SESSION['email']);
+            unset($_SESSION['senha']);
+            header('location: login.php');
         }
     } else {
         echo "Insira os dados corretamente";
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header('location: login.php');
     }
 }
 

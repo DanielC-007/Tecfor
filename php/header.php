@@ -8,8 +8,4 @@
             <img id="user" src="../src/imgs/userDark.png" />
         </button>
     </div>
-    <div class="pesquisaDiv">
-        <input type="search" name="barraPesquisa" id="barraPesquisa" />
-        <button id="procurar"><img src="../src/imgs/busca.png" /></button>
-    </div>
 </header>

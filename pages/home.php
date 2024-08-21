@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header('Location: login.php');
+    }
+    $logado = $_SESSION['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,10 +27,10 @@
   ?>
   <main class="container">
     <div class="publicacaoDiv">
-      <div class="cabecalho"><img src="../src/imgs/userDark.png"><a href="">Fulano123</a></div>
+      <div class="cabecalho"><img src="../src/imgs/userDark.png"><?php print_r($logado);?></div>
       <div class="descricao"><h3>Veja esse incrível lobo!</h3></div>
       <img src="../src/imgs/Lobo.jpeg">
-      <div class="rodape">/*cod do diego*/</div>
+      <!-- <div class="rodape">/*cod do diego*/</div> -->
     </div>
   </main>
 </body>
