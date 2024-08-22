@@ -1,15 +1,14 @@
-<?php include_once('../connection/connect.php'); 
+<?php 
+include_once('../connection/connect.php'); 
+session_start();
+
+// Obtém o ID do aluno a partir da sessão (ou outra fonte de autenticação)
+$userId = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : 0;
+
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verifica se um arquivo foi enviado
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == UPLOAD_ERR_OK) {
-        // ID do usuário - pode ser obtido da sessão ou de outro meio
-        $userId = isset($_SESSION['id_aluno']) ? $_SESSION['id_aluno'] : 0;
-
-// if ($userId <= 0) {
-//     die("ID do aluno inválido ou não encontrado. Faça login e tente novamente.");
-// }
-
         // Diretório onde a imagem será salva
         $uploadDir = __DIR__ . '/uploads/' . $userId . '/';
 
@@ -23,14 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Move o arquivo enviado para o diretório de destino
         if (move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadFile)) {
-            // Obtém o comentário do formulário
-            $comentario = $connect->real_escape_string($_POST['comentario']);
+            // Obtém o comentário do formulário, se definido
+            $comentario = isset($_POST['comentario']) ? $connect->real_escape_string($_POST['comentario']) : '';
 
             // Insere os dados no banco de dados
             $sql = "INSERT INTO imagens (user_id, imagem_path, comentario) VALUES ($userId, '$uploadFile', '$comentario')";
 
             if ($connect->query($sql) === TRUE) {
-                echo "A imagem e o comentário foram enviados com sucesso!";
+                // Redireciona para evitar reenvio do formulário
+                header('Location: ' . $_SERVER['PHP_SELF']);
+                exit();
             } else {
                 echo "Erro ao salvar os dados: " . $connect->error;
             }
@@ -47,8 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $connect->close();
 ?>
 
+
 <!-- Formulário HTML para enviar a imagem e o comentário -->
-<form action="" method="post" enctype="multipart/form-data">
+<form action="mural.php" method="post" enctype="multipart/form-data">
     Selecione uma imagem: <input type="file" id="fileInput" name="imagem" accept="image/*">
     <br>
     Comentário: <textarea name="comentario" rows="4" cols="50"></textarea>
