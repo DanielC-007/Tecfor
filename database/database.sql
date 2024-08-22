@@ -1,5 +1,5 @@
 create database conexaoTecfor;
-use conexao;
+use conexaoTecfor;
 
 create table info_user(
 id_user int NOT NULL AUTO_INCREMENT,
@@ -12,13 +12,20 @@ curso varchar(100),
 primary key (id_user)
 );
 
-create table post_user(
-id_post int not null auto_increment,
-descricao varchar(1000),
-curtidas_post int,
-primary key (id_post)
-);
+-- create table post_user(
+-- id_post int not null auto_increment,
+-- descricao varchar(1000),
+-- curtidas_post int,
+-- primary key (id_post)
+-- );
 
+CREATE TABLE imagens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    imagem_path VARCHAR(255) NOT NULL,
+    comentario TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 
 create table comentarios(
