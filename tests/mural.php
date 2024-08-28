@@ -6,7 +6,7 @@ include_once('../connection/connect.php');
 $sql = "SELECT imagens.imagem_path, imagens.comentario, alunos.nome 
         FROM imagens 
         JOIN alunos ON imagens.user_id = alunos.id_aluno
-        ORDER BY imagens.id_imagem DESC";
+        ORDER BY imagens.id DESC";
 
 // Executa a consulta
 $result = $connect->query($sql);

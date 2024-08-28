@@ -1,5 +1,5 @@
 <?php 
-include_once('../connection/connect.php'); 
+include_once('../connection/connect.php');
 session_start();
 
 // Obtém o ID do aluno a partir da sessão (ou outra fonte de autenticação)

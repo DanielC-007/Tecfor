@@ -20,7 +20,6 @@ comentario TEXT,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
 create table comentarios(
 id_coment int not null auto_increment,
 comentario_user varchar(1000),
