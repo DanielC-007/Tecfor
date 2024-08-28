@@ -21,15 +21,15 @@ if(isset($_POST['submit'])){
         $consulta = $connect->query($query);
 
         if($consulta->num_rows > 0){
-            echo "Email já está em uso";
+            echo "<h4 style='color:red;width:175px;margin-left:calc(50vw - 175px / 2);'>Email já está em uso</h4>";
         } else {
             $query = "INSERT INTO alunos (nome, email, senha_hash) VALUES ('$nome', '$email', '$hash')";
             $connect->query($query);
 
-            header("Location: login.php?email=" . $email);
+            header("Location: login.php");
         }
     } else {
-        echo "Preencha os dados corretamente";
+        echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);'>Preencha os dados corretamente</h4>";
     }
 }
 ?>
@@ -41,7 +41,8 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/register.css">
-    <title>Document</title>
+    <link rel="icon" href="../src/imgs/icon.png">
+    <title>Cadastro</title>
 </head>
 <body>
     <main class="container">

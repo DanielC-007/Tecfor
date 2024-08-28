@@ -27,9 +27,9 @@ comentario_user varchar(1000),
 curtidas_coment int,
 primary key (id_coment),
 id_user int not null,
-id_post int not null,
-foreign key(id_user) references info_user(id_user),
-foreign key(id_post) references post_user(id_post)
+id_post int not null
+-- foreign key(id_user) references info_user(id_user),
+-- foreign key(id_post) references post_user(id_post)
 );
 
 create table alunos(
