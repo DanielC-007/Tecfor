@@ -39,5 +39,3 @@ senha_hash varchar(225),
 primary key (id_aluno)
 );
 
-/* create table chats(
-); */

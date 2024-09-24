@@ -18,9 +18,9 @@
             <ul>
                 <a href="">
                     <li style="color: #916dd5;">Home</li>
-                </a><a href="">
+                </a><a href="pages/sobre_nos.php">
                     <li>Sobre nós</li>
-                </a><a href="">
+                </a><a href="pages/contato.php">
                     <li>Contato</li>
                 </a>
             </ul>
@@ -33,7 +33,7 @@
             <h1>de se <strong>conectar</strong> a</h1>
             <h1><i>comunidade <strong>escolar</strong></i></h1>
             <p>Transformando o ambiente escolar e conectando pessoas.</p>
-            <button>Saiba mais</button>
+            <a><button>Saiba mais</button></a>
             <a href="pages/register.php"><button>Cadastre-se</button></a>
         </div>
         <img src="src/imgs/escola.png">
