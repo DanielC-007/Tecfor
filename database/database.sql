@@ -39,3 +39,4 @@ senha_hash varchar(225),
 primary key (id_aluno)
 );
 
+INSERT INTO alunos (nome, email, senha_hash) VALUES ('teste', 'teste@gmail.com', '123');

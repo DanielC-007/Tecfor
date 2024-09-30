@@ -70,6 +70,7 @@ ul a li {
 main {
     display: flex;
     justify-content: space-between;
+    height: 68vh;
 }
 
 main img {
@@ -140,13 +141,9 @@ footer div img {
     margin-right: 5px;
 }
 
-footer div a {
+footer div p {
     text-decoration: none;
     font-size: 20px;
-}
-
-footer div a:hover {
-    text-decoration: underline 3px #916dd5;
 }
 
 .contato {

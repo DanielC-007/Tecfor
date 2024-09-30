@@ -25,27 +25,27 @@ if(isset($_POST['submit'])){
             
             $hash = $aluno['senha_hash'];
             if(password_verify($senha, $hash)){
-                echo "Login feito para o usuário " . $aluno['nome'];
+                // echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Login feito para o usuário</h4>" . $aluno['nome'];
                 $_SESSION['email'] = $email;
                 $_SESSION['senha'] = $senha;
                 header('Location: home.php');
             } else{
-                echo "Senha inválida";
+                echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Senha inválida</h4>";
                 unset($_SESSION['email']);
                 unset($_SESSION['senha']);
-                header('location: login.php');
+                // header('location: login.php');
             }
         } else {
-            echo "Email não cadastrado";
+            echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Email não cadastrado</h4>";
             unset($_SESSION['email']);
             unset($_SESSION['senha']);
-            header('location: login.php');
+            // header('location: login.php');
         }
     } else {
-        echo "Insira os dados corretamente";
+        echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Insira os dados corretamente</h4>";
         unset($_SESSION['email']);
         unset($_SESSION['senha']);
-        header('location: login.php');
+        // header('location: login.php');
     }
 }
 
@@ -65,6 +65,7 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
+    <a onclick="history.go(-1);" class="back">Voltar</a>
     <main class="container">
         <div class="box1">
             <h1>Faça login <br> E entre para nossa comunidade</h1>

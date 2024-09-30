@@ -9,6 +9,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  padding-top: 15px;
 }
 
 form {
@@ -57,7 +58,7 @@ form input[type=submit]:hover {
 }
 
 .container {
-  height: 100vh;
+  height: calc(100vh - 15px - 30px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,4 +72,17 @@ h2 {
 
 p {
   color: white;
+}
+
+.back {
+  color: #dac7ff;
+  text-decoration: none;
+  border: solid 2px #916dd5;
+  border-radius: 50px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.back:hover {
+  background-color: #916dd5;
 }

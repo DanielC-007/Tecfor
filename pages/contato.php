@@ -24,7 +24,7 @@
                     <li style="color: #916dd5;">Contato</li>
                 </a>
             </ul>
-            <a href="pages/login.php"><button>Entrar</button></a>
+            <a href="login.php"><button>Entrar</button></a>
         </div>
     </header>
     <div class="contato">
@@ -33,11 +33,11 @@
     <footer>
         <div>
             <img src="../src/imgs/insta.png">
-            <a href="">@_tecfor</a>
+            <p>@_tecfor</p>
         </div>
         <div>
             <img src="../src/imgs/gmail.png">
-            <a href="">tecfor.etecrgs@gmail.com</a>
+            <p>tecfor.etecrgs@gmail.com</p>
         </div>
     </footer>
     </body>

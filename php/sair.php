@@ -2,5 +2,5 @@
     session_start();
     unset($_SESSION['email']);
     unset($_SESSION['password']);
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
 ?>

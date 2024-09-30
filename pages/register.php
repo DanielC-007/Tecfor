@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         $consulta = $connect->query($query);
 
         if($consulta->num_rows > 0){
-            echo "<h4 style='color:red;width:175px;margin-left:calc(50vw - 175px / 2);'>Email já está em uso</h4>";
+            echo "<h4 style='color:red;width:175px;margin-left:calc(50vw - 175px / 2);position:fixed;'>Email já está em uso</h4>";
         } else {
             $query = "INSERT INTO alunos (nome, email, senha_hash) VALUES ('$nome', '$email', '$hash')";
             $connect->query($query);
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
             header("Location: login.php");
         }
     } else {
-        echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);'>Preencha os dados corretamente</h4>";
+        echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;'>Preencha os dados corretamente</h4>";
     }
 }
 ?>
@@ -45,6 +45,7 @@ if(isset($_POST['submit'])){
     <title>Cadastro</title>
 </head>
 <body>
+    <a onclick="history.go(-1);" class="back">Voltar</a>
     <main class="container">
         <form method="POST">
             <h2>Registro</h2>
