@@ -119,7 +119,7 @@ main div button {
 
 main div button:hover {
     cursor: pointer;
-    animation: deLaPraCa 3s;
+    border: solid 3px #906def;
 }
 
 footer{
@@ -160,7 +160,7 @@ footer div p {
     margin-bottom: 100px;
 }
 
-@keyframes deLaPraCa {
+/*@keyframes deLaPraCa {
 
     0% {
         background: rgb(70, 50, 93);
@@ -176,7 +176,7 @@ footer div p {
         background: rgb(113, 81, 169);
         background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 100%);
     }
-}
+}*/
 
 @keyframes upDown{
     0%, 100% {
