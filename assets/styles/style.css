@@ -260,16 +260,19 @@ form input[type="submit"]:hover {
   margin: 10px;
 }
 
-#infoUser button {
+#infoUser .sair {
+  border: solid 3px red;
   background-color: transparent;
   border-radius: 5px;
   height: 50px;
   width: 250px;
   margin: 5px;
-  border: solid 3px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#infoUser button:hover {
+#infoUser .sair:hover {
   background-color: red;
 }
 

@@ -99,7 +99,7 @@ form .div1 input {
 }
 
 form .div2 input[type=submit],
-button {
+#cad {
   background-color: transparent;
   color: #dac7ff;
   border: solid 3px #916dd5;
@@ -111,8 +111,15 @@ button {
   font-size: 20px;
 }
 
+#cad {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 form .div2 input[type=submit]:hover,
-button:hover {
+#cad:hover {
   cursor: pointer;
   background-color: #916dd5;
 }

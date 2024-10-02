@@ -3,5 +3,5 @@
     <img src="../src/imgs/userDark.png" />
     <h1><?php print_r($logado);?></h1>
     <h5>id: 01</h5>
-    <button><a href="sair.php">Sair</a></button>
+    <a href="../php/sair.php" class="sair">Sair</a>
   </aside>

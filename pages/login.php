@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-    <a onclick="history.go(-1);" class="back">Voltar</a>
+    <a href="../index.php" class="back">Voltar</a>
     <main class="container">
         <div class="box1">
             <h1>Faça login <br> E entre para nossa comunidade</h1>
@@ -81,9 +81,7 @@ if(isset($_POST['submit'])){
                     <input type="password" placeholder="Senha" name="password" id="password">
                 </div>
                 <div class="div2">
-                    <button>
-                        <a href="register.php">Cadastre-se</a>
-                    </button>
+                    <a href="register.php" id="cad">Cadastre-se</a>
                     <input type="submit" value="Entrar" name="submit">
                 </div>
             </form>
