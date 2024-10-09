@@ -48,7 +48,7 @@ $connect->close();
   ?>
   <main class="container">
     <div class="publicacaoDiv">
-      <div class="cabecalho"><img src="../src/imgs/userDark.png"><?php echo $logadoNome; ?> (<?php echo $logadoEmail; ?>)</div>
+      <div class="cabecalho"><img src="../src/imgs/userDark.png"><?php echo $logadoNome; ?></div>
       <div class="descricao"><h3>Veja esse incrível lobo!</h3></div>
       <img src="../src/imgs/Lobo.jpeg">
       <!-- <div class="rodape">/*cod do diego*/</div> -->

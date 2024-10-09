@@ -1,26 +1,5 @@
 console.log("Olá, tudo certo");
 
-// function configOpenClose() {
-//   var divConfig = document.getElementById("telaConfig");
-//   var bntY = document.getElementById("y");
-//   if (
-//     divConfig.style.transform === "translateY(-200%)" ||
-//     divConfig.style.transform === ""
-//   ) {
-//     divConfig.style.animation = "downY 0.5s";
-//     divConfig.style.transform = "translateY(0px)";
-//     divConfig.style.visibility = "visible";
-//     bntY.style.visibility = "visible";
-//   } else {
-//     divConfig.style.animation = "upY 0.5s";
-//     divConfig.style.transform = "translateY(-200%)";
-//     bntY.style.visibility = "hidden";
-//     setTimeout(function delay() {
-//       divConfig.style.visibility = "hidden";
-//     }, 500);
-//   }
-// }
-
 function navOpenClose() {
   var navSalas = document.getElementById("salas");
   var bntX = document.getElementById("x");

@@ -270,6 +270,10 @@ footer div p {
     animation: leftRight 1s;
 }
 
+#setabnt1{
+    visibility: hidden;
+}
+
 @keyframes upDown {
 
     0%,
