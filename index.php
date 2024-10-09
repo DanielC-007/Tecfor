@@ -33,10 +33,10 @@
             <h1>de se <strong>conectar</strong> a</h1>
             <h1><i>comunidade <strong>escolar</strong></i></h1>
             <p>Transformando o ambiente escolar e conectando pessoas.</p>
-            <a><button>Saiba mais</button></a>
-            <a href="pages/register.php"><button>Cadastre-se</button></a>
+            <a><button class="saibacas" >Saiba mais</button></a>
+            <a href="pages/register.php"><button class="saibacas" >Cadastre-se</button></a>
         </div>
-        <img src="src/imgs/escola.png">
+        <img class="escola" src="src/imgs/escola.png">
     </main>
 </body>
 </html>

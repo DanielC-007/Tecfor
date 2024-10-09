@@ -17,7 +17,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
 }
 
 header div {
@@ -68,12 +67,13 @@ ul a li {
 }
 
 main {
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     height: 68vh;
 }
 
-main img {
+main .escola {
     height: 50vh;
     width: auto;
     margin-right: 75px;
@@ -106,7 +106,7 @@ p {
     font-size: 15px;
 }
 
-main div button {
+main div .saibacas {
     background: rgb(70, 50, 93);
     background: linear-gradient(90deg, rgba(70, 50, 93, 1) 0%, rgba(113, 81, 169, 1) 100%);
     border: none;
@@ -117,12 +117,12 @@ main div button {
     margin-right: 15px;
 }
 
-main div button:hover {
+main div .saibacas:hover {
     cursor: pointer;
     border: solid 3px #906def;
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +147,7 @@ footer div p {
 }
 
 .contato {
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,29 +161,147 @@ footer div p {
     margin-bottom: 100px;
 }
 
-/*@keyframes deLaPraCa {
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    width: 100vw;
+}
 
-    0% {
-        background: rgb(70, 50, 93);
-        background: linear-gradient(90deg, rgba(70, 50, 93, 1) 0%, rgba(113, 81, 169, 1) 100%);
-    }
+.container .maincon {
+    height: 560px;
+    width: 1180px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #13072e 0%, #3f2182 100%);
+}
 
-    50% {
-        background: rgb(113, 81, 169);
-        background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 50%, rgba(113, 81, 169, 1) 100%);
-    }
+.container .maincon h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 195px;
+    height: 40px;
+    background: linear-gradient(90deg, #9c72fa 0%, #b168ed 100%);
+    border-radius: 50px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 75px 0 0 60px;
+}
 
+.divdl {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(560px - 75px - 40px);
+    width: 1180px;
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+    width: 250px;
+    margin: 0;
+}
+
+.box2 {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+}
+
+.box3 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width: 250px;
+    margin: 0;
+}
+
+.box2 p {
+    font-size: 20px;
+    padding: 15px;
+    text-align: justify;
+    margin: 0;
+}
+
+.box2 h2 {
+    margin-top: 25px;
+    font-size: 24px;
+    padding: 15px;
+    font-weight: 900;
+}
+
+.box1 .setaimg,
+.box3 .setaimg {
+    height: 50px;
+    width: 50px;
+}
+
+.setabnt {
+    background-color: transparent;
+    margin: 0 15px 150px 0;
+    border: none;
+}
+
+.box1 .setabnt:hover {
+    cursor: pointer;
+    padding-right: 25px;
+    animation: leftRight 1s;
+}
+
+.box1 .setabnt:not(:hover) {
+    animation: rightLeft 1s;
+}
+
+.box3 .setabnt:hover {
+    cursor: pointer;
+    padding-left: 25px;
+    animation: rightLeft 1s;
+}
+
+.box3 .setabnt:not(:hover) {
+    animation: leftRight 1s;
+}
+
+@keyframes upDown {
+
+    0%,
     100% {
-        background: rgb(113, 81, 169);
-        background: linear-gradient(90deg, rgba(113, 81, 169, 1) 0%, rgba(70, 50, 93, 1) 100%);
-    }
-}*/
-
-@keyframes upDown{
-    0%, 100% {
         transform: translateY(0px);
-    } 
+    }
+
     50% {
         transform: translateY(15px);
+    }
+}
+
+@keyframes leftRight {
+    from {
+        padding-right: 0;
+        padding-left: 25px;
+    }
+
+    to {
+        padding-right: 25px;
+        padding-left: 0;
+    }
+}
+
+@keyframes rightLeft {
+    from {
+        padding-left: 0;
+        padding-right: 25px;
+    }
+
+    to {
+        padding-left: 25px;
+        padding-right: 0;
     }
 }
