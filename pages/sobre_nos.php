@@ -41,6 +41,16 @@
                     <h2>TecFor: Conectando o futuro da ETEC Rio Grande da Serra</h2>
                     <p>Somos uma rede social criada para conectar os alunos, promover a troca de experiências, fortalecer o aprendizado e criar um espaço para compartilhar momentos especiais dentro e fora da sala de aula.</p>
                 </div>
+                <div class="box2" id="box2">
+                    <h2>Com a Tecfor, você poderá:</h2>
+                    <ul>
+                        <li>Compartilhar suas experiências e ideias com outros alunos.</li>
+                        <li>Participar de grupos de estudo e projetos.</li>
+                        <li>Ficar por dentro das novidades da ETEC.</li>
+                        <li>Criar um portfólio online com seus trabalhos e projetos.</li>
+                        <li>E muito mais!</li>
+                    </ul>
+                </div>
                 <div class="box3">
                     <button class="setabnt" id="setabnt2" onclick="passarInfo()">
                         <img class="setaimg" src="../src/imgs/setad.png">

@@ -47,19 +47,19 @@ header div button:hover {
     background-color: #906def;
 }
 
-ul {
+header div ul {
     display: flex;
 }
 
-ul a {
+header div ul a {
     text-decoration: none;
 }
 
-ul a:hover {
+header div ul a:hover {
     text-decoration: underline 3px #916dd5;
 }
 
-ul a li {
+header div ul a li {
     margin: 0 10px;
     list-style-type: none;
     font-size: 25px;
@@ -252,25 +252,23 @@ footer div p {
 
 .box1 .setabnt:hover {
     cursor: pointer;
-    padding-right: 25px;
-    animation: leftRight 1s;
-}
-
-.box1 .setabnt:not(:hover) {
-    animation: rightLeft 1s;
+    animation: leftRight 1.5s;
 }
 
 .box3 .setabnt:hover {
     cursor: pointer;
-    padding-left: 25px;
-    animation: rightLeft 1s;
-}
-
-.box3 .setabnt:not(:hover) {
-    animation: leftRight 1s;
+    animation: rightLeft 1.5s;
 }
 
 #setabnt1{
+    visibility: hidden;
+}
+
+#setabnt2 {
+    visibility: visible;
+}
+
+#box2 {
     visibility: hidden;
 }
 
@@ -287,25 +285,41 @@ footer div p {
 }
 
 @keyframes leftRight {
-    from {
-        padding-right: 0;
-        padding-left: 25px;
+    100%, 0% {
+        transform: translateX(0%);
     }
 
-    to {
-        padding-right: 25px;
-        padding-left: 0;
+    50% {
+        transform: translateX(-50%);
     }
 }
 
 @keyframes rightLeft {
+    100%, 0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes opacidadeOff {
     from {
-        padding-left: 0;
-        padding-right: 25px;
+        opacity: 100%;
+    } 
+    
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes opacidadeOn {
+    from {
+        opacity: 0%;
     }
 
     to {
-        padding-left: 25px;
-        padding-right: 0;
+        opacity: 100%;
     }
 }
