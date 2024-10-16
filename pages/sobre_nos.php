@@ -25,7 +25,7 @@
                     <li>Contato</li>
                 </a>
             </ul>
-            <a href="pages/login.php"><button>Entrar</button></a>
+            <a href="login.php"><button>Entrar</button></a>
         </div>
     </header>
     <main class="container">

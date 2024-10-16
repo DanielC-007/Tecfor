@@ -33,7 +33,7 @@
             <h1>de se <strong>conectar</strong> a</h1>
             <h1><i>comunidade <strong>escolar</strong></i></h1>
             <p>Transformando o ambiente escolar e conectando pessoas.</p>
-            <a><button class="saibacas" >Saiba mais</button></a>
+            <a href="pages/sobre_nos.php"><button class="saibacas" >Saiba mais</button></a>
             <a href="pages/register.php"><button class="saibacas" >Cadastre-se</button></a>
         </div>
         <img class="escola" src="src/imgs/escola.png">
