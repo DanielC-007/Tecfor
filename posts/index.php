@@ -83,6 +83,7 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
     </style>
 </head>
 <body>
+    <a href="../pages/home.php">voltar</a>
     <form method="POST" enctype="multipart/form-data" action="">
         <p><label for="">Selecione o arquivo</label>
         <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>
