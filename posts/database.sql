@@ -7,5 +7,8 @@ CREATE TABLE arquivos (
     nome VARCHAR(100) NOT NULL,
     path VARCHAR(100) NOT NULL,
     comentario TEXT,
+    ip_selecionado VARCHAR(10),
     data_uploaded DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+drop table arquivos;

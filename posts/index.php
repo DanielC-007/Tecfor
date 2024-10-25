@@ -20,7 +20,7 @@ if (isset($_GET['deletar'])) {
     }
 }
 
-function enviarArquivo($error, $size, $name, $tmp_name, $comentario) {
+function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecionado) {
     include("conexao.php");
 
     if ($size > 2097152) {
@@ -39,8 +39,8 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario) {
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($tmp_name, $path);
     if ($deu_certo) {
-        $stmt = $mysqli->prepare("INSERT INTO arquivos (nome, path, comentario, data_uploaded) VALUES (?, ?, ?, NOW())");
-        $stmt->bind_param("sss", $nomeDoArquivo, $path, $comentario);
+        $stmt = $mysqli->prepare("INSERT INTO arquivos (nome, path, comentario, ip_selecionado, data_uploaded) VALUES (?, ?, ?, ?, NOW())");
+        $stmt->bind_param("ssss", $nomeDoArquivo, $path, $comentario, $ip_selecionado);
         $stmt->execute() or die($mysqli->error);
         return true;
     } else {
@@ -51,9 +51,10 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario) {
 if (isset($_FILES['arquivo'])) {
     $arquivos = $_FILES['arquivo'];
     $comentario = $_POST['comentario'];
+    $ip_selecionado = $_POST['ip_selecionado'];
     $tudo_certo = true;
     foreach ($arquivos['name'] as $index => $name) {
-        $deu_certo = enviarArquivo($arquivos['error'][$index], $arquivos['size'][$index], $name, $arquivos['tmp_name'][$index], $comentario);
+        $deu_certo = enviarArquivo($arquivos['error'][$index], $arquivos['size'][$index], $name, $arquivos['tmp_name'][$index], $comentario, $ip_selecionado);
         if (!$deu_certo) {
             $tudo_certo = false;
         }
@@ -66,14 +67,13 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
     <style>
-        /* Estilo para o elemento de pré-visualização */
         #preview {
             display: block;
             margin-top: 10px;
@@ -88,8 +88,15 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
         <p><label for="">Selecione o arquivo</label>
         <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>
         <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
+
         <p><label for="">Deixe um comentário</label><br>
         <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea><br>
+
+        <p>Escolha uma opção:</p>
+        <label><input type="radio" name="ip_selecionado" value="ip1" required> IP1</label>
+        <label><input type="radio" name="ip_selecionado" value="ip2" required> IP2</label>
+        <label><input type="radio" name="ip_selecionado" value="ip3" required> IP3</label><br>
+
         <button name="upload" type="submit">Enviar arquivo</button>
     </form>
 
@@ -99,8 +106,9 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
             <th>Preview</th>
             <!-- <th>Arquivo</th> -->
             <th>Comentário</th>
+            <th>Opção IP</th>
             <th>Data de Envio</th>
-            <!-- <th>Ações</th> -->
+            <th>Ações</th>
         </thead>
         <tbody>
             <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
@@ -108,15 +116,15 @@ $sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
                     <td><img src="<?php echo $arquivo['path']; ?>" width="100"></td>
                     <!-- <td><a target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome']; ?></a></td> -->
                     <td><?php echo htmlspecialchars($arquivo['comentario']); ?></td>
+                    <td><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></td>
                     <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_uploaded'])); ?></td>
-                    <!-- <td><a href="index.php?deletar=<?php echo $arquivo['id']; ?>">Delete</a></td> -->
+                    <td><a href="index.php?deletar=<?php echo $arquivo['id']; ?>">Delete</a></td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 
     <script>
-        // Função para pré-visualizar a imagem
         function previewImage(event) {
             const preview = document.getElementById('preview');
             const file = event.target.files[0];
