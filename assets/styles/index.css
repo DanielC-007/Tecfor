@@ -252,15 +252,15 @@ footer div p {
 
 .box1 .setabnt:hover {
     cursor: pointer;
-    animation: leftRight 1.5s;
+    animation: leftRight 1s infinite;
 }
 
 .box3 .setabnt:hover {
     cursor: pointer;
-    animation: rightLeft 1.5s;
+    animation: rightLeft 1s infinite;
 }
 
-#setabnt1{
+#setabnt1 {
     visibility: hidden;
 }
 
@@ -285,7 +285,9 @@ footer div p {
 }
 
 @keyframes leftRight {
-    100%, 0% {
+
+    100%,
+    0% {
         transform: translateX(0%);
     }
 
@@ -295,7 +297,9 @@ footer div p {
 }
 
 @keyframes rightLeft {
-    100%, 0% {
+
+    100%,
+    0% {
         transform: translateX(0%);
     }
 
@@ -307,8 +311,8 @@ footer div p {
 @keyframes opacidadeOff {
     from {
         opacity: 100%;
-    } 
-    
+    }
+
     to {
         opacity: 0%;
     }
@@ -321,5 +325,127 @@ footer div p {
 
     to {
         opacity: 100%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    header {
+        height: 10vh;
+        display: block;
+    }
+
+    header div {
+        margin: 0;
+        padding: 5px;
+        justify-content: center;
+    }
+
+    header div button {
+        height: 45px;
+        width: 80px;
+        font-size: 20px;
+        margin-left: 25px;
+        
+    }
+
+    header div ul a li {
+        margin: 0 5px;
+        font-size: 20px;
+        text-decoration: underline 3px #916dd5;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .escola {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        transform: translateY(0);
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer div {
+        margin: 10px 0;
+    }
+
+    .contato h1 {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .container .maincon {
+        height: auto; /* Deixe a altura automática para se adaptar ao conteúdo */
+        width: 90%; /* Reduza a largura para melhorar a responsividade */
+        max-width: 1180px; /* Defina uma largura máxima */
+        border-radius: 15px;
+        background: linear-gradient(90deg, #13072e 0%, #3f2182 100%);
+        padding: 20px; /* Adicione um pouco de preenchimento interno */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adicione sombra para destaque */
+    }
+    
+    .divdl {
+        flex-direction: column; /* Alinhe os itens verticalmente */
+        width: 100%; /* Garanta que ocupe toda a largura */
+        align-items: stretch; /* Faça as caixas ocuparem o espaço disponível */
+    }
+    
+    .box1, .box2, .box3 {
+        width: 100%; /* Faça as boxes ocuparem toda a largura */
+        margin: 10px 0; /* Espaçamento entre as boxes */
+    }
+    
+    .box2 {
+        padding: 20px; /* Aumente o preenchimento interno */
+        background: rgba(255, 255, 255, 0.1); /* Um fundo leve para contraste */
+        border-radius: 10px; /* Bordas arredondadas */
+    }
+
+    .box1,
+    .box3 {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .box2 p {
+        font-size: 18px;
+    }
+
+    .box2 h2 {
+        font-size: 22px;
+    }
+
+    .box1 .setaimg,
+    .box3 .setaimg {
+        height: 40px;
+        width: 40px;
+    }
+
+    .setabnt {
+        margin: 0 10px 50px 0;
     }
 }
