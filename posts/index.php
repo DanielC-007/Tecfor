@@ -1,14 +1,14 @@
 ﻿<?php
-include("conexao.php");
+include("../connection/connect.php");
 
 if (isset($_GET['deletar'])) {
     $id = intval($_GET['deletar']);
-    $sql_query = $mysqli->query("SELECT * FROM arquivos WHERE id = '$id'") or die($mysqli->error);
+    $sql_query = $connect->query("SELECT * FROM arquivos WHERE id = '$id'") or die($connect->error);
     $arquivo = $sql_query->fetch_assoc();
 
     if ($arquivo && isset($arquivo['path']) && file_exists($arquivo['path'])) {
         if (unlink($arquivo['path'])) {
-            $deu_certo = $mysqli->query("DELETE FROM arquivos WHERE id = '$id'") or die($mysqli->error);
+            $deu_certo = $connect->query("DELETE FROM arquivos WHERE id = '$id'") or die($connect->error);
             if ($deu_certo) {
                 echo "<p>Arquivo excluído com sucesso</p>";
             }
@@ -21,7 +21,7 @@ if (isset($_GET['deletar'])) {
 }
 
 function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecionado) {
-    include("conexao.php");
+    include("../connection/connect.php");
 
     if ($size > 2097152) {
         die("Arquivo muito grande!!");
@@ -39,9 +39,9 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecio
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($tmp_name, $path);
     if ($deu_certo) {
-        $stmt = $mysqli->prepare("INSERT INTO arquivos (nome, path, comentario, ip_selecionado, data_uploaded) VALUES (?, ?, ?, ?, NOW())");
+        $stmt = $connect->prepare("INSERT INTO arquivos (nome, path, comentario, ip_selecionado, data_uploaded) VALUES (?, ?, ?, ?, NOW())");
         $stmt->bind_param("ssss", $nomeDoArquivo, $path, $comentario, $ip_selecionado);
-        $stmt->execute() or die($mysqli->error);
+        $stmt->execute() or die($connect->error);
         return true;
     } else {
         return false;
@@ -63,7 +63,7 @@ if (isset($_FILES['arquivo'])) {
     exit();
 }
 
-$sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
+$sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 ?>
 
 <!DOCTYPE html>
