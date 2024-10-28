@@ -1,15 +1,5 @@
 ﻿<?php
-    session_start();
-    include_once('../connection/connect.php');
-    if(!isset($_SESSION['email']) == true and !isset($_SESSION['senha']) == true){
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header('Location: ../pages/login.php');
-    }
-    $logado = $_SESSION['email'];
-?>
-
-<?php
+include_once("../php/filtro.php");
 include("../connection/connect.php");
 
 if (isset($_GET['deletar'])) {
@@ -34,6 +24,13 @@ if (isset($_GET['deletar'])) {
 function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecionado) {
     include("../connection/connect.php");
 
+    // Obter o ID do usuário logado
+    session_start();
+    $email = $_SESSION['email'];
+    $query = $connect->query("SELECT id_aluno FROM alunos WHERE email = '$email'");
+    $aluno = $query->fetch_assoc();
+    $id_aluno = $aluno['id_aluno'];
+
     if ($size > 2097152) {
         die("Arquivo muito grande!!");
     }
@@ -50,14 +47,15 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecio
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($tmp_name, $path);
     if ($deu_certo) {
-        $stmt = $connect->prepare("INSERT INTO arquivos (nome, path, comentario, ip_selecionado, data_uploaded) VALUES (?, ?, ?, ?, NOW())");
-        $stmt->bind_param("ssss", $nomeDoArquivo, $path, $comentario, $ip_selecionado);
+        $stmt = $connect->prepare("INSERT INTO arquivos (nome, path, comentario, ip_selecionado, data_uploaded, id_aluno) VALUES (?, ?, ?, ?, NOW(), ?)");
+        $stmt->bind_param("ssssi", $nomeDoArquivo, $path, $comentario, $ip_selecionado, $id_aluno);
         $stmt->execute() or die($connect->error);
         return true;
     } else {
         return false;
     }
 }
+
 
 if (isset($_FILES['arquivo'])) {
     $arquivos = $_FILES['arquivo'];
@@ -112,31 +110,6 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 
         <button name="upload" type="submit">Enviar arquivo</button>
     </form>
-
-    <!-- <h1>Lista de Arquivos</h1>
-    <table border="1" cellpadding="10">
-        <thead>
-            <th>Preview</th>
-            <th>Arquivo</th>
-            <th>Comentário</th>
-            <th>Opção IP</th>
-            <th>Data de Envio</th>
-            <th>Ações</th>
-        </thead>
-        <tbody>
-            <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
-                <tr>
-                    <td><img src="<?php echo $arquivo['path']; ?>" width="100"></td>
-                    <td><a target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome']; ?></a></td>
-                    <td><?php echo htmlspecialchars($arquivo['comentario']); ?></td>
-                    <td><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></td>
-                    <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_uploaded'])); ?></td>
-                    <td><a href="index.php?deletar=<?php echo $arquivo['id']; ?>">Delete</a></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table> -->
-
     <script>
         function previewImage(event) {
             const preview = document.getElementById('preview');

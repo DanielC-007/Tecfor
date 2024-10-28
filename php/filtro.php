@@ -5,7 +5,7 @@ include_once('../connection/connect.php');
 if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 
