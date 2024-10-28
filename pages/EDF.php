@@ -1,12 +1,5 @@
 <?php
-  session_start();
-  include_once('../connection/connect.php');
-  if(!isset($_SESSION['email']) == true and !isset($_SESSION['senha']) == true){
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header('Location: login.php');
-    }
-    $logado = $_SESSION['email'];
+  include_once("../php/filtro.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +13,7 @@
   <link rel="icon" href="../src/imgs/icon.png" />
   <script src="../assets/scripts/script.js" defer></script>
   <?php // require_once("../connection/connect.php"); ?>
-  <title>Sala 3</title>
+  <title>EDF</title>
 </head>
 
 <body>

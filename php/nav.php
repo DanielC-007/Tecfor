@@ -5,17 +5,17 @@
                 <img src="../src/imgs/home.png" />
                 <p>Página principal</p>
             </button></a>
-        <a href="sala1.php"><button>
+        <a href="DS.php"><button>
                 <img src="../src/imgs/chats.png" />
-                <p>Sala 1</p>
+                <p>DS</p>
             </button></a>
-        <a href="sala2.php"><button>
+        <a href="ADM.php"><button>
                 <img src="../src/imgs/chats.png" />
-                <p>Sala 2</p>
+                <p>ADM</p>
             </button></a>
-        <a href="sala3.php"><button>
+        <a href="EDF.php"><button>
                 <img src="../src/imgs/chats.png" />
-                <p>Sala 3</p>
+                <p>EDF</p>
             </button></a>
     </div>
     <div>
