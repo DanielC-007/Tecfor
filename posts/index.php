@@ -1,4 +1,15 @@
 ﻿<?php
+    session_start();
+    include_once('../connection/connect.php');
+    if(!isset($_SESSION['email']) == true and !isset($_SESSION['senha']) == true){
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header('Location: ../pages/login.php');
+    }
+    $logado = $_SESSION['email'];
+?>
+
+<?php
 include("../connection/connect.php");
 
 if (isset($_GET['deletar'])) {
@@ -59,7 +70,7 @@ if (isset($_FILES['arquivo'])) {
             $tudo_certo = false;
         }
     }
-    header("Location: " . $_SERVER['PHP_SELF']);
+    header("Location: arquivos_publicados.php");
     exit();
 }
 
@@ -67,7 +78,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,6 +95,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 </head>
 <body>
     <a href="../pages/home.php">voltar</a>
+    <a href="arquivos_publicados.php">Arquivos</a>
     <form method="POST" enctype="multipart/form-data" action="">
         <p><label for="">Selecione o arquivo</label>
         <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>
@@ -93,18 +105,19 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
         <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea><br>
 
         <p>Escolha uma opção:</p>
-        <label><input type="radio" name="ip_selecionado" value="ip1" required> IP1</label>
-        <label><input type="radio" name="ip_selecionado" value="ip2" required> IP2</label>
-        <label><input type="radio" name="ip_selecionado" value="ip3" required> IP3</label><br>
+        <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
+        <label><input type="radio" name="ip_selecionado" value="ADM" required> ADM</label>
+        <label><input type="radio" name="ip_selecionado" value="EDF" required> EDF</label>
+        <label><input type="radio" name="ip_selecionado" value="INFO" required> INFO</label><br>
 
         <button name="upload" type="submit">Enviar arquivo</button>
     </form>
 
-    <h1>Lista de Arquivos</h1>
+    <!-- <h1>Lista de Arquivos</h1>
     <table border="1" cellpadding="10">
         <thead>
             <th>Preview</th>
-            <!-- <th>Arquivo</th> -->
+            <th>Arquivo</th>
             <th>Comentário</th>
             <th>Opção IP</th>
             <th>Data de Envio</th>
@@ -114,7 +127,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
             <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
                 <tr>
                     <td><img src="<?php echo $arquivo['path']; ?>" width="100"></td>
-                    <!-- <td><a target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome']; ?></a></td> -->
+                    <td><a target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome']; ?></a></td>
                     <td><?php echo htmlspecialchars($arquivo['comentario']); ?></td>
                     <td><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></td>
                     <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_uploaded'])); ?></td>
@@ -122,7 +135,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
                 </tr>
             <?php } ?>
         </tbody>
-    </table>
+    </table> -->
 
     <script>
         function previewImage(event) {
