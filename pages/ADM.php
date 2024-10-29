@@ -21,10 +21,13 @@
   
   <?php
   require_once("../php/all.php");
-  require_once("../posts/ADM.php");
   ?>
 
-  <main class="container"></main>
+  <main class="container">
+    <?php
+    require_once("../posts/ADM.php");
+    ?>
+  </main>
 </body>
 
 </html>

@@ -97,7 +97,7 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
-.containerPost{
+.containerPost {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,23 +133,33 @@ form input[type="submit"]:hover {
 }
 
 .publicacaoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   justify-content: space-between;
-  background-color: var(--cor2);
   margin-top: 30px;
-  width: 50vw;
-  min-width: 250px;
-  height: auto;
+  min-width: 75vw;
   border-radius: 5px;
-  padding: 5px;
 }
 
 .publicacaoDiv img {
-  width: 100%;
-  border-radius: 5px;
+  background-color: var(--cor1);
+  width: auto;
+  max-width: 50vw;
+  height: 50vh;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 5px;
 }
 
-.publicacaoDiv h3 {
-  font-weight: normal;
+.publicacaoDiv div {
+  background-color: var(--cor2);
+  background-color: var(--cor2);
+  height: 50vh;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 .cabecalho {
@@ -157,7 +167,7 @@ form input[type="submit"]:hover {
   align-items: center;
 }
 
-.cabecalho img{
+.cabecalho img {
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -355,7 +365,7 @@ form input[type="submit"]:hover {
   animation: pulse 1.5s;
 }
 
-#fileImgUser{
+#fileImgUser {
   background-color: var(--cor1);
   border-radius: 5px;
   margin-top: 5px;
@@ -404,6 +414,7 @@ form input[type="submit"]:hover {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
