@@ -18,14 +18,15 @@ include_once("../php/filtro.php");
 <body>
   <?php
   require_once("../php/all.php");
+  require_once("../posts/arquivos_publicados.php");
   ?>
   <main class="container">
-    <div class="publicacaoDiv">
+    <!-- <div class="publicacaoDiv">
       <div class="cabecalho"><img src="../src/imgs/userDark.png"><?php echo $logadoNome; ?></div>
       <div class="descricao"><h3>Veja esse incrível lobo!</h3></div>
       <img src="../src/imgs/Lobo.jpeg">
-      <!-- <div class="rodape">/*cod do diego*/</div> -->
-    </div>
+      <div class="rodape">/*cod do diego*/</div>
+    </div> -->
   </main>
 </body>
 

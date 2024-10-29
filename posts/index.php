@@ -68,7 +68,7 @@ if (isset($_FILES['arquivo'])) {
             $tudo_certo = false;
         }
     }
-    header("Location: arquivos_publicados.php");
+    header("Location: ../pages/home.php");
     exit();
 }
 
@@ -93,11 +93,11 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 </head>
 <body>
     <a href="../pages/home.php">voltar</a>
-    <a href="arquivos_publicados.php">Arquivos</a>
+    <!-- <a href="arquivos_publicados.php">Arquivos</a>
     <a href="DS.php">DS</a>
     <a href="ADM.php">ADM</a>
     <a href="INFO.php">INFO</a>
-    <a href="EDF.php">EDF</a>
+    <a href="EDF.php">EDF</a> -->
     <form method="POST" enctype="multipart/form-data" action="">
         <p><label for="">Selecione o arquivo</label>
         <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>

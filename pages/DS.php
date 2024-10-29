@@ -20,6 +20,7 @@
   
   <?php
   require_once("../php/all.php");
+  require_once("../posts/DS.php");
   ?>
 
   <main class="container"></main>

@@ -20,8 +20,8 @@ $sql_query = $connect->query("
     <title>Publicações DS</title>
 </head>
 <body>
-    <a href="index.php">Voltar</a>
-    <h1>Lista de Arquivos Publicados - DS</h1>
+    <!-- <a href="index.php">Voltar</a>
+    <h1>Lista de Arquivos Publicados - DS</h1> -->
     <table border="1" cellpadding="10">
         <thead>
             <th>Preview</th>
@@ -33,7 +33,7 @@ $sql_query = $connect->query("
         <tbody>
             <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
                 <tr>
-                    <td><img src="<?php echo $arquivo['path']; ?>" width="100"></td>
+                    <td><img src="../posts/<?php echo $arquivo['path']; ?>" width="100"></td>
                     <td><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></td>
                     <td><?php echo htmlspecialchars($arquivo['comentario']); ?></td>
                     <td><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></td>

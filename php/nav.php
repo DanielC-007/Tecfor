@@ -17,6 +17,12 @@
                 <img src="../src/imgs/chats.png" />
                 <p>EDF</p>
             </button></a>
+        <a href="INFO.php">
+            <button>
+                <img src="../src/imgs/chats.png">
+                <p>INFO</p>
+            </button>
+        </a>
     </div>
     <div>
         <button onclick="tema()">

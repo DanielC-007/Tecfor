@@ -12,15 +12,14 @@
   <link rel="stylesheet" href="../assets/styles/style.css" />
   <link rel="icon" href="../src/imgs/icon.png" />
   <script src="../assets/scripts/script.js" defer></script>
-  <?php // require_once("../connection/connect.php"); ?>
-  <title>EDF</title>
+  <title>INFO</title>
 </head>
 
 <body>
   
   <?php
   require_once("../php/all.php");
-  require_once("../posts/EDF.php");
+  require_once("../posts/INFO.php");
   ?>
 
   <main class="container"></main>
