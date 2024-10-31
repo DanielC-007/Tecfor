@@ -81,23 +81,11 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../src/imgs/icon.png">
     <title>Upload</title>
-    <style>
-        #preview {
-            display: block;
-            margin-top: 10px;
-            max-width: 200px;
-            max-height: 200px;
-        }
-    </style>
 </head>
 <body>
     <a href="../pages/home.php">voltar</a>
-    <!-- <a href="arquivos_publicados.php">Arquivos</a>
-    <a href="DS.php">DS</a>
-    <a href="ADM.php">ADM</a>
-    <a href="INFO.php">INFO</a>
-    <a href="EDF.php">EDF</a> -->
     <form method="POST" enctype="multipart/form-data" action="">
         <p><label for="">Selecione o arquivo</label>
         <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>
