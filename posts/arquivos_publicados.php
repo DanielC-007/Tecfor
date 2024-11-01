@@ -24,6 +24,7 @@ $sql_query = $connect->query("
             <img src="../posts/<?php echo $arquivo['path']; ?>" width="100">
             <div>
                 <p><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></p>
+                <p><?php echo htmlspecialchars($arquivo['titulo']); ?></p>
                 <p><?php echo htmlspecialchars($arquivo['comentario']); ?></p>
                 <p><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></p>
                 <p><?php echo date("d/m/Y H:i", strtotime($arquivo['data_uploaded'])); ?></p>
