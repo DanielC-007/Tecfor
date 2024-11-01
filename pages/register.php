@@ -45,16 +45,18 @@ if(isset($_POST['submit'])){
     <title>Cadastro</title>
 </head>
 <body>
-    <a onclick="history.go(-1);" class="back">Voltar</a>
+    <a href="../index.php" class="back">Voltar</a>
     <main class="container">
         <form method="POST">
-            <h2>Registro</h2>
+            <h2>Cadastro</h2>
             <img src="../src/imgs/raposa.png">
             <input type="text" id="nome" name="nome" placeholder="Nome">
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="password" id="password" name="password" placeholder="Senha">
-            <p></p>
-            <input type="submit" name="submit" value="Enviar">
+            <div class="dldiv">
+                <a href="login.php" class="loginbnt">Login</a>
+                <input type="submit" name="submit" value="Enviar">
+            </div>
         </form>
     </main>
 </body>

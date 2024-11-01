@@ -21,10 +21,9 @@ if (isset($_GET['deletar'])) {
     }
 }
 
-function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecionado) {
+function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecionado, $titulo) {
     include("../connection/connect.php");
 
-    // Obter o ID do usuário logado
     session_start();
     $email = $_SESSION['email'];
     $query = $connect->query("SELECT id_aluno FROM alunos WHERE email = '$email'");
@@ -40,15 +39,15 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecio
     $novoNomeDoArquivo = uniqid();
     $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 
-    if ($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg") {
+    if (!in_array($extensao, ['jpg', 'png', 'jpeg'])) {
         die("Tipo de arquivo não aceito");
     }
 
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
     $deu_certo = move_uploaded_file($tmp_name, $path);
     if ($deu_certo) {
-        $stmt = $connect->prepare("INSERT INTO arquivos (nome, path, comentario, ip_selecionado, data_uploaded, id_aluno) VALUES (?, ?, ?, ?, NOW(), ?)");
-        $stmt->bind_param("ssssi", $nomeDoArquivo, $path, $comentario, $ip_selecionado, $id_aluno);
+        $stmt = $connect->prepare("INSERT INTO arquivos (titulo, nome, path, comentario, ip_selecionado, data_uploaded, id_aluno) VALUES (?, ?, ?, ?, ?, NOW(), ?)");
+        $stmt->bind_param("sssssi", $titulo, $nomeDoArquivo, $path, $comentario, $ip_selecionado, $id_aluno);
         $stmt->execute() or die($connect->error);
         return true;
     } else {
@@ -57,13 +56,15 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecio
 }
 
 
+
 if (isset($_FILES['arquivo'])) {
     $arquivos = $_FILES['arquivo'];
     $comentario = $_POST['comentario'];
     $ip_selecionado = $_POST['ip_selecionado'];
+    $titulo = $_POST['titulo']; // Capture o título do formulário
     $tudo_certo = true;
     foreach ($arquivos['name'] as $index => $name) {
-        $deu_certo = enviarArquivo($arquivos['error'][$index], $arquivos['size'][$index], $name, $arquivos['tmp_name'][$index], $comentario, $ip_selecionado);
+        $deu_certo = enviarArquivo($arquivos['error'][$index], $arquivos['size'][$index], $name, $arquivos['tmp_name'][$index], $comentario, $ip_selecionado, $titulo);
         if (!$deu_certo) {
             $tudo_certo = false;
         }
@@ -71,6 +72,7 @@ if (isset($_FILES['arquivo'])) {
     header("Location: ../pages/home.php");
     exit();
 }
+
 
 $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 ?>
@@ -82,6 +84,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../src/imgs/icon.png">
+    <link rel="stylesheet" href="../assets/styles/post.css">
     <title>Upload</title>
 </head>
 <body>
@@ -90,6 +93,10 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
         <p><label for="">Selecione o arquivo</label>
         <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>
         <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
+
+        <p><label for="titulo">Título da Publicação</label><br>
+        <input type="text" name="titulo" id="titulo" required></p>
+
 
         <p><label for="">Deixe um comentário</label><br>
         <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea><br>

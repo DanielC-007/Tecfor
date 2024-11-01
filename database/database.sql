@@ -19,5 +19,6 @@ CREATE TABLE arquivos (
     ip_selecionado VARCHAR(10),
     data_uploaded DATETIME DEFAULT CURRENT_TIMESTAMP,
     id_aluno INT,
+    tituloVARCHAR(100) NOT NULL,
     FOREIGN KEY (id_aluno) REFERENCES alunos (id_aluno)
 );
