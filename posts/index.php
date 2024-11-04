@@ -88,27 +88,31 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
     <title>Upload</title>
 </head>
 <body>
-    <a href="../pages/home.php">voltar</a>
-    <form method="POST" enctype="multipart/form-data" action="">
-        <p><label for="">Selecione o arquivo</label>
-        <input multiple name="arquivo[]" type="file" onchange="previewImage(event)"></p>
-        <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
-
-        <p><label for="titulo">Título da Publicação</label><br>
-        <input type="text" name="titulo" id="titulo" required></p>
-
-
-        <p><label for="">Deixe um comentário</label><br>
-        <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea><br>
-
-        <p>Escolha uma opção:</p>
-        <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
-        <label><input type="radio" name="ip_selecionado" value="ADM" required> ADM</label>
-        <label><input type="radio" name="ip_selecionado" value="EDF" required> EDF</label>
-        <label><input type="radio" name="ip_selecionado" value="INFO" required> INFO</label><br>
-
-        <button name="upload" type="submit">Enviar arquivo</button>
-    </form>
+    <a href="../pages/home.php" class="back">voltar</a>
+    <main class="container">
+        <form method="POST" enctype="multipart/form-data" action="">
+            <div class="box1">
+                <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
+                <div>
+                    <input type="text" name="titulo" id="titulo" required placeholder="Adicione um título">
+                    <input name="arquivo[]" type="file" onchange="previewImage(event)">
+                </div>
+            </div>
+            <div class="box2">
+                <textarea name="comentario" id="comentario" placeholder="Adicione uma descrição"></textarea><br>
+                <div>
+                    <div>
+                        <p>Publique em algum curso</p>
+                        <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
+                        <label><input type="radio" name="ip_selecionado" value="ADM" required> ADM</label>
+                        <label><input type="radio" name="ip_selecionado" value="EDF" required> EDF</label>
+                        <label><input type="radio" name="ip_selecionado" value="INFO" required> INFO</label><br>
+                    </div>
+                </div>
+            </div>
+            <button name="upload" type="submit">Enviar arquivo</button>            
+        </form>
+    </main>
     <script>
         function previewImage(event) {
             const preview = document.getElementById('preview');
