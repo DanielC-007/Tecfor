@@ -24,7 +24,6 @@ if (isset($_GET['deletar'])) {
 function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecionado, $titulo) {
     include("../connection/connect.php");
 
-    session_start();
     $email = $_SESSION['email'];
     $query = $connect->query("SELECT id_aluno FROM alunos WHERE email = '$email'");
     $aluno = $query->fetch_assoc();
@@ -100,7 +99,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
             </div>
             <div class="box2">
                 <textarea name="comentario" id="comentario" placeholder="Adicione uma descrição"></textarea><br>
-                <div>
+                <div class="box22">
                     <div>
                         <p>Publique em algum curso</p>
                         <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
