@@ -90,12 +90,10 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
     <a href="../pages/home.php" class="back">voltar</a>
     <main class="container">
         <form method="POST" enctype="multipart/form-data" action="">
+            <input type="text" name="titulo" id="titulo" required placeholder="Adicione um título">
             <div class="box1">
                 <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
-                <div>
-                    <input type="text" name="titulo" id="titulo" required placeholder="Adicione um título">
-                    <input name="arquivo[]" type="file" onchange="previewImage(event)">
-                </div>
+                <input name="arquivo[]" type="file" onchange="previewImage(event)">
             </div>
             <div class="box2">
                 <textarea name="comentario" id="comentario" placeholder="Adicione uma descrição"></textarea><br>
@@ -109,7 +107,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
                     </div>
                 </div>
             </div>
-            <button name="upload" type="submit">Enviar arquivo</button>            
+            <button name="upload" type="submit" class="submit">Publicar</button>            
         </form>
     </main>
     <script>

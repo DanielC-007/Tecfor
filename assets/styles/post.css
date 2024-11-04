@@ -35,7 +35,7 @@ body {
 }
 
 form {
-  border-radius: 25px;
+  border-radius: 15px;
   border: solid 3px #916dd5;
   padding: 15px;
   text-align: center;
@@ -43,7 +43,6 @@ form {
 
 .box2 {
   display: flex;
-  justify-content: space-between;
   margin: 10px;
 }
 
@@ -51,7 +50,11 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  border: solid 3px #916dd5;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 3px;
+  width: 100%;
 }
 
 .box2 .box22 div {
@@ -67,18 +70,11 @@ form {
   align-items: center;
 }
 
-.box1 div {
-  text-align: start;
-  margin-top: 10px;
-  width: 100%;
-}
-
 #preview {
   border: solid 3px #916dd5;
   border-radius: 15px;
-  width: auto;
   max-width: 50vw;
-  height: 50vh;
+  max-height: 50vh;
 }
 
 input[type="text"],
@@ -98,6 +94,23 @@ input[type="text"] {
 textarea {
   border-radius: 10px;
   resize: none;
-  width: 250px;
-  height: 100px;
+  width: 100%;
+  margin: 3px;
+}
+
+input[type=file] {
+  margin-top: 10px;
+}
+
+.submit {
+  background-color: transparent;
+  padding: 5px;
+  color: #dac7ff;
+  border: solid 3px #916dd5;
+  border-radius: 10px;
+}
+
+.submit:hover {
+  background-color: #916dd5;
+  cursor: pointer;
 }
