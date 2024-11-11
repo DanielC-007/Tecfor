@@ -23,7 +23,6 @@ include_once("../php/filtro.php");
     <?php
     require_once("../posts/arquivos_publicados.php");
     ?>
-  <a href="../posts/upload_foto.php">asdjkç</a>
   </main>
 </body>
 

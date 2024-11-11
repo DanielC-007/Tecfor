@@ -2,10 +2,9 @@
 include_once("../php/filtro.php");
 include("../connection/connect.php");
 
-// Consulta para obter todos os arquivos do banco de dados
 $sql_query = $connect->query("
-    SELECT arquivos.*, alunos.nome AS nome_aluno 
-    FROM arquivos 
+    SELECT arquivos.*, alunos.nome AS nome_aluno, alunos.foto_perfil
+    FROM arquivos
     JOIN alunos ON arquivos.id_aluno = alunos.id_aluno
     ORDER BY arquivos.data_uploaded DESC
 ") or die($connect->error);
@@ -22,13 +21,20 @@ $sql_query = $connect->query("
 <body>
     <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
         <div class="publicacaoDiv">
-            <img src="../posts/<?php echo $arquivo['path']; ?>" width="100">
+            <img src="../posts/<?php echo $arquivo['path']; ?>">
             <div>
-                <p><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></p>
-                <p><?php echo htmlspecialchars($arquivo['titulo']); ?></p>
-                <p><?php echo htmlspecialchars($arquivo['comentario']); ?></p>
-                <p><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></p>
-                <p><?php echo date("d/m/Y H:i", strtotime($arquivo['data_uploaded'])); ?></p>
+                <div class="postInfo">
+                    <img class="imgUser" src="<?php echo htmlspecialchars($arquivo['foto_perfil']) ? htmlspecialchars($arquivo['foto_perfil']) : '../src/imgs/userDefault.png'; ?>">
+                    <div>
+                        <p><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></p>
+                        <p><?php echo date("d/m/Y", strtotime($arquivo['data_uploaded'])); ?></p>
+                        <p><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></p>
+                    </div>
+                </div>
+                <div class="titDesc">
+                    <h1><?php echo htmlspecialchars($arquivo['titulo']); ?></h1>
+                    <p><?php echo htmlspecialchars($arquivo['comentario']); ?></p>
+                </div>
             </div>
         </div>
     <?php } ?>

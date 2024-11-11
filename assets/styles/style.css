@@ -166,7 +166,7 @@ form input[type="submit"]:hover {
 
 .publicacaoDiv {
   display: flex;
-  margin-top: 50px;
+  margin-top: 25px;
   width: 65vw;
 }
 
@@ -180,9 +180,40 @@ form input[type="submit"]:hover {
 .publicacaoDiv div {
   border-radius: 10px;
   border: solid 3px #916dd5;
-  padding: 5px;
   margin-left: 5px;
   width: 100%;
+}
+
+.publicacaoDiv .imgUser {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.publicacaoDiv .postInfo{
+  background-color: var(--cor2);
+  display: flex;
+  margin: 0;
+  padding: 5px;
+  border: transparent;
+  border-bottom: solid 3px #916dd5;
+  border-radius: 7px 7px 0 0;
+  width: calc(100% - 10px);
+}
+
+.publicacaoDiv .postInfo div {
+  display: block;
+  border: transparent;
+}
+
+.publicacaoDiv .titDesc {
+  margin: 0;
+  border: transparent;
+  border-bottom: solid 3px #916dd5;
+  border-radius: 0;
+  padding: 5px;
+  width: calc(100% - 10px);
 }
 
 /*! ids */
