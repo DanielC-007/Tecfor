@@ -1,5 +1,5 @@
 <button id="z" onclick="infoUserOpenClose()"></button>
-<?php include_once("../posts/upload_foto.php");?>
+<?php include_once("../src/upload_foto.php");?>
   <aside id="infoUser">
     <?php if (!empty($aluno['foto_perfil'])): ?>
         <img id="preview" src="../posts/<?php echo htmlspecialchars($aluno['foto_perfil']); ?>">

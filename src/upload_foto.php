@@ -8,9 +8,10 @@ if (!isset($_SESSION['email'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
     $email = $_SESSION['email'];
-    $query = $connect->query("SELECT id_aluno FROM alunos WHERE email = '$email'");
+    $query = $connect->query("SELECT id_aluno, foto_perfil FROM alunos WHERE email = '$email'");
     $aluno = $query->fetch_assoc();
     $id_aluno = $aluno['id_aluno'];
+    $foto_perfil_atual = $aluno['foto_perfil']; // Pega a foto atual
 
     $arquivo = $_FILES['foto_perfil'];
     $size = $arquivo['size'];
@@ -22,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
         die("Arquivo muito grande!!");
     }
 
-    // Define a pasta e o novo nome do arquivo
     $pasta = "../src/fotos_perfil/";
     $novoNomeArquivo = uniqid() . "." . strtolower(pathinfo($name, PATHINFO_EXTENSION));
     $path = $pasta . $novoNomeArquivo;
@@ -31,6 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
     $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
     if (!in_array($extensao, ['jpg', 'jpeg', 'png'])) {
         die("Tipo de arquivo não permitido. Apenas JPG, JPEG e PNG são aceitos.");
+    }
+
+    // Deleta a foto antiga, se existir
+    if (!empty($foto_perfil_atual) && file_exists($foto_perfil_atual)) {
+        unlink($foto_perfil_atual);
     }
 
     // Move o arquivo para a pasta de destino
@@ -47,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
         echo "<p>Falha ao enviar a foto de perfil.</p>";
     }
 }
+
 
 // Obtém as informações do usuário logado
 $email = $_SESSION['email'];

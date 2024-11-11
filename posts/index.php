@@ -101,6 +101,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
                 <div class="box22">
                     <div>
                         <p>Publique em algum curso</p>
+                        <label><input type="radio" name="ip_selecionado" value="Geral" required> Geral</label>
                         <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
                         <label><input type="radio" name="ip_selecionado" value="ADM" required> ADM</label>
                         <label><input type="radio" name="ip_selecionado" value="EDF" required> EDF</label>

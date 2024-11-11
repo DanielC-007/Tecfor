@@ -5,6 +5,12 @@
                 <img src="../src/imgs/home.png" />
                 <p>Página principal</p>
             </button></a>
+            <a href="Geral.php">
+                <button>
+                    <img src="../src/imgs/chats.png">
+                    <p>Geral</p>
+                </button>
+            </a>
         <a href="DS.php"><button>
                 <img src="../src/imgs/chats.png" />
                 <p>DS</p>
