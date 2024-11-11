@@ -21,7 +21,7 @@
                     <li>Home</li>
                 </a><a href="">
                     <li style="color: #916dd5;">Sobre nós</li>
-                </a><a href="contato.php">
+                </a><a href="#footer">
                     <li>Contato</li>
                 </a>
             </ul>
@@ -59,5 +59,29 @@
             </div>
         </div>
     </main>
+    <footer id="footer">
+        Tecfor - 2024 ©Copyright
+
+        <a href="">
+            <img src="./src/imgs/insta.png">
+            @_tecfor
+        </a>
+        <a href="">
+            <img src="./src/imgs/gmail.png">
+            tecfor.etecrgs@gmail.com
+        </a>
+    </footer>
 </body>
+<style>
+#box2 {
+    visibility: visible;
+    display: none;
+}
+
+#setabnt1 {
+    visibility: visible;
+    display: none;
+}
+</style>
+
 </html>

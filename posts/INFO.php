@@ -8,6 +8,7 @@ $sql_query = $connect->query("
     FROM arquivos 
     JOIN alunos ON arquivos.id_aluno = alunos.id_aluno
     WHERE arquivos.ip_selecionado = 'INFO'
+    ORDER BY arquivos.data_uploaded DESC
 ") or die($connect->error);
 ?>
 

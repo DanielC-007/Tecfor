@@ -1,3 +1,19 @@
+:root {
+  --corFundo: #0b001a;
+  --corTexto: white;
+  --cor1: #e0c0f1;
+  --cor2: #3f2182;
+  --cor3: #3f2182;
+}
+
+body.lightTheme {
+  --corFundo: #fff0ff;
+  --corTexto: black;
+  --cor1: #200e4b;
+  --cor2: #dbb6ee;
+  --cor3: #e0b0ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +22,13 @@
 }
 
 body {
-  background-image: url(../../src/imgs/fundo.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: var(--corFundo);
 }
 
 .back {
   position: fixed;
   transform: translateY(20px);
-  color: #dac7ff;
+  color: var(--cor1);
   text-decoration: none;
   border: solid 2px #916dd5;
   border-radius: 50px;
@@ -39,6 +52,18 @@ form {
   border: solid 3px #916dd5;
   padding: 15px;
   text-align: center;
+}
+
+input{
+  color: var(--corTexto);
+}
+
+p{
+  color: var(--cor1);
+}
+
+label{
+  color: var(--corTexto);
 }
 
 .box2 {
@@ -96,6 +121,7 @@ textarea {
   resize: none;
   width: 100%;
   margin: 3px;
+  color: var(--corTexto);
 }
 
 input[type=file] {
@@ -105,9 +131,11 @@ input[type=file] {
 .submit {
   background-color: transparent;
   padding: 5px;
-  color: #dac7ff;
+  color: var(--cor1);
   border: solid 3px #916dd5;
   border-radius: 10px;
+  height: 50px;
+  width: 100px;
 }
 
 .submit:hover {

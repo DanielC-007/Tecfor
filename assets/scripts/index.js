@@ -4,21 +4,15 @@ function passarInfo() {
     var box1 = document.getElementById("box1");
     var box2 = document.getElementById("box2");
 
-    if (box1.style.visibility == "hidden" || box2.style.visibility == "visible") {
-        console.log("Bye bye");
-        bnt1.style.visibility = "hidden";
-        bnt2.style.visibility = "visible";
-        box1.style.animation = "opacidadeOn 1s";
-        box2.style.animation = "opacidadeOff 1s";
-        box1.style.visibility = "visible";
-        box2.style.visibility = "hidden";
+    if (box1.style.display == "none" || box2.style.display == "block") {
+        bnt1.style.display = "none";
+        bnt2.style.display = "block";
+        box1.style.display = "block";
+        box2.style.display = "none";
     } else {
-        console.log("Hello");
-        bnt1.style.visibility = "visible";
-        bnt2.style.visibility = "hidden";
-        box1.style.animation = "opacidadeOff 1s";
-        box2.style.animation = "opacidadeOn 1s";
-        box1.style.visibility = "hidden";
-        box2.style.visibility = "visible";
+        bnt1.style.display = "block";
+        bnt2.style.display = "none";
+        box1.style.display = "none";
+        box2.style.display = "block";
     }
 }

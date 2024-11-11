@@ -124,15 +124,15 @@ form input[type="submit"]:hover {
   width: 50px;
 }
 
-.pesquisaDiv {
+/* .pesquisaDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #7151a9;
   padding: 5px;
-}
+} */
 
-.publicacaoDiv {
+/* .publicacaoDiv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,15 +144,14 @@ form input[type="submit"]:hover {
 
 .publicacaoDiv img {
   background-color: var(--cor1);
-  width: auto;
   max-width: 50vw;
-  height: 50vh;
+  max-height: 50vh;
   border-radius: 15px;
   margin: 5px;
   padding: 5px;
 }
 
-.publicacaoDiv div {
+ .publicacaoDiv div {
   background-color: var(--cor2);
   background-color: var(--cor2);
   height: 50vh;
@@ -160,45 +159,28 @@ form input[type="submit"]:hover {
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
-}
+} */
 
-.cabecalho {
+.publicacaoDiv {
   display: flex;
-  align-items: center;
+  margin-top: 50px;
+  width: 65vw;
 }
 
-.cabecalho img {
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-right: 5px;
+.publicacaoDiv img {
+  border-radius: 10px;
+  border: solid 3px #916dd5;
+  height: auto;
+  width: 40vw;
 }
 
-.postFlexCollum {
-  display: flex;
-  flex-direction: column;
-}
-
-.postFlexCollum textarea {
-  border: none;
-  border-radius: 5px;
-  height: 75px;
+.publicacaoDiv div {
+  /* background-color: var(--cor3); */
+  border-radius: 10px;
+  border: solid 3px #916dd5;
   padding: 5px;
-  background-color: var(--cor1);
-  resize: none;
-  margin-top: 5px;
-}
-
-.imgpub {
-  background-color: #7151a9;
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: 5px;
-}
-
-.imgpub img {
-  height: 40vh;
-  border-radius: 5px;
+  margin-left: 5px;
+  width: 100%;
 }
 
 /*! ids */
@@ -226,13 +208,13 @@ form input[type="submit"]:hover {
   visibility: hidden;
 }
 
-#barraPesquisa {
+/* #barraPesquisa {
   background-color: var(--cor2);
   border: none;
   border-radius: 5px;
   height: 30px;
   width: calc(400px - 5px - 30px);
-}
+} */
 
 #procurar {
   background-color: var(--corFundo);
@@ -272,7 +254,7 @@ form input[type="submit"]:hover {
 #infoUser .sair {
   border: solid 3px red;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 50px;
   width: 250px;
   margin: 5px;
@@ -308,7 +290,7 @@ form input[type="submit"]:hover {
 #salas button {
   background-color: transparent;
   border: solid 3px #6941ad;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 290px;
   height: 50px;
   margin-top: 5px;
@@ -445,9 +427,9 @@ form input[type="submit"]:hover {
     width: 40px;
   }
 
-  #barraPesquisa {
+  /* #barraPesquisa {
     height: 20px;
-  }
+  } */
 
   #procurar {
     height: 20px;
@@ -506,4 +488,16 @@ form input[type="submit"]:hover {
   #post img {
     height: 55px;
   }
+
+  .publicacaoDiv{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .publicacaoDiv img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+
 }

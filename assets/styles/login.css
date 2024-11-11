@@ -95,7 +95,7 @@ form .div1 input {
   border: solid 3px #916dd5;
   color: #dac7ff;
   border-radius: 100px;
-  padding: 5px;
+  padding: 5px 5px 5px 15px;
   margin: 5px 0 15px 0;
   outline: none;
 }

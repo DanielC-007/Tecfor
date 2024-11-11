@@ -84,6 +84,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../src/imgs/icon.png">
     <link rel="stylesheet" href="../assets/styles/post.css">
+    <script src="../assets/scripts/script.js" defer></script>
     <title>Upload</title>
 </head>
 <body>

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/styles/index.css">
     <link rel="icon" href="src/imgs/icon.png">
     <title>Tecfor</title>
+
+    <!-- htacess -->
 </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
                     <li style="color: #916dd5;">Home</li>
                 </a><a href="pages/sobre_nos.php">
                     <li>Sobre nós</li>
-                </a><a href="pages/contato.php">
+                </a><a href="#footer">
                     <li>Contato</li>
                 </a>
             </ul>
@@ -30,7 +32,7 @@
     <main>
         <div>
             <h1>Um novo meio</h1>
-            <h1>de se <strong>conectar</strong> a</h1>
+            <h1>de se <strong>conectar</strong> à</h1>
             <h1><i>comunidade <strong>escolar</strong></i></h1>
             <p>Transformando o ambiente escolar e conectando pessoas.</p>
             <a href="pages/sobre_nos.php"><button class="saibacas" >Saiba mais</button></a>
@@ -38,5 +40,18 @@
         </div>
         <img class="escola" src="src/imgs/escola.png">
     </main>
+
+    <footer id="footer">
+        Tecfor - 2024 ©Copyright
+
+        <a href="">
+            <img src="./src/imgs/insta.png">
+            @_tecfor
+        </a>
+        <a href="">
+            <img src="./src/imgs/gmail.png">
+            tecfor.etecrgs@gmail.com
+        </a>
+    </footer>
 </body>
 </html>

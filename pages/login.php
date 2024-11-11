@@ -25,42 +25,38 @@ if(isset($_POST['submit'])){
             
             $hash = $aluno['senha_hash'];
             if(password_verify($senha, $hash)){
-                // echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Login feito para o usuário</h4>" . $aluno['nome'];
                 $_SESSION['email'] = $email;
                 $_SESSION['senha'] = $senha;
                 header('Location: home.php');
             } else{
-                echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Senha inválida</h4>";
+                // echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Senha inválida</h4>";
                 unset($_SESSION['email']);
                 unset($_SESSION['senha']);
-                // header('location: login.php');
+                echo "<script>alert('Senha inválida');</script>";
             }
         } else {
-            echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Email não cadastrado</h4>";
+            // echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Email não cadastrado</h4>";
             unset($_SESSION['email']);
             unset($_SESSION['senha']);
-            // header('location: login.php');
+            echo "<script>alert('Email não cadastrado');</script>";
         }
     } else {
-        echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Insira os dados corretamente</h4>";
+        // echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;';>Insira os dados corretamente</h4>";
         unset($_SESSION['email']);
         unset($_SESSION['senha']);
-        // header('location: login.php');
+        echo "<script>alert('Insira os dados corretamente');</script>";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../src/imgs/icon.png">
     <link rel="stylesheet" href="../assets/styles/login.css">
-    <!-- <script src="../assets/scripts/script.js" defer></script> -->
     <title>Login</title>
 </head>
 
