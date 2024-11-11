@@ -54,8 +54,8 @@ if(isset($_POST['submit'])){
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="password" id="password" name="password" placeholder="Senha">
             <div class="dldiv">
-                <a href="login.php" class="loginbnt">Login</a>
-                <input type="submit" name="submit" value="Enviar">
+                <a href="login.php">Já possui conta?</a>
+                <input type="submit" name="submit" value="Cadastrar">
             </div>
         </form>
     </main>

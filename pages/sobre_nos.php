@@ -63,11 +63,11 @@
         Tecfor - 2024 ©Copyright
 
         <a href="">
-            <img src="./src/imgs/insta.png">
+            <img src="../src/imgs/insta.png">
             @_tecfor
         </a>
         <a href="">
-            <img src="./src/imgs/gmail.png">
+            <img src="../src/imgs/gmail.png">
             tecfor.etecrgs@gmail.com
         </a>
     </footer>

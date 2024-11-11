@@ -77,7 +77,7 @@ if(isset($_POST['submit'])){
                     <input type="password" placeholder="Senha" name="password" id="password">
                 </div>
                 <div class="div2">
-                    <a href="register.php" id="cad">Cadastre-se</a>
+                    <a href="register.php">Não possui conta?</a>
                     <input type="submit" value="Entrar" name="submit">
                 </div>
             </form>
