@@ -28,8 +28,8 @@
         <button onclick="tema()">
             <img id="sunMoon" src="../src/imgs/sun.png" />Alterar tema
         </button>
-        <button class="sair">
-            <a href="../php/sair.php">Sair</a>
-        </button>
+            <a href="../php/sair.php" class="sair">
+                <button>Sair</button>
+            </a>
     </div>
 </nav>

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/styles/index.css">
     <link rel="icon" href="src/imgs/icon.png">
     <title>Tecfor</title>
-
     <!-- htacess -->
 </head>
 <body>

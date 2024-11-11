@@ -149,7 +149,7 @@ form input[type="submit"]:hover {
   padding: 5px;
 }
 
- .publicacaoDiv div {
+.publicacaoDiv div {
   background-color: var(--cor2);
   background-color: var(--cor2);
   height: 50vh;
@@ -173,7 +173,6 @@ form input[type="submit"]:hover {
 }
 
 .publicacaoDiv div {
-  /* background-color: var(--cor3); */
   border-radius: 10px;
   border: solid 3px #916dd5;
   padding: 5px;
@@ -265,7 +264,11 @@ form input[type="submit"]:hover {
   background-color: red;
 } */
 
-.sair:hover {
+#salas .sair button {
+  border: solid red;
+}
+
+#salas .sair button:hover {
   background-color: red;
 }
 
@@ -308,7 +311,6 @@ form input[type="submit"]:hover {
 }
 
 #salas button:hover,
-#eye:hover,
 #telaConfig button:hover {
   background-color: #6941ad;
 }

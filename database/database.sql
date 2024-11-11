@@ -6,6 +6,7 @@ id_aluno int not null auto_increment,
 nome varchar(225),
 email varchar(225),
 senha_hash varchar(225),
+foto_perfil VARCHAR(225),
 primary key (id_aluno)
 );
 
