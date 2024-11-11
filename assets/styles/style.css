@@ -122,6 +122,11 @@ form input[type="submit"]:hover {
   width: 50px;
 }
 
+.header button .imgUser {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* .pesquisaDiv {
   display: flex;
   justify-content: center;
@@ -242,10 +247,60 @@ form input[type="submit"]:hover {
   visibility: hidden;
 }
 
+#infoUser h1 {
+  font-size: 35px;
+}
+
 #infoUser img {
   width: 250px;
   height: 250px;
   margin: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#infoUser form {
+  padding: 0;
+  margin-top: 10px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+#infoUser form input {
+  color: var(--corTexto);
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+#infoUser form button {
+  color: var(--corTexto);
+  background-color: transparent;
+  border: solid 3px #3f2182;
+  border-radius: 50px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+#infoUser form button:hover{
+  background-color: #3f2182;
+}
+
+.custom-file-label {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: solid 3px #6941ad;
+  color: var(--corTexto);
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.custom-file-label:hover {
+  background-color: #6941ad;
 }
 
 /* .sair {
@@ -493,12 +548,12 @@ form input[type="submit"]:hover {
     height: 55px;
   }
 
-  .publicacaoDiv{
+  .publicacaoDiv {
     flex-direction: column;
     align-items: center;
   }
-  
-  .publicacaoDiv img{
+
+  .publicacaoDiv img {
     width: 100%;
     height: auto;
     margin-bottom: 5px;

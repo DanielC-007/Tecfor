@@ -93,7 +93,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
         <form method="POST" enctype="multipart/form-data" action="">
             <input type="text" name="titulo" id="titulo" required placeholder="Adicione um título">
             <div class="box1">
-                <img id="preview" src="" alt="Pré-visualização da imagem" style="display: none;">
+                <img id="preview" alt="Pré-visualização da imagem" style="display: none;">
                 <input name="arquivo[]" type="file" onchange="previewImage(event)">
             </div>
             <div class="box2">

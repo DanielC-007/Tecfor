@@ -122,5 +122,3 @@ function carregarTema() {
 }
 
 carregarTema();
-
-// 
