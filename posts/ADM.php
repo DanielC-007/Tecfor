@@ -2,10 +2,9 @@
 include_once("../php/filtro.php");
 include("../connection/connect.php");
 
-// Filtra apenas as publicações com 'DS' no ip_selecionado
 $sql_query = $connect->query("
-    SELECT arquivos.*, alunos.nome AS nome_aluno 
-    FROM arquivos 
+    SELECT arquivos.*, alunos.nome AS nome_aluno, alunos.foto_perfil
+    FROM arquivos
     JOIN alunos ON arquivos.id_aluno = alunos.id_aluno
     WHERE arquivos.ip_selecionado = 'ADM'
     ORDER BY arquivos.data_uploaded DESC
@@ -21,27 +20,25 @@ $sql_query = $connect->query("
     <title>Publicações DS</title>
 </head>
 <body>
-    <!-- <a href="index.php">Voltar</a>
-    <h1>Lista de Arquivos Publicados - DS</h1> -->
-    <table border="1" cellpadding="10">
-        <thead>
-            <th>Preview</th>
-            <th>Nome do Usuário</th>
-            <th>Comentário</th>
-            <th>Opção IP</th>
-            <th>Data de Envio</th>
-        </thead>
-        <tbody>
-            <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
-                <tr>
-                    <td><img src="../posts/<?php echo $arquivo['path']; ?>" width="100"></td>
-                    <td><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></td>
-                    <td><?php echo htmlspecialchars($arquivo['comentario']); ?></td>
-                    <td><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></td>
-                    <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_uploaded'])); ?></td>
-                </tr>
-            <?php } ?>
-        </tbody>
+    <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
+        <div class="publicacaoDiv">
+            <img src="../posts/<?php echo $arquivo['path']; ?>">
+            <div>
+                <div class="postInfo">
+                    <img class="imgUser" src="<?php echo htmlspecialchars($arquivo['foto_perfil']) ? htmlspecialchars($arquivo['foto_perfil']) : '../src/imgs/userDefault.png'; ?>">
+                    <div>
+                        <p><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></p>
+                        <p><?php echo date("d/m/Y", strtotime($arquivo['data_uploaded'])); ?></p>
+                        <p><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></p>
+                    </div>
+                </div>
+                <div class="titDesc">
+                    <h1><?php echo htmlspecialchars($arquivo['titulo']); ?></h1>
+                    <p><?php echo htmlspecialchars($arquivo['comentario']); ?></p>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     </table>
 </body>
 </html>
