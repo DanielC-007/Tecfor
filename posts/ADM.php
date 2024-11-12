@@ -27,9 +27,9 @@ $sql_query = $connect->query("
                 <div class="postInfo">
                     <img class="imgUser" src="<?php echo htmlspecialchars($arquivo['foto_perfil']) ? htmlspecialchars($arquivo['foto_perfil']) : '../src/imgs/userDefault.png'; ?>">
                     <div>
-                        <p><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></p>
-                        <p><?php echo date("d/m/Y", strtotime($arquivo['data_uploaded'])); ?></p>
-                        <p><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></p>
+                        <h4><?php echo htmlspecialchars($arquivo['nome_aluno']); ?></h4>
+                        <h6><?php echo date("d/m/Y", strtotime($arquivo['data_uploaded'])); ?></h6>
+                        <h5><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></h5>
                     </div>
                 </div>
                 <div class="titDesc">

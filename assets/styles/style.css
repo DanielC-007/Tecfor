@@ -135,35 +135,6 @@ form input[type="submit"]:hover {
   padding: 5px;
 } */
 
-/* .publicacaoDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  min-width: 75vw;
-  border-radius: 5px;
-}
-
-.publicacaoDiv img {
-  background-color: var(--cor1);
-  max-width: 50vw;
-  max-height: 50vh;
-  border-radius: 15px;
-  margin: 5px;
-  padding: 5px;
-}
-
-.publicacaoDiv div {
-  background-color: var(--cor2);
-  background-color: var(--cor2);
-  height: 50vh;
-  width: 100%;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 5px;
-} */
-
 .publicacaoDiv {
   display: flex;
   margin-top: 25px;
@@ -215,8 +186,6 @@ form input[type="submit"]:hover {
   padding: 5px;
   width: calc(100% - 10px);
 }
-
-/*! ids */
 
 #icon {
   width: 70px;

@@ -78,6 +78,7 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,48 +88,53 @@ $sql_query = $connect->query("SELECT * FROM arquivos") or die($connect->error);
     <script src="../assets/scripts/script.js" defer></script>
     <title>Upload</title>
 </head>
+
 <body>
     <a href="../pages/home.php" class="back">voltar</a>
     <main class="container">
         <form method="POST" enctype="multipart/form-data" action="">
-            <input type="text" name="titulo" id="titulo" required placeholder="Adicione um título">
-            <div class="box1">
-                <img id="preview" alt="Pré-visualização da imagem" style="display: none;">
-                <input name="arquivo[]" type="file" onchange="previewImage(event)">
-            </div>
-            <div class="box2">
-                <textarea name="comentario" id="comentario" placeholder="Adicione uma descrição"></textarea><br>
-                <div class="box22">
-                    <div>
-                        <p>Publique em algum curso</p>
-                        <label><input type="radio" name="ip_selecionado" value="Geral" required> Geral</label>
-                        <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
-                        <label><input type="radio" name="ip_selecionado" value="ADM" required> ADM</label>
-                        <label><input type="radio" name="ip_selecionado" value="EDF" required> EDF</label>
-                        <label><input type="radio" name="ip_selecionado" value="INFO" required> INFO</label><br>
+            <img id="preview" alt="Pré-visualização da imagem" style="display: none;">
+            <div class="boxes">
+                <div class="box1">
+                    <label for="arquivo" class="custom-file-label">Selecionar imagem</label>
+                    <input name="arquivo[]" id="arquivo" type="file" onchange="previewImage(event)"
+                        style="display: none;">
+                    <input type="text" name="titulo" id="titulo" required placeholder="Adicione um título">
+                </div>
+                <div class="box2">
+                    <textarea name="comentario" id="comentario" placeholder="Adicione uma descrição"></textarea><br>
+                    <div class="box22">
+                        <div>
+                            <p>Publique em algum curso</p>
+                            <label><input type="radio" name="ip_selecionado" value="Geral" required> Geral</label>
+                            <label><input type="radio" name="ip_selecionado" value="DS" required> DS</label>
+                            <label><input type="radio" name="ip_selecionado" value="ADM" required> ADM</label>
+                            <label><input type="radio" name="ip_selecionado" value="EDF" required> EDF</label>
+                            <label><input type="radio" name="ip_selecionado" value="INFO" required> INFO</label><br>
+                        </div>
                     </div>
                 </div>
+                <button name="upload" type="submit" class="submit">Publicar</button>
             </div>
-            <button name="upload" type="submit" class="submit">Publicar</button>            
         </form>
     </main>
     <script>
-        function previewImage(event) {
-            const preview = document.getElementById('preview');
-            const file = event.target.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                }
-                reader.readAsDataURL(file);
-            } else {
-                preview.src = '';
-                preview.style.display = 'none';
+    function previewImage(event) {
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
             }
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '';
+            preview.style.display = 'none';
         }
+    }
     </script>
 </body>
+
 </html>

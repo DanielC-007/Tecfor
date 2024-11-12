@@ -12,7 +12,9 @@
 <body>
 <header>
         <div>
-            <img src="../src/imgs/icon.png">
+            <a href="../index.php">
+                <img src="../src/imgs/icon.png">
+            </a>
             <h4>Tecfor</h4>
         </div>
         <div>

@@ -52,10 +52,18 @@ form {
   border: solid 3px #916dd5;
   padding: 15px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxes{
+  display: block;
 }
 
 input{
   color: var(--corTexto);
+  font-size: 16px;
 }
 
 p{
@@ -68,7 +76,7 @@ label{
 
 .box2 {
   display: flex;
-  margin: 10px;
+  margin: 5px 10px;
 }
 
 .box2 .box22 {
@@ -89,7 +97,8 @@ label{
 }
 
 .box1 {
-  margin: 10px;
+  margin: 5px 10px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +122,7 @@ textarea {
 
 input[type="text"] {
   height: 30px;
-  width: 250px;
+  width: 100%;
 }
 
 textarea {
@@ -124,21 +133,33 @@ textarea {
   color: var(--corTexto);
 }
 
-input[type=file] {
-  margin-top: 10px;
-}
-
 .submit {
   background-color: transparent;
   padding: 5px;
   color: var(--cor1);
   border: solid 3px #916dd5;
-  border-radius: 10px;
+  border-radius: 50px;
   height: 50px;
-  width: 100px;
+  width: 150px;
+  font-size: 16px;
 }
 
 .submit:hover {
   background-color: #916dd5;
   cursor: pointer;
+}
+
+.custom-file-label {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: solid 3px #6941ad;
+  color: var(--corTexto);
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.custom-file-label:hover {
+  background-color: #6941ad;
 }
