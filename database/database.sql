@@ -10,8 +10,6 @@ foto_perfil VARCHAR(225),
 primary key (id_aluno)
 );
 
-INSERT INTO alunos (nome, email, senha_hash) VALUES ('Teste', 'teste@gmail.com', '$2y$10$9cfejYyQzfGJxQ4eBwleT.4OQXuVVJ8hclqGQhbB6/o32YVB4LfGm');
-
 CREATE TABLE arquivos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -23,3 +21,15 @@ CREATE TABLE arquivos (
     titulo VARCHAR(100) NOT NULL,
     FOREIGN KEY (id_aluno) REFERENCES alunos (id_aluno)
 );
+
+CREATE TABLE comentarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_arquivo INT NOT NULL,
+    id_aluno INT NOT NULL,
+    comentario TEXT NOT NULL,
+    data_comentario DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_arquivo) REFERENCES arquivos(id),
+    FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno)
+);
+
+INSERT INTO alunos (nome, email, senha_hash) VALUES ('Teste', 'teste@gmail.com', '$2y$10$9cfejYyQzfGJxQ4eBwleT.4OQXuVVJ8hclqGQhbB6/o32YVB4LfGm');

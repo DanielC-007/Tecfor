@@ -12,6 +12,9 @@
         <label for="foto_perfil" class="custom-file-label">Mudar foto de perfil</label>
         <input type="file" name="foto_perfil" id="foto_perfil" required style="display:none;" onchange="previewImage(event)">
       <button type="submit" name="upload">Confirmar Foto</button>
+      <!-- <?php if (!empty($aluno['foto_perfil'])): ?>
+            <button type="submit" name="remove_foto">Remover Foto</button>
+        <?php endif; ?> -->
     </form>
   </aside>
 
