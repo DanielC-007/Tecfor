@@ -3,7 +3,7 @@
   --corTexto: white;
   --cor1: #13072e;
   --cor2: #3f2182;
-  --cor3: #3f2182;
+  --cor3: #291452;
 }
 
 body.lightTheme {
@@ -146,6 +146,7 @@ form input[type="submit"]:hover {
   border: solid 3px #916dd5;
   height: auto;
   width: 40vw;
+  padding: 3px;
 }
 
 .publicacaoDiv div {
@@ -153,6 +154,16 @@ form input[type="submit"]:hover {
   border: solid 3px #916dd5;
   margin-left: 5px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.publicacaoDiv div .caixa2 {
+  margin: 0;
+  border: transparent;
+  border-radius: 0;
 }
 
 .publicacaoDiv .imgUser {
@@ -162,9 +173,10 @@ form input[type="submit"]:hover {
   width: 50px;
 }
 
-.publicacaoDiv .postInfo{
+.publicacaoDiv .postInfo {
   background-color: var(--cor2);
-  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 0;
   padding: 5px;
   border: transparent;
@@ -185,6 +197,67 @@ form input[type="submit"]:hover {
   border-radius: 0;
   padding: 5px;
   width: calc(100% - 10px);
+}
+
+.publicacaoDiv .comentarios {
+  border: transparent;
+  margin: 0;
+  border-radius: 0;
+  max-height: 40vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: red;
+}
+
+.publicacaoDiv .comentarios .comentario {
+  background-color: var(--cor3);
+  margin: 0 0 5px 0;
+  border: transparent;
+  border-radius: 0;
+  border-bottom: solid 3px #916dd5;
+}
+
+.publicacaoDiv .comentarios .comentario p {
+  margin: 5px;
+  font-size: larger;
+}
+
+.publicacaoDiv .comentarios .comentario div {
+  background-color: var(--cor1);
+  width: calc(100% - 7px);
+  padding: 3px;
+  flex-direction: row;
+  align-items: center;
+  border: transparent;
+  margin: 0;
+  border-radius: 0;
+}
+
+.publicacaoDiv .comentarios .comentario div .imgUser {
+  height: 30px;
+  width: 30px;
+}
+
+.publicacaoDiv .comentarios .comentario div div {
+  display: block;
+  border: transparent;
+  border-radius: 0;
+}
+
+.publicacaoDiv .comentar {
+  margin: 0;
+  border: transparent;
+  border-radius: 0;
+}
+
+.publicacaoDiv .comentar form {
+  width: calc(100% - 10px);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 7px 7px;
+  border-top: solid 3px #916dd5;
+  background-color: var(--cor2);
 }
 
 #icon {
@@ -285,7 +358,7 @@ form input[type="submit"]:hover {
   margin-bottom: 5px;
 }
 
-#infoUser form button:hover{
+#infoUser form button:hover {
   background-color: #3f2182;
 }
 
