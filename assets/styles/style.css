@@ -144,9 +144,10 @@ form input[type="submit"]:hover {
 .publicacaoDiv img {
   border-radius: 10px;
   border: solid 3px #916dd5;
-  height: auto;
+  height: 40vw;
   width: 40vw;
   padding: 3px;
+  object-fit: cover;
 }
 
 .publicacaoDiv div {
@@ -154,10 +155,10 @@ form input[type="submit"]:hover {
   border: solid 3px #916dd5;
   margin-left: 5px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
+  display: block;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* align-items: start; */
 }
 
 .publicacaoDiv div .caixa2 {
@@ -175,6 +176,7 @@ form input[type="submit"]:hover {
 
 .publicacaoDiv .postInfo {
   background-color: var(--cor2);
+  display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
@@ -203,8 +205,8 @@ form input[type="submit"]:hover {
   border: transparent;
   margin: 0;
   border-radius: 0;
-  max-height: 40vh;
-  overflow-y: scroll;
+  height: 100%;
+  overflow-y: auto;
   scroll-behavior: smooth;
   background-color: red;
 }
@@ -258,6 +260,40 @@ form input[type="submit"]:hover {
   border-radius: 0 0 7px 7px;
   border-top: solid 3px #916dd5;
   background-color: var(--cor2);
+}
+
+.publicacaoDiv .comentar form textarea {
+  outline: none;
+  resize: none;
+  background-color: var(--cor3);
+  color: var(--corTexto);
+  border-radius: 50px;
+  border: solid 3px #916dd5;
+  text-align: center;
+  padding: 5px 0 0  10px;
+  font-size: 16px;
+  height: 25px;
+  width: 75%;
+}
+
+.publicacaoDiv .comentar form button {
+  background-color: transparent;
+}
+
+.publicacaoDiv .comentar form button[type="submit"] {
+  border: solid 3px #916dd5;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: var(--cor3);
+}
+
+.publicacaoDiv .comentar form button[type="submit"]:hover {
+  background-color: #916dd5;
+}
+
+.publicacaoDiv .comentar form button img {
+  height: 25px;
+  width: 25px;
 }
 
 #icon {
@@ -376,22 +412,6 @@ form input[type="submit"]:hover {
 .custom-file-label:hover {
   background-color: #6941ad;
 }
-
-/* .sair {
-  border: solid 3px red;
-  background-color: transparent;
-  border-radius: 10px;
-  height: 50px;
-  width: 250px;
-  margin: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sair:hover {
-  background-color: red;
-} */
 
 #salas .sair button {
   border: solid red;
