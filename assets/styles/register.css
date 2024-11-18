@@ -36,6 +36,7 @@ form input {
   color: #dac7ff;
   border-radius: 100px;
   padding: 5px;
+  padding-left: 10px;
   margin: 5px 0 15px 0;
   outline: none;
   font-size: large;
@@ -105,4 +106,19 @@ p {
 
 .dldiv a:hover {
   text-decoration: underline 3px #916dd5;
+}
+
+@media screen and (max-width: 685px) {
+
+  form {
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  form input {
+    width: calc(350px / 2 + 50px);
+
+  }
+
 }

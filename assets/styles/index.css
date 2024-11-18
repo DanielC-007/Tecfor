@@ -126,6 +126,7 @@ footer {
     align-items: center;
     justify-content: center;
     height: 20vh;
+    margin-top: 150px;
 }
 
 footer div {
@@ -357,7 +358,7 @@ footer a img{
     }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 685px) {
     header {
         height: 10vh;
         display: block;
@@ -393,6 +394,7 @@ footer a img{
         height: auto;
         margin-right: 0;
         transform: translateY(0);
+        margin: 15px 0;
     }
 
     h1 {
@@ -409,6 +411,7 @@ footer a img{
 
     footer {
         flex-direction: column;
+        margin-top: 150px;
     }
 
     footer div {
@@ -427,30 +430,30 @@ footer a img{
     }
 
     .container .maincon {
-        height: auto; /* Deixe a altura automática para se adaptar ao conteúdo */
-        width: 90%; /* Reduza a largura para melhorar a responsividade */
-        max-width: 1180px; /* Defina uma largura máxima */
+        height: auto;
+        width: 90%; 
+        max-width: 1180px; 
         border-radius: 15px;
         background: linear-gradient(90deg, #13072e 0%, #3f2182 100%);
-        padding: 20px; /* Adicione um pouco de preenchimento interno */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adicione sombra para destaque */
+        padding: 20px;  
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
     }
     
     .divdl {
-        flex-direction: column; /* Alinhe os itens verticalmente */
-        width: 100%; /* Garanta que ocupe toda a largura */
-        align-items: stretch; /* Faça as caixas ocuparem o espaço disponível */
+        flex-direction: column; 
+        width: 100%;  
+        align-items: stretch;
     }
     
     .box1, .box2, .box3 {
-        width: 100%; /* Faça as boxes ocuparem toda a largura */
-        margin: 10px 0; /* Espaçamento entre as boxes */
+        width: 100%; 
+        margin: 10px 0; 
     }
     
     .box2 {
-        padding: 20px; /* Aumente o preenchimento interno */
-        background: rgba(255, 255, 255, 0.1); /* Um fundo leve para contraste */
-        border-radius: 10px; /* Bordas arredondadas */
+        padding: 20px; 
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px; 
     }
 
     .box1,
@@ -476,5 +479,13 @@ footer a img{
 
     .setabnt {
         margin: 0 10px 50px 0;
+    }
+    
+    main div {
+        text-align: center;
+    }
+
+    main div .saibacas{
+        margin-bottom: 5px;
     }
 }

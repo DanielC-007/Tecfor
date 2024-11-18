@@ -152,13 +152,13 @@ h2 {
 }
 
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 685px) {
 
   .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 95vh;
   }
 
   .box1 img {
@@ -173,10 +173,12 @@ h2 {
 
   .box1 {
     visibility: hidden;
+    position: fixed;
   }
   
   .box2 {
     width: 100vw;
+    /* position: absolute; */
   }
 
   form {
@@ -186,6 +188,6 @@ h2 {
   }
 
   form .div1 input{
-    width: calc(350px / 2);
+    width: calc(350px / 2 + 50px);
   }
 }

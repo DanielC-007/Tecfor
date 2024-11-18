@@ -148,7 +148,7 @@ form input[type="submit"]:hover {
   border-radius: 10px;
   border: solid 3px #916dd5;
   margin-left: 5px;
-  max-height: calc(40vw + 12px);
+  max-height: calc(40vw + 7px);
 }
 
 .publicacaoDiv .imgUser {
@@ -174,6 +174,28 @@ form input[type="submit"]:hover {
 .publicacaoDiv .postInfo div {
   display: block;
   border: transparent;
+}
+
+.publicacaoDiv .postInfo .dropPost {
+  background-color: transparent;
+  border: solid 3px red;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.publicacaoDiv .postInfo .dropPost:hover {
+  background-color: red;
+}
+
+.publicacaoDiv .postInfo .editPost {
+  background-color: transparent;
+  border: solid 3px #916dd5;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.publicacaoDiv .postInfo .editPost:hover {
+  background-color: #916dd5;
 }
 
 .publicacaoDiv .titDesc {
@@ -202,7 +224,7 @@ form input[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: calc(100% - 120px - 6px);
+  height: calc(100% - 27vh - 2px);
 }
 
 .publicacaoDiv .comentarios .comentario {
@@ -222,6 +244,7 @@ form input[type="submit"]:hover {
   background-color: var(--cor1);
   width: calc(100% - 7px);
   padding: 3px;
+  display: flex;
   flex-direction: row;
   align-items: center;
   border: transparent;
@@ -277,6 +300,7 @@ form input[type="submit"]:hover {
 .publicacaoDiv .comentar form button[type="submit"] {
   border: solid 3px #916dd5;
   padding: 5px;
+  margin-left: 5px;
   border-radius: 50px;
   background-color: var(--cor3);
 }
@@ -543,8 +567,8 @@ form input[type="submit"]:hover {
   }
 }
 
-/*! ajustar tela */
 
+/*! ajustar tela */
 @media screen and (max-width: 685px) {
   .header {
     height: 30px;

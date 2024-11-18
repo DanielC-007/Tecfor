@@ -164,3 +164,12 @@ textarea {
 .custom-file-label:hover {
   background-color: #6941ad;
 }
+
+@media screen and (max-width: 685px) {
+  form {
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 55px;
+    border: transparent;
+  }
+}

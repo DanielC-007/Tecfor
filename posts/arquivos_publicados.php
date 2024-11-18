@@ -1,7 +1,7 @@
 <?php
 include("../connection/connect.php");
 
-// Verifique se o usuário está logado
+// Verifica se o usuário está logado
 if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
@@ -9,10 +9,10 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
     exit();
 }
 
-// Defina o e-mail logado na variável
+// Define o e-mail logado na variável
 $logadoEmail = $_SESSION['email'];
 
-// Obter `id_aluno` do usuário logado
+// Obtém `id_aluno` e nome do usuário logado
 $sql = "SELECT id_aluno, nome FROM alunos WHERE email = ?";
 $stmt = $connect->prepare($sql);
 $stmt->bind_param("s", $logadoEmail);
@@ -29,23 +29,129 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 
+// Processa a exclusão de publicações
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_arquivo_id'])) {
+    $delete_arquivo_id = $_POST['delete_arquivo_id'];
+
+    // Verifica se o usuário logado é o dono da publicação
+    $stmt = $connect->prepare("SELECT path, id_aluno FROM arquivos WHERE id = ?");
+    $stmt->bind_param("i", $delete_arquivo_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $arquivo = $result->fetch_assoc();
+        
+        if ($arquivo['id_aluno'] == $id_aluno) {
+            // Apagar os comentários relacionados
+            $stmt_delete_comments = $connect->prepare("DELETE FROM comentarios WHERE id_arquivo = ?");
+            $stmt_delete_comments->bind_param("i", $delete_arquivo_id);
+            $stmt_delete_comments->execute();
+            $stmt_delete_comments->close();
+
+            // Apagar a imagem do servidor
+            $file_path = "../posts/" . $arquivo['path'];
+            if (file_exists($file_path)) {
+                unlink($file_path);
+            }
+
+            // Apagar o arquivo da base de dados
+            $stmt_delete_file = $connect->prepare("DELETE FROM arquivos WHERE id = ?");
+            $stmt_delete_file->bind_param("i", $delete_arquivo_id);
+            $stmt_delete_file->execute();
+            $stmt_delete_file->close();
+
+            header("Location: {$_SERVER['PHP_SELF']}");
+            exit();
+        } else {
+            echo "Você não tem permissão para excluir esta publicação.";
+        }
+    } else {
+        echo "Publicação não encontrada.";
+    }
+
+    $stmt->close();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_arquivo_id'])) {
+    $edit_arquivo_id = $_POST['edit_arquivo_id'];
+    $novo_titulo = $_POST['titulo'];
+    $novo_comentario = $_POST['comentario'];
+
+    // Verifica se o usuário logado é o dono da publicação
+    $stmt = $connect->prepare("SELECT path, id_aluno FROM arquivos WHERE id = ?");
+    $stmt->bind_param("i", $edit_arquivo_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $arquivo = $result->fetch_assoc();
+
+        if ($arquivo['id_aluno'] == $id_aluno) {
+            // Verifica se uma nova imagem foi enviada
+            if (isset($_FILES['arquivo']['name']) && $_FILES['arquivo']['name'] != '') {
+                $imagem_antiga = "../posts/" . $arquivo['path'];
+
+                // Remove a imagem antiga
+                if (file_exists($imagem_antiga)) {
+                    unlink($imagem_antiga);
+                }
+
+                // Salva a nova imagem
+                $novo_nome_arquivo = uniqid() . '-' . $_FILES['arquivo']['name'];
+                $destino = "../posts/" . $novo_nome_arquivo;
+                move_uploaded_file($_FILES['arquivo']['tmp_name'], $destino);
+
+                // Atualiza o banco de dados com a nova imagem
+                $stmt_update = $connect->prepare("UPDATE arquivos SET titulo = ?, comentario = ?, path = ? WHERE id = ?");
+                $stmt_update->bind_param("sssi", $novo_titulo, $novo_comentario, $novo_nome_arquivo, $edit_arquivo_id);
+            } else {
+                // Atualiza o banco de dados sem alterar a imagem
+                $stmt_update = $connect->prepare("UPDATE arquivos SET titulo = ?, comentario = ? WHERE id = ?");
+                $stmt_update->bind_param("ssi", $novo_titulo, $novo_comentario, $edit_arquivo_id);
+            }
+
+            $stmt_update->execute();
+            $stmt_update->close();
+
+            header("Location: {$_SERVER['PHP_SELF']}");
+            exit();
+        } else {
+            echo "Você não tem permissão para editar esta publicação.";
+        }
+    } else {
+        echo "Publicação não encontrada.";
+    }
+
+    $stmt->close();
+}
+
 // Verifique se há um comentário a ser inserido
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_arquivo = $_POST['id_arquivo'];
     $comentario = $_POST['comentario'];
 
-    // Insere o comentário usando o `id_aluno`
+    // Insere o comentário usando o id_aluno
     $stmt = $connect->prepare("INSERT INTO comentarios (id_arquivo, id_aluno, comentario, data_comentario) VALUES (?, ?, ?, NOW())");
     $stmt->bind_param("iis", $id_arquivo, $id_aluno, $comentario);
     $stmt->execute();
     $stmt->close();
 
-    // Redireciona de volta para evitar reenvio do formulário
     header("Location: {$_SERVER['HTTP_REFERER']}");
     exit();
 }
 
 // Consulta para obter os arquivos e dados do usuário
+$sql_query = $connect->query("
+    SELECT arquivos.*, alunos.nome AS nome_aluno, alunos.foto_perfil
+    FROM arquivos
+    JOIN alunos ON arquivos.id_aluno = alunos.id_aluno
+    ORDER BY arquivos.data_uploaded DESC
+") or die($connect->error);
+
+
+
+// Consulta para exibir os arquivos
 $sql_query = $connect->query("
     SELECT arquivos.*, alunos.nome AS nome_aluno, alunos.foto_perfil
     FROM arquivos
@@ -64,6 +170,24 @@ $sql_query = $connect->query("
     <title>Arquivos Publicados</title>
 </head>
 
+<style>
+    .editForm {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.editForm input,
+.editForm textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+</style>
+
 <body>
     <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
     <div class="publicacaoDiv">
@@ -77,10 +201,17 @@ $sql_query = $connect->query("
                     <h6><?php echo date("d/m/Y", strtotime($arquivo['data_uploaded'])); ?></h6>
                     <h5><?php echo htmlspecialchars($arquivo['ip_selecionado']); ?></h5>
                 </div>
+                <?php if ($arquivo['id_aluno'] == $id_aluno) { ?>
+                    <form method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta publicação?');">
+                        <input type="hidden" name="delete_arquivo_id" value="<?php echo $arquivo['id']; ?>">
+                        <button type="submit" class="dropPost">Excluir</button>
+                    </form>
+                    <button class="editPost" onclick="showEditForm(<?php echo $arquivo['id']; ?>)">Editar</button>
+                <?php } ?>
             </div>
             <div class="titDesc">
                 <h1><?php echo htmlspecialchars($arquivo['titulo']); ?></h1>
-                <p><?php echo htmlspecialchars($arquivo['comentario']); ?></p>
+                <p><?php echo nl2br(wordwrap(htmlspecialchars($arquivo['comentario']), 28, "\n", true)); ?></p>
             </div>
             <div class="caixaspcbtw">
                 <div class="comentarios">
@@ -116,10 +247,6 @@ $sql_query = $connect->query("
                 </div>
                 <div class="comentar">
                     <form action="" method="POST">
-                        <!-- <button class="like-button" id="likeBtn">
-                                <span class="heart empty"><img src="../src/imgs/heartNull.png"></span>
-                                <span class="heart filled"><img src="../src/imgs/heartCheio.png"></span>
-                            </button> -->
                         <input type="hidden" name="id_arquivo" value="<?php echo $arquivo['id']; ?>">
                         <textarea name="comentario" placeholder="Escreva um comentário..." required></textarea>
                         <button type="submit">Comentar</button>
@@ -128,29 +255,30 @@ $sql_query = $connect->query("
             </div>
         </div>
     </div>
+    <!-- <div id="editForm-<?php echo $arquivo['id']; ?>" class="editForm" style="display: none;">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="edit_arquivo_id" value="<?php echo $arquivo['id']; ?>">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" value="<?php echo htmlspecialchars($arquivo['titulo']); ?>" required>
+            <label for="comentario">Descrição:</label>
+            <textarea name="comentario" required><?php echo htmlspecialchars($arquivo['comentario']); ?></textarea>
+            <label for="arquivo">Substituir imagem:</label>
+            <input type="file" name="arquivo" accept="image/*">
+            <button type="submit">Salvar</button>
+            <button type="button" onclick="hideEditForm(<?php echo $arquivo['id']; ?>)">Cancelar</button>
+        </form>
+    </div> -->
+
     <?php } ?>
 </body>
 
 </html>
 
-<script>
-const likeBtn = document.getElementById('likeBtn');
-const emptyHeart = document.querySelector('.empty');
-const filledHeart = document.querySelector('.filled');
-
-likeBtn.addEventListener('click', function() {
-    this.classList.add('animate');
-    setTimeout(() => {
-        this.classList.remove('animate');
-    }, 600); // Duração da animação
-
-    // Alternar a visibilidade dos corações
-    if (emptyHeart.style.opacity === '0') {
-        emptyHeart.style.opacity = '1';
-        filledHeart.style.opacity = '0';
-    } else {
-        emptyHeart.style.opacity = '0';
-        filledHeart.style.opacity = '1';
-    }
-});
-</script>
+<!-- <script>
+function showEditForm(id) {
+    document.getElementById('editForm-' + id).style.display = 'block';
+}
+function hideEditForm(id) {
+    document.getElementById('editForm-' + id).style.display = 'none';
+}
+</script> -->
