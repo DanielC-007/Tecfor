@@ -139,6 +139,7 @@ form input[type="submit"]:hover {
   display: flex;
   margin-top: 25px;
   width: 65vw;
+  max-height: calc(40vw + 12px);
 }
 
 .publicacaoDiv img {
@@ -151,9 +152,7 @@ form input[type="submit"]:hover {
 }
 
 .publicacaoDiv div {
-  border-radius: 10px;
-  border: solid 3px #916dd5;
-  margin-left: 5px;
+  
   width: 100%;
   display: block;
   /* flex-direction: column; */
@@ -161,10 +160,10 @@ form input[type="submit"]:hover {
   /* align-items: start; */
 }
 
-.publicacaoDiv div .caixa2 {
-  margin: 0;
-  border: transparent;
-  border-radius: 0;
+.publicacaoDiv .caixa2 {
+  border-radius: 10px;
+  border: solid 3px #916dd5;
+  margin-left: 5px;
 }
 
 .publicacaoDiv .imgUser {
@@ -205,10 +204,21 @@ form input[type="submit"]:hover {
   border: transparent;
   margin: 0;
   border-radius: 0;
-  height: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
-  background-color: red;
+}
+
+.publicacaoDiv .comentarios h3 {
+  color: #916dd5;
+}
+
+.publicacaoDiv .caixaspcbtw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100% - 120px - 6px);
+  
 }
 
 .publicacaoDiv .comentarios .comentario {
