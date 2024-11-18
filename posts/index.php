@@ -39,7 +39,8 @@ function enviarArquivo($error, $size, $name, $tmp_name, $comentario, $ip_selecio
     $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 
     if (!in_array($extensao, ['jpg', 'png', 'jpeg'])) {
-        die("Tipo de arquivo não aceito");
+        header("Location: ../posts/index.php");
+        // die("Tipo de arquivo não aceito");
     }
 
     $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
