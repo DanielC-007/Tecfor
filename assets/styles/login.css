@@ -150,3 +150,42 @@ h2 {
     transform: translateY(15px);
   }
 }
+
+
+@media screen and (max-width: 1080px) {
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .box1 img {
+    visibility: hidden;
+  }
+  
+  .vozesdacabeca {
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+  }
+
+  .box1 {
+    visibility: hidden;
+  }
+  
+  .box2 {
+    width: 100vw;
+  }
+
+  form {
+    padding: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  form .div1 input{
+    width: calc(350px / 2);
+  }
+}
