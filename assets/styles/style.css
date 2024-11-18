@@ -14,7 +14,6 @@ body.lightTheme {
   --cor3: #e0b0ff;
 }
 
-/*! itens no geral */
 * {
   padding: 0px;
   margin: 0px;
@@ -79,8 +78,6 @@ form input[type="submit"]:hover {
   color: white;
 }
 
-/*! classes */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -127,19 +124,10 @@ form input[type="submit"]:hover {
   object-fit: cover;
 }
 
-/* .pesquisaDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #7151a9;
-  padding: 5px;
-} */
-
 .publicacaoDiv {
   display: flex;
   margin-top: 25px;
   width: 65vw;
-  max-height: calc(40vw + 12px);
 }
 
 .publicacaoDiv img {
@@ -152,18 +140,15 @@ form input[type="submit"]:hover {
 }
 
 .publicacaoDiv div {
-  
   width: 100%;
   display: block;
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
-  /* align-items: start; */
 }
 
 .publicacaoDiv .caixa2 {
   border-radius: 10px;
   border: solid 3px #916dd5;
   margin-left: 5px;
+  max-height: calc(40vw + 12px);
 }
 
 .publicacaoDiv .imgUser {
@@ -218,7 +203,6 @@ form input[type="submit"]:hover {
   align-items: center;
   justify-content: space-between;
   height: calc(100% - 120px - 6px);
-  
 }
 
 .publicacaoDiv .comentarios .comentario {
@@ -280,7 +264,7 @@ form input[type="submit"]:hover {
   border-radius: 50px;
   border: solid 3px #916dd5;
   text-align: center;
-  padding: 5px 0 0  10px;
+  padding: 5px 0 0 10px;
   font-size: 16px;
   height: 25px;
   width: 75%;
@@ -328,14 +312,6 @@ form input[type="submit"]:hover {
   position: absolute;
   visibility: hidden;
 }
-
-/* #barraPesquisa {
-  background-color: var(--cor2);
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  width: calc(400px - 5px - 30px);
-} */
 
 #procurar {
   background-color: var(--corFundo);
@@ -516,8 +492,6 @@ form input[type="submit"]:hover {
   margin-top: 5px;
 }
 
-/*! animações */
-
 @keyframes showNav {
   from {
     transform: translateX(-100%);
@@ -559,7 +533,6 @@ form input[type="submit"]:hover {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -573,9 +546,6 @@ form input[type="submit"]:hover {
 /*! ajustar tela */
 
 @media screen and (max-width: 685px) {
-  /*todo itens no geral */
-
-  /* todo classes */
   .header {
     height: 30px;
   }
@@ -585,14 +555,9 @@ form input[type="submit"]:hover {
     width: auto;
   }
 
-  /*todo ids */
   #icon {
     width: 40px;
   }
-
-  /* #barraPesquisa {
-    height: 20px;
-  } */
 
   #procurar {
     height: 20px;
@@ -658,9 +623,36 @@ form input[type="submit"]:hover {
   }
 
   .publicacaoDiv img {
+    margin-bottom: 3px;
     width: 100%;
-    height: auto;
-    margin-bottom: 5px;
   }
 
+  .publicacaoDiv .caixa2 {
+    margin: 0;
+    max-height: calc(75vh + 12px);
+  }
+
+  .publicacaoDiv .imgUser {
+    margin: 0;
+  }
+
+  .publicacaoDiv .comentarios .comentario div .imgUser {
+    margin: 0;
+  }
+
+  .publicacaoDiv .caixaspcbtw {
+  }
+
+  .publicacaoDiv .imgUser {
+    height: 35px;
+    width: 35px;
+  }
+
+  .publicacaoDiv .titDesc {
+    font-size: small;
+  }
+
+  .publicacaoDiv .comentarios {
+    max-height: 40vw;
+  }
 }
