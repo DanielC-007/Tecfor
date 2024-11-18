@@ -145,6 +145,9 @@ form input[type="submit"]:hover {
 }
 
 .publicacaoDiv .caixa2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 10px;
   border: solid 3px #916dd5;
   margin-left: 5px;
@@ -224,7 +227,9 @@ form input[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: calc(100% - 27vh - 2px);
+  /* height: calc(100% - 27vh - 2px); */
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .publicacaoDiv .comentarios .comentario {
