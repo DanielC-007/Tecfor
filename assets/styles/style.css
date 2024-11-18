@@ -189,7 +189,7 @@ form input[type="submit"]:hover {
 .publicacaoDiv .postInfo .dropPost:hover {
   background-color: red;
 }
-
+/* 
 .publicacaoDiv .postInfo .editPost {
   background-color: transparent;
   border: solid 3px #916dd5;
@@ -200,6 +200,10 @@ form input[type="submit"]:hover {
 .publicacaoDiv .postInfo .editPost:hover {
   background-color: #916dd5;
 }
+
+.editForm {
+  position: fixed;
+} */
 
 .publicacaoDiv .titDesc {
   margin: 0;
@@ -654,6 +658,8 @@ form input[type="submit"]:hover {
   .publicacaoDiv img {
     margin-bottom: 3px;
     width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .publicacaoDiv .caixa2 {

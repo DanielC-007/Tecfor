@@ -170,24 +170,6 @@ $sql_query = $connect->query("
     <title>Arquivos Publicados</title>
 </head>
 
-<style>
-    .editForm {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-.editForm input,
-.editForm textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-</style>
-
 <body>
     <?php while ($arquivo = $sql_query->fetch_assoc()) { ?>
     <div class="publicacaoDiv">
@@ -206,7 +188,7 @@ $sql_query = $connect->query("
                         <input type="hidden" name="delete_arquivo_id" value="<?php echo $arquivo['id']; ?>">
                         <button type="submit" class="dropPost">Excluir</button>
                     </form>
-                    <button class="editPost" onclick="showEditForm(<?php echo $arquivo['id']; ?>)">Editar</button>
+                    <!-- <button class="editPost" onclick="showEditForm(<?php echo $arquivo['id']; ?>)">Editar</button> -->
                 <?php } ?>
             </div>
             <div class="titDesc">
@@ -274,11 +256,11 @@ $sql_query = $connect->query("
 
 </html>
 
-<!-- <script>
+<script>
 function showEditForm(id) {
     document.getElementById('editForm-' + id).style.display = 'block';
 }
 function hideEditForm(id) {
     document.getElementById('editForm-' + id).style.display = 'none';
 }
-</script> -->
+</script>
