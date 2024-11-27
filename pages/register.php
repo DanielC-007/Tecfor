@@ -14,22 +14,30 @@ if(isset($_POST['submit'])){
         $email = $_POST['email'];
         $senha = $_POST['password'];
 
-        
-        $hash = password_hash($senha, PASSWORD_BCRYPT);
-        
-        $query = "SELECT * FROM alunos where email = '$email'";
-        $consulta = $connect->query($query);
-
-        if($consulta->num_rows > 0){
-            echo "<h4 style='color:red;width:175px;margin-left:calc(50vw - 175px / 2);position:fixed;'>Email já está em uso</h4>";
+        // Validação do comprimento da senha
+        if (strlen($senha) < 8) {
+            echo "<script>alert('A senha deve ter no mínimo 8 caracteres');</script>";
         } else {
-            $query = "INSERT INTO alunos (nome, email, senha_hash) VALUES ('$nome', '$email', '$hash')";
-            $connect->query($query);
+            // Hash da senha
+            $hash = password_hash($senha, PASSWORD_BCRYPT);
 
-            header("Location: login.php");
+            // Verificar se o e-mail já existe
+            $query = "SELECT * FROM alunos WHERE email = '$email'";
+            $consulta = $connect->query($query);
+
+            if($consulta->num_rows > 0){
+                echo "<script>alert('Email já está em uso');</script>";
+            } else {
+                // Inserir novo registro
+                $query = "INSERT INTO alunos (nome, email, senha_hash) VALUES ('$nome', '$email', '$hash')";
+                $connect->query($query);
+
+                header("Location: login.php");
+                exit();
+            }
         }
     } else {
-        echo "<h4 style='color:red;width:275px;margin-left:calc(50vw - 275px / 2);position:fixed;'>Preencha os dados corretamente</h4>";
+        echo "<script>alert('Preencha os dados corretamente');</script>";
     }
 }
 ?>
@@ -50,9 +58,9 @@ if(isset($_POST['submit'])){
         <form method="POST">
             <h2>Cadastro</h2>
             <img src="../src/imgs/raposa.png">
-            <input type="text" id="nome" name="nome" placeholder="Nome">
-            <input type="email" id="email" name="email" placeholder="Email">
-            <input type="password" id="password" name="password" placeholder="Senha">
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Senha" minlength="8" required>
             <div class="dldiv">
                 <a href="login.php">Já possui conta?</a>
                 <input type="submit" name="submit" value="Cadastrar">

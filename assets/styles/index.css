@@ -239,6 +239,10 @@ footer div p {
     font-weight: 900;
 }
 
+.box2 ul {
+    font-size: larger;
+}
+
 .box1 .setaimg,
 .box3 .setaimg {
     height: 50px;

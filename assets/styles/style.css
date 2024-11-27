@@ -392,6 +392,7 @@ form input[type="submit"]:hover {
   margin-top: 10px;
   background-color: transparent;
   border-radius: 0;
+  margin-bottom: 100px;
 }
 
 #infoUser form input {
@@ -432,7 +433,21 @@ form input[type="submit"]:hover {
   background-color: #6941ad;
 }
 
-#salas .sair button {
+#infoUser .sair button {
+  background-color: transparent;
+  padding: 5px;
+  border: solid 3px red;
+  border-radius: 10px;
+  font-size: medium;
+  width: 200px;
+  height: 50px;
+}
+
+#infoUser .sair button:hover {
+  background-color: red;
+}
+
+#salas .sair button{
   border: solid red;
 }
 
